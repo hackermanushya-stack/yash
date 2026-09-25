@@ -52,13 +52,12 @@
     }
 
     body {
-      background-color: var(--bg-base);
+      background-color: #000000;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 100% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 0% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 55%),
-        linear-gradient(180deg, #07040E 0%, #0F091F 100%);
-      background-attachment: fixed;
+        radial-gradient(ellipse 90% 45% at 50% 0%, rgba(124, 58, 237, 0.38) 0%, rgba(88, 28, 135, 0.22) 28%, rgba(20, 10, 36, 0.75) 45%, #000000 60%),
+        linear-gradient(180deg, rgba(30, 12, 60, 0.95) 0%, rgba(18, 8, 36, 0.85) 30%, rgba(10, 4, 20, 0.7) 42%, #000000 45%, #000000 100%);
+      background-repeat: no-repeat;
+      background-attachment: scroll;
       color: var(--text-offwhite);
       min-height: 100vh;
       line-height: 1.6;
@@ -66,28 +65,30 @@
       position: relative;
     }
 
-    /* Ambient Subtle Purple & Violet Deep Glows with Apple-style diffusion */
+    /* Ambient Subtle Purple & Violet Deep Glow localized to top 45% */
     body::before {
       content: "";
-      position: fixed;
-      top: -150px;
-      left: 10%;
-      width: 750px;
-      height: 750px;
-      background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, rgba(139, 92, 246, 0.04) 40%, rgba(7, 4, 14, 0) 70%);
-      filter: blur(100px);
+      position: absolute;
+      top: -100px;
+      left: 15%;
+      width: 70%;
+      height: 45vh;
+      max-height: 550px;
+      background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.22) 0%, rgba(124, 58, 237, 0.12) 40%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(80px);
       pointer-events: none;
       z-index: 0;
     }
     body::after {
       content: "";
-      position: fixed;
-      bottom: -150px;
-      right: 10%;
-      width: 680px;
-      height: 680px;
-      background: radial-gradient(circle, rgba(192, 132, 252, 0.1) 0%, rgba(250, 204, 21, 0.04) 50%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(120px);
+      position: absolute;
+      top: 15vh;
+      right: 5%;
+      width: 480px;
+      height: 30vh;
+      max-height: 420px;
+      background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(90px);
       pointer-events: none;
       z-index: 0;
     }
@@ -1387,7 +1388,7 @@
   </section>
 
   <!-- 11. Footer -->
-  <footer style="padding: 4rem 0 2.5rem; border-top: 1px solid var(--glass-border); background: #05030A;">
+  <footer style="padding: 4rem 0 2.5rem; border-top: 1px solid var(--glass-border); background: #000000;">
     <div class="container">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 2.5rem;">
         
