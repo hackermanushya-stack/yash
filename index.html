@@ -10,33 +10,35 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Font: Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
-
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* =========================================================
-       APPLE SF PRO DISPLAY TYPOGRAPHY & SMOOTH ANIMATIONS
-       ========================================================= */
+    /* ====================================================================
+       COHESIVE PALETTE: Purple Gradient Main Theme + Black & White + Yellow Accent
+       High-end Apple-Grade Glassmorphism & Ambient Purple & Violet Glows
+       ==================================================================== */
     :root {
-      --bg-deep-navy: #0A1128;
-      --bg-navy-dark: #0F172A;
-      --accent-yellow: #FACC15;
-      --accent-yellow-hover: #EAB308;
-      --accent-yellow-glow: rgba(250, 204, 21, 0.35);
-      --ambient-cyan: rgba(56, 189, 248, 0.12);
-      --glass-bg: rgba(255, 255, 255, 0.04);
-      --glass-bg-hover: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.12);
-      --glass-border-focus: rgba(250, 204, 21, 0.5);
-      --text-primary: #F8FAFC;
+      --bg-base: #07040E;            /* Rich deep midnight obsidian purple */
+      --bg-surface: #120A24;         /* Surface dark violet */
+      --color-purple-glow: #7C3AED;  /* Vibrant royal violet glow */
+      --color-purple-primary: #8B5CF6; /* Primary electric purple */
+      --color-purple-soft: #C084FC;  /* Luminous lilac / orchid highlight */
+      --color-yellow: #FACC15;       /* Sole accent yellow */
+      --color-yellow-hover: #EAB308;
+      --color-yellow-glow: rgba(250, 204, 21, 0.28);
+      
+      --glass-panel: rgba(18, 10, 36, 0.65);
+      --glass-panel-hover: rgba(26, 15, 52, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-border-hover: rgba(192, 132, 252, 0.38);
+      --glass-border-yellow: rgba(250, 204, 21, 0.4);
+
+      --text-white: #FFFFFF;
+      --text-offwhite: #F1F5F9;
       --text-muted: #94A3B8;
       --text-subtle: #64748B;
-      /* Apple SF Pro Display System Font Stack */
+
       --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
@@ -49,243 +51,279 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Apple-style Fluid Smooth Animations */
-    @keyframes appleFloat {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
-    }
-
-    @keyframes appleGlowPulse {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 0.95; }
-    }
-
-    /* Interactive Software Logo Badge with Authentic Graphic Icon */
-    .app-icon-badge {
-      width: 46px;
-      height: 46px;
-      min-width: 46px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      overflow: hidden;
-    }
-    .app-icon-badge.pr {
-      background: linear-gradient(135deg, #00005B 0%, #000028 100%);
-      border: 1.5px solid #EA77FF;
-      box-shadow: 0 0 15px rgba(234, 119, 255, 0.25);
-    }
-    .app-icon-badge.ae {
-      background: linear-gradient(135deg, #00005B 0%, #000024 100%);
-      border: 1.5px solid #D291FF;
-      box-shadow: 0 0 15px rgba(210, 145, 255, 0.25);
-    }
-    .app-icon-badge.ps {
-      background: linear-gradient(135deg, #001E36 0%, #001120 100%);
-      border: 1.5px solid #31A8FF;
-      box-shadow: 0 0 15px rgba(49, 168, 255, 0.25);
-    }
-
-    .software-item-row {
-      display: flex;
-      align-items: center;
-      gap: 1.15rem;
-      padding: 0.95rem 1.15rem;
-      border-radius: 0.85rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .software-item-row:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(250, 204, 21, 0.35);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-    .software-item-row:hover .app-icon-badge {
-      transform: scale(1.1) rotate(-3deg);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    /* Graphical Floating Skill Tags matching Screenshot */
-    .skill-tag-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.825rem;
-      font-weight: 700;
-      padding: 0.4rem 0.95rem;
-      border-radius: 9999px;
-      backdrop-filter: blur(12px);
-      transition: all 0.25s ease;
-      cursor: default;
-    }
-    .skill-tag-pill:hover {
-      transform: translateY(-2px);
-    }
-    .skill-tag-yellow {
-      background: rgba(250, 204, 21, 0.1);
-      color: #FACC15;
-      border: 1px solid rgba(250, 204, 21, 0.3);
-    }
-    .skill-tag-blue {
-      background: rgba(56, 189, 248, 0.1);
-      color: #38BDF8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .skill-tag-purple {
-      background: rgba(192, 132, 252, 0.1);
-      color: #C084FC;
-      border: 1px solid rgba(192, 132, 252, 0.3);
-    }
-    .skill-tag-emerald {
-      background: rgba(52, 211, 153, 0.1);
-      color: #34D399;
-      border: 1px solid rgba(52, 211, 153, 0.3);
-    }
-    .skill-tag-pink {
-      background: rgba(244, 114, 182, 0.1);
-      color: #F472B6;
-      border: 1px solid rgba(244, 114, 182, 0.3);
-    }
-
-    /* Ambient graphical glow blobs */
-    .glow-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.35;
-    }
-
-    /* Apple-Style Smooth Scroll Reveal System */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(28px) scale(0.98);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    /* Staggered delay helpers for smooth sequenced appearance */
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* Mobile Responsive Optimizations for Phone Displays */
-    @media (max-width: 640px) {
-      .case-study-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-      .case-study-stats {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 0.75rem !important;
-      }
-      .case-study-stat-box {
-        padding: 1rem 0.75rem !important;
-      }
-      .case-study-stat-number {
-        font-size: 1.65rem !important;
-      }
-      .case-study-stat-label {
-        font-size: 0.75rem !important;
-      }
-      .case-study-card {
-        padding: 1.35rem 1rem !important;
-      }
-      .case-study-actions {
-        flex-direction: column !important;
-        width: 100% !important;
-      }
-      .case-study-actions a {
-        width: 100% !important;
-        text-align: center !important;
-      }
-    }
-
     body {
-      font-family: var(--font-main);
-      background-color: var(--bg-deep-navy);
+      background-color: var(--bg-base);
       background-image: 
-        radial-gradient(circle at 15% 15%, var(--ambient-cyan) 0%, transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 50% 80%, rgba(250, 204, 21, 0.05) 0%, transparent 50%),
-        linear-gradient(180deg, var(--bg-deep-navy) 0%, var(--bg-navy-dark) 100%);
+        radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 100% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 0% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 55%),
+        linear-gradient(180deg, #07040E 0%, #0F091F 100%);
       background-attachment: fixed;
-      color: var(--text-primary);
+      color: var(--text-offwhite);
       min-height: 100vh;
       line-height: 1.6;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Ambient Subtle Purple & Violet Deep Glows with Apple-style diffusion */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -150px;
+      left: 10%;
+      width: 750px;
+      height: 750px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, rgba(139, 92, 246, 0.04) 40%, rgba(7, 4, 14, 0) 70%);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -150px;
+      right: 10%;
+      width: 680px;
+      height: 680px;
+      background: radial-gradient(circle, rgba(192, 132, 252, 0.1) 0%, rgba(250, 204, 21, 0.04) 50%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
     }
 
     /* Container Utilities */
     .container {
-      max-width: 1240px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Glassmorphism Styles matching Screenshot */
+    /* Pure Glassmorphic Cards */
     .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: var(--glass-panel);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
       border-radius: 1rem;
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
-                  border-color 0.25s ease, 
-                  box-shadow 0.25s ease;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .glass-card:hover {
-      border-color: rgba(255, 255, 255, 0.25);
+      border-color: var(--glass-border-hover);
+      background: var(--glass-panel-hover);
+      box-shadow: 0 24px 45px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(139, 92, 246, 0.18);
     }
-    .glass-card-interactive:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-yellow);
-      box-shadow: 0 20px 30px -10px var(--accent-yellow-glow);
+    .glass-card-yellow-glow {
+      border-color: var(--glass-border-yellow);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(250, 204, 21, 0.1);
+    }
+    .glass-card-yellow-glow:hover {
+      border-color: var(--color-yellow);
+      box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.8), 0 0 35px var(--color-yellow-glow);
     }
 
-    /* 16:9 Thumbnail Image Preview Card */
-    .thumb-preview-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 0.85rem;
-      border: 1px solid var(--glass-border);
-      background: #000000;
-      position: relative;
-      display: flex;
+    /* Buttons: Yellow Accent, Glass Neutral, Direct Action */
+    .btn-yellow {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--color-yellow);
+      color: #07040E;
+      font-weight: 700;
+      font-size: 0.925rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 0.55rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px -3px var(--color-yellow-glow);
     }
-    .thumb-preview-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-    }
-    .thumb-preview-box:hover img {
-      transform: scale(1.03);
-      filter: brightness(1.05);
+    .btn-yellow:hover {
+      background-color: var(--color-yellow-hover);
+      box-shadow: 0 6px 28px 0px rgba(250, 204, 21, 0.45);
+      transform: translateY(-2px);
     }
 
-    /* Embedded Video Frame Container (Responsive 16:9 or 9:16) */
+    .btn-glass {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      color: var(--text-white);
+      font-weight: 600;
+      font-size: 0.925rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 0.55rem;
+      border: 1px solid var(--glass-border);
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .btn-direct-chat {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: rgba(139, 92, 246, 0.16);
+      color: #FFFFFF;
+      border: 1px solid rgba(192, 132, 252, 0.35);
+      font-weight: 700;
+      font-size: 0.925rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 0.55rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(12px);
+    }
+    .btn-direct-chat:hover {
+      background: rgba(139, 92, 246, 0.3);
+      border-color: var(--color-purple-soft);
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-direct-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: rgba(250, 204, 21, 0.08);
+      color: var(--color-yellow);
+      border: 1px solid rgba(250, 204, 21, 0.35);
+      font-weight: 700;
+      font-size: 0.925rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 0.55rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(12px);
+    }
+    .btn-direct-email:hover {
+      background: rgba(250, 204, 21, 0.18);
+      border-color: var(--color-yellow);
+      box-shadow: 0 0 25px var(--color-yellow-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Section Badges */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-yellow);
+      padding: 0.35rem 0.95rem;
+      background: rgba(250, 204, 21, 0.08);
+      border: 1px solid rgba(250, 204, 21, 0.25);
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 4, 14, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
+    }
+    .brand-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-white);
+      text-decoration: none;
+    }
+    .brand-logo .accent-word {
+      color: var(--color-yellow);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--text-white);
+    }
+    .nav-links a.active {
+      color: var(--color-yellow);
+    }
+
+    /* Filter Tabs */
+    .filter-tab {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-muted);
+      border: 1px solid var(--glass-border);
+      padding: 0.55rem 1.25rem;
+      border-radius: 0.55rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .filter-tab:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+    }
+    .filter-tab.active {
+      background: var(--color-yellow);
+      color: #060A14;
+      border-color: var(--color-yellow);
+      box-shadow: 0 0 20px -2px var(--color-yellow-glow);
+    }
+
+    /* Balanced Work Grid */
+    #portfolioGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .portfolio-item {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Video Frame Container */
     .video-embed-wrapper {
       position: relative;
       width: 100%;
@@ -311,207 +349,67 @@
       border: 0;
     }
 
-    /* Buttons */
-    .btn-yellow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background-color: var(--accent-yellow);
-      color: #0A1128;
-      font-weight: 700;
-      font-size: 0.925rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 0.5rem;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 0 20px -3px var(--accent-yellow-glow);
-    }
-    .btn-yellow:hover {
-      background-color: var(--accent-yellow-hover);
-      box-shadow: 0 0 28px 0px rgba(250, 204, 21, 0.55);
-      transform: translateY(-1px);
-    }
-
-    .btn-glass {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(12px);
-      color: var(--text-primary);
-      font-weight: 600;
-      font-size: 0.925rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 0.5rem;
-      border: 1px solid var(--glass-border);
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-    .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.3);
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: rgba(37, 211, 102, 0.15);
-      color: #25d366;
-      border: 1px solid rgba(37, 211, 102, 0.4);
-      font-weight: 700;
-      font-size: 0.925rem;
-      padding: 0.8rem 1.75rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .btn-whatsapp:hover {
-      background: rgba(37, 211, 102, 0.28);
-      border-color: #25d366;
-      box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
-      transform: translateY(-1px);
-    }
-
-    .btn-email-app {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: rgba(250, 204, 21, 0.12);
-      color: var(--accent-yellow);
-      border: 1px solid rgba(250, 204, 21, 0.35);
-      font-weight: 700;
-      font-size: 0.925rem;
-      padding: 0.8rem 1.75rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .btn-email-app:hover {
-      background: rgba(250, 204, 21, 0.24);
-      border-color: var(--accent-yellow);
-      box-shadow: 0 0 25px var(--accent-yellow-glow);
-      transform: translateY(-1px);
-    }
-
-    /* Section Badge */
-    .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-yellow);
-      padding: 0.35rem 0.85rem;
-      background: rgba(250, 204, 21, 0.08);
-      border: 1px solid rgba(250, 204, 21, 0.25);
-      border-radius: 9999px;
-      margin-bottom: 1rem;
-    }
-
-    /* Navigation */
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(10, 17, 40, 0.88);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.3s ease;
-    }
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 4.5rem;
-    }
-    .brand-logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #FFFFFF;
-      text-decoration: none;
-    }
-    .brand-logo .accent-word {
-      color: var(--accent-yellow);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
+    /* 16:9 Thumbnail Image Preview Box */
+    .thumb-preview-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000000;
       position: relative;
-    }
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
-    .nav-links a.active {
-      color: var(--accent-yellow);
-    }
-
-    /* Filter Tabs matching Screenshot */
-    .filter-tab {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-muted);
-      border: 1px solid var(--glass-border);
-      padding: 0.55rem 1.15rem;
-      border-radius: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .filter-tab:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-primary);
-    }
-    .filter-tab.active {
-      background: var(--accent-yellow);
-      color: #0A1128;
-      border-color: var(--accent-yellow);
-      box-shadow: 0 0 15px -2px var(--accent-yellow-glow);
-    }
-
-    /* Work Grid - Balanced Alignment for All Work */
-    #portfolioGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2rem;
-      align-items: stretch;
-    }
-
-    .portfolio-item {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .thumb-preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .thumb-preview-box:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Core Software Interactive App Badges */
+    .software-item-row {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      padding: 0.95rem 1.15rem;
+      border-radius: 0.85rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .software-item-row:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(250, 204, 21, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .app-icon-badge {
+      width: 46px;
+      height: 46px;
+      min-width: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       overflow: hidden;
     }
+    .software-item-row:hover .app-icon-badge {
+      transform: scale(1.1) rotate(-3deg);
+    }
 
-    /* FAQ Styles */
+    /* FAQ Accordion */
     .faq-item {
       border-bottom: 1px solid var(--glass-border);
-      transition: background-color 0.2s ease;
     }
     .faq-item:last-child {
       border-bottom: none;
@@ -521,10 +419,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.25rem 1.5rem;
+      padding: 1.3rem 1.5rem;
       background: transparent;
       border: none;
-      color: var(--text-primary);
+      color: var(--text-white);
       font-size: 1.05rem;
       font-weight: 600;
       text-align: left;
@@ -532,11 +430,11 @@
       transition: color 0.2s ease;
     }
     .faq-question:hover {
-      color: var(--accent-yellow);
+      color: var(--color-yellow);
     }
     .faq-icon {
       transition: transform 0.3s ease;
-      color: var(--accent-yellow);
+      color: var(--color-yellow);
       font-size: 1.35rem;
       line-height: 1;
     }
@@ -557,7 +455,7 @@
       padding-bottom: 1.35rem;
     }
 
-    /* Form Fields */
+    /* Form Inputs */
     .form-group {
       margin-bottom: 1.25rem;
     }
@@ -565,32 +463,49 @@
       display: block;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #E2E8F0;
+      color: #F1F5F9;
       margin-bottom: 0.4rem;
     }
     .form-input, .form-select, .form-textarea {
       width: 100%;
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(18, 10, 36, 0.7);
       border: 1px solid var(--glass-border);
-      border-radius: 0.5rem;
+      border-radius: 0.55rem;
       padding: 0.75rem 1rem;
       font-size: 0.925rem;
-      color: var(--text-primary);
+      color: var(--text-white);
       font-family: inherit;
       outline: none;
       transition: all 0.2s ease;
     }
     .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--accent-yellow);
+      border-color: var(--color-yellow);
       box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(26, 15, 52, 0.95);
     }
     .form-select option {
-      background: #0F172A;
+      background: #120A24;
       color: #F8FAFC;
     }
 
-    /* Responsive */
+    /* Apple-Style Smooth Scroll Reveal System */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(24px) scale(0.985);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Mobile Responsive */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -602,13 +517,38 @@
         top: 4.5rem;
         left: 0;
         right: 0;
-        background: #0A1128;
+        background: #0D071C;
         padding: 1.5rem;
         border-bottom: 1px solid var(--glass-border);
         gap: 1rem;
       }
       .mobile-menu-btn {
         display: block;
+      }
+      .case-study-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .case-study-stats {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.75rem !important;
+      }
+      .case-study-stat-box {
+        padding: 1.1rem 0.75rem !important;
+      }
+      .case-study-stat-number {
+        font-size: 1.7rem !important;
+      }
+      .case-study-stat-label {
+        font-size: 0.75rem !important;
+      }
+      .case-study-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .case-study-actions a {
+        width: 100% !important;
+        text-align: center !important;
       }
     }
     @media (min-width: 769px) {
@@ -620,7 +560,7 @@
 </head>
 <body>
 
-  <!-- 1. Sticky Navigation Bar matching Screenshot -->
+  <!-- 1. Sticky Navigation Bar -->
   <header class="nav-bar">
     <div class="container nav-container">
       <a href="#home" class="brand-logo">
@@ -640,7 +580,7 @@
       </nav>
 
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="#contact" class="btn-yellow" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">
+        <a href="#contact" class="btn-yellow" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
           Book a Call
         </a>
         <button class="mobile-menu-btn btn-glass" id="mobileMenuBtn" aria-label="Toggle Navigation" style="padding: 0.5rem 0.75rem;">
@@ -651,24 +591,24 @@
   </header>
 
   <!-- 2. Hero Section (Above the Fold) -->
-  <section id="home" style="padding: 5rem 0 4.5rem; position: relative; overflow: hidden;">
-    <div class="container" style="position: relative; z-index: 10;">
-      <div style="max-width: 880px; margin: 0 auto; text-align: center;">
+  <section id="home" style="padding: 5.5rem 0 4.5rem; text-align: center; position: relative;">
+    <div class="container">
+      <div style="max-width: 860px; margin: 0 auto;">
         
         <div class="section-badge">
-          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-yellow); margin-right: 4px;"></span>
+          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--color-yellow); margin-right: 4px;"></span>
           Video Editor & Motion Designer
         </div>
 
-        <h1 style="font-size: clamp(2.3rem, 5vw, 4.1rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.5rem; text-wrap: balance;">
-          Transforming Raw Footage into <span style="background: linear-gradient(135deg, #FFFFFF 20%, #FACC15 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">High-Converting</span> Visual Stories
+        <h1 style="font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: #FFFFFF; text-wrap: balance;">
+          Transforming Raw Footage into <span style="color: var(--color-yellow);">High-Converting</span> Visual Stories
         </h1>
 
         <p style="font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); line-height: 1.65; max-width: 720px; margin: 0 auto 2.5rem; text-wrap: balance;">
           Helping creators, channels, and brands boost retention, views, and subscriber growth through high-impact pacing, dynamic motion design, and premium sound sculpting.
         </p>
 
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem;">
           <a href="#portfolio" class="btn-yellow">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             Explore Work
@@ -677,50 +617,37 @@
             <i class="fa-solid fa-calendar-check"></i>
             Book a Strategy Call
           </a>
-          <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project%20or%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn-glass" style="color: #25d366; border-color: rgba(37, 211, 102, 0.35);">
+          <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project%20or%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn-direct-chat">
             <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp Directly
+            Direct WhatsApp
           </a>
-        </div>
-
-        <!-- Graphical Floating Skill Pills (from user screenshot) -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem; margin-bottom: 1.5rem;">
-          <span class="skill-tag-pill skill-tag-yellow">#Storytelling</span>
-          <span class="skill-tag-pill skill-tag-blue">#SoundDesign</span>
-          <span class="skill-tag-pill skill-tag-purple">#MotionGraphics</span>
-          <span class="skill-tag-pill skill-tag-emerald">#PacingAndRhythm</span>
-          <span class="skill-tag-pill skill-tag-pink">#ThumbnailDesign</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 3. Featured Channel Growth Spotlight: Mr.khalokar (Fully Mobile Optimized) -->
-  <section style="padding: 1rem 0 3.5rem; position: relative;">
-    <!-- Ambient graphic glow -->
-    <div class="glow-blob" style="top: -20px; left: 10%; width: 260px; height: 260px; background: rgba(250, 204, 21, 0.12);"></div>
-    <div class="glow-blob" style="bottom: -20px; right: 10%; width: 280px; height: 280px; background: rgba(56, 189, 248, 0.1);"></div>
-
-    <div class="container" style="position: relative; z-index: 5;">
-      <div class="glass-card case-study-card scroll-reveal" style="padding: 2.25rem; border-color: rgba(250, 204, 21, 0.35); position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(15,23,42,0.9) 100%);">
+  <!-- 3. Featured Channel Growth Spotlight: Mr.khalokar (Balanced, Proper Alignment) -->
+  <section style="padding: 1.5rem 0 4rem;">
+    <div class="container">
+      <div class="glass-card glass-card-yellow-glow scroll-reveal" style="padding: 2.5rem; position: relative;">
         
-        <div class="case-study-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
+        <div class="case-study-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
           
           <div>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(250, 204, 21, 0.15); border: 1px solid var(--accent-yellow); color: var(--accent-yellow); font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 9999px; margin-bottom: 1rem; text-transform: uppercase;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(250, 204, 21, 0.12); border: 1px solid var(--color-yellow); color: var(--color-yellow); font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 9999px; margin-bottom: 1rem; text-transform: uppercase;">
               ★ FEATURED CHANNEL GROWTH CASE STUDY
             </div>
             
-            <h3 style="font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; color: #FFFFFF; line-height: 1.25;">
+            <h3 style="font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; color: #FFFFFF; line-height: 1.25;">
               Manager & Video Editor — Mr.khalokar YT Channel
             </h3>
             
-            <p style="font-size: 0.85rem; font-weight: 600; color: var(--accent-yellow); margin-bottom: 1rem;">
+            <p style="font-size: 0.875rem; font-weight: 600; color: var(--color-yellow); margin-bottom: 1rem;">
               Apr 2023 - Till Now · End-to-End Content Management
             </p>
             
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.75rem;">
               Managed content strategy, community engagement, and full video post-production for the official YouTube channel <strong>Mr .khalokar</strong>. Handled everything from click-magnet thumbnail designs to high-retention video edits.
             </p>
 
@@ -735,35 +662,35 @@
             </div>
           </div>
 
-          <!-- Highlight Metric Stats from Screenshot - Clean on Phones -->
+          <!-- Highlight Metric Stats -->
           <div class="case-study-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             
-            <div class="case-study-stat-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.35rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: var(--accent-yellow); line-height: 1.1; margin-bottom: 0.35rem;">
+            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
+              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: var(--color-yellow); line-height: 1.1; margin-bottom: 0.35rem;">
                 11,69,447+
               </div>
               <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Total Views Gained</div>
               <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Across video catalog</div>
             </div>
 
-            <div class="case-study-stat-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.35rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #38BDF8; line-height: 1.1; margin-bottom: 0.35rem;">
+            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
+              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.35rem;">
                 0 → 2,500+
               </div>
               <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Subscribers Grew</div>
               <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Organic community growth</div>
             </div>
 
-            <div class="case-study-stat-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.35rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #34D399; line-height: 1.1; margin-bottom: 0.35rem;">
+            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
+              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.35rem;">
                 100%
               </div>
               <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Production Ownership</div>
               <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">From thumbnail to export</div>
             </div>
 
-            <div class="case-study-stat-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.35rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #F472B6; line-height: 1.1; margin-bottom: 0.35rem;">
+            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
+              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: var(--color-yellow); line-height: 1.1; margin-bottom: 0.35rem;">
                 Since 2023
               </div>
               <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Ongoing Retention</div>
@@ -778,20 +705,20 @@
     </div>
   </section>
 
-  <!-- 4. Categorized Portfolio / Case Studies Section (All Work Tab with balanced grid) -->
-  <section id="portfolio" style="padding: 4.5rem 0 5.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- 4. Work Section (Proper Grid Alignment in All Tab) -->
+  <section id="portfolio" style="padding: 4.5rem 0 5.5rem; border-top: 1px solid var(--glass-border);">
     <div class="container">
       <div class="scroll-reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 3rem;">
         <div class="section-badge">Selected Works</div>
-        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem;">
+        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
           Portfolio & Production Work
         </h2>
         <p style="color: var(--text-muted); max-width: 650px; font-size: 1.05rem; margin-bottom: 2rem;">
           Direct embedded HD previews of motion design reels, full YouTube long-form edits, and 16:9 custom thumbnails.
         </p>
 
-        <!-- Interactive Filter Tabs: All Work, Shorts / Reels, YouTube Long-Form, Thumbnails & Graphics -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; background: rgba(15, 23, 42, 0.6); padding: 0.4rem; border-radius: 0.75rem; border: 1px solid var(--glass-border);">
+        <!-- Clean Filter Tabs -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; background: rgba(10, 18, 38, 0.75); padding: 0.4rem; border-radius: 0.75rem; border: 1px solid var(--glass-border); backdrop-filter: blur(12px);">
           <button class="filter-tab active" onclick="filterPortfolio('all', this)">All Work</button>
           <button class="filter-tab" onclick="filterPortfolio('shorts', this)">Shorts / Reels</button>
           <button class="filter-tab" onclick="filterPortfolio('youtube', this)">YouTube Long-Form</button>
@@ -799,12 +726,12 @@
         </div>
       </div>
 
-      <!-- Balanced Portfolio Grid -->
+      <!-- Balanced Portfolio Grid with Symmetrical Alignment -->
       <div id="portfolioGrid">
         
         <!-- Video 1: Motion Design Reel (Hw-QpfJNj8M) -->
-        <div class="glass-card glass-card-interactive portfolio-item scroll-reveal reveal-delay-1" data-category="shorts">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.3);">
+        <div class="glass-card portfolio-item scroll-reveal reveal-delay-1" data-category="shorts">
+          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
             <div class="video-embed-wrapper aspect-shorts">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?rel=0&modestbranding=1" 
@@ -816,23 +743,23 @@
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">Motion Design Reel</span>
-              <span style="font-size: 0.75rem; background: rgba(250, 204, 21, 0.15); color: var(--accent-yellow); padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700;">Direct HD Player</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Motion Design Reel</span>
+              <span style="font-size: 0.75rem; background: rgba(250, 204, 21, 0.12); color: var(--color-yellow); padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700;">Direct HD Player</span>
             </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Dynamic Motion Design Reel</h4>
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Dynamic Motion Design Reel</h4>
             <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
               Dynamic kinetic typography, fluid After Effects motion design, seamless frame pacing, and precision audio effects designed to hook mobile viewers instantly.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
               <span>Turnaround: 24–48h</span>
-              <a href="https://youtube.com/shorts/Hw-QpfJNj8M?feature=share" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
+              <a href="https://youtube.com/shorts/Hw-QpfJNj8M?feature=share" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Video 2: YouTube Long-Form (8ETFrvZku5o) -->
-        <div class="glass-card glass-card-interactive portfolio-item scroll-reveal reveal-delay-2" data-category="youtube">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.3);">
+        <div class="glass-card portfolio-item scroll-reveal reveal-delay-2" data-category="youtube">
+          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
             <div class="video-embed-wrapper aspect-landscape">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?rel=0&modestbranding=1" 
@@ -844,23 +771,23 @@
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">YouTube Long-Form</span>
-              <span style="font-size: 0.75rem; background: rgba(56, 189, 248, 0.15); color: #38BDF8; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700;">16:9 HD Player</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">YouTube Long-Form</span>
+              <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.08); color: #FFFFFF; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700;">16:9 HD Player</span>
             </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Story-Driven Narrative & High Retention Pacing</h4>
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Story-Driven Narrative & High Retention Pacing</h4>
             <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
               Crafted with custom After Effects motion graphics, immersive multi-layered SFX, and structured narrative arcs keeping viewers engaged end-to-end.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
               <span>Turnaround: 3–5 Days</span>
-              <a href="https://youtu.be/8ETFrvZku5o" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
+              <a href="https://youtu.be/8ETFrvZku5o" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Video 3: YouTube Long-Form (FLfUsi4Jfx4) -->
-        <div class="glass-card glass-card-interactive portfolio-item scroll-reveal reveal-delay-3" data-category="youtube">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.3);">
+        <div class="glass-card portfolio-item scroll-reveal reveal-delay-3" data-category="youtube">
+          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
             <div class="video-embed-wrapper aspect-landscape">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?rel=0&modestbranding=1" 
@@ -872,22 +799,22 @@
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">YouTube Long-Form</span>
-              <span style="font-size: 0.75rem; background: rgba(56, 189, 248, 0.15); color: #38BDF8; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700;">16:9 HD Player</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">YouTube Long-Form</span>
+              <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.08); color: #FFFFFF; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700;">16:9 HD Player</span>
             </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Engaging Pacing & Visual Story Architecture</h4>
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Engaging Pacing & Visual Story Architecture</h4>
             <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
               Multicam synchronization, crisp audio mastering, sound effects build-ups, and seamless visual transitions that hold attention.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
               <span>Full Post-Production</span>
-              <a href="https://youtu.be/FLfUsi4Jfx4" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
+              <a href="https://youtu.be/FLfUsi4Jfx4" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Graphic Design / Thumbnail 1: (16:9 Uncropped Presentation) -->
-        <div class="glass-card glass-card-interactive portfolio-item scroll-reveal reveal-delay-2" data-category="graphics">
+        <div class="glass-card portfolio-item scroll-reveal reveal-delay-2" data-category="graphics">
           <div style="padding: 0.75rem;">
             <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
               <div class="thumb-preview-box">
@@ -897,7 +824,7 @@
                   alt="High-CTR Thumbnail Design by Yash Edits" 
                   loading="lazy"
                 />
-                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(10, 17, 40, 0.85); border: 1px solid var(--accent-yellow); color: var(--accent-yellow); padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
+                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(6, 10, 20, 0.85); border: 1px solid var(--color-yellow); color: var(--color-yellow); padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
                   16:9 Full View
                 </div>
               </div>
@@ -905,22 +832,22 @@
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">Graphic Design · 16:9</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design · 16:9</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">Hover to Zoom</span>
             </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">High-CTR Thumbnail Design</h4>
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">High-CTR Thumbnail Design</h4>
             <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
               Custom Photoshop composition, facial expression isolation, dynamic depth lighting, and click-magnet visual hierarchy designed to maximize CTR without edge cropping.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
               <span>Adobe Photoshop</span>
-              <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-weight: 700; text-decoration: none;">View Asset ↗</a>
+              <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">View Asset ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Graphic Design / Thumbnail 2: (16:9 Uncropped Presentation) -->
-        <div class="glass-card glass-card-interactive portfolio-item scroll-reveal reveal-delay-3" data-category="graphics">
+        <div class="glass-card portfolio-item scroll-reveal reveal-delay-3" data-category="graphics">
           <div style="padding: 0.75rem;">
             <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
               <div class="thumb-preview-box">
@@ -930,7 +857,7 @@
                   alt="Custom Photoshop Composition by Yash Edits" 
                   loading="lazy"
                 />
-                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(10, 17, 40, 0.85); border: 1px solid var(--accent-yellow); color: var(--accent-yellow); padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
+                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(6, 10, 20, 0.85); border: 1px solid var(--color-yellow); color: var(--color-yellow); padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
                   16:9 Full View
                 </div>
               </div>
@@ -938,16 +865,16 @@
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">Graphic Design · 16:9</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design · 16:9</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">Hover to Zoom</span>
             </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Custom Photoshop Composition</h4>
+            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Custom Photoshop Composition</h4>
             <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
               Clean focal contrast, bold graphical typography, color separation, and storytelling visual elements that hook browsing eyes in a true 16:9 ratio.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
               <span>High Resolution</span>
-              <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-weight: 700; text-decoration: none;">View Asset ↗</a>
+              <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">View Asset ↗</a>
             </div>
           </div>
         </div>
@@ -957,11 +884,11 @@
   </section>
 
   <!-- 5. The Process ("How I Work") Section -->
-  <section id="process" style="padding: 5rem 0; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.06);">
+  <section id="process" style="padding: 5rem 0; border-top: 1px solid var(--glass-border);">
     <div class="container">
-      <div style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
+      <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
         <div class="section-badge">Streamlined Workflow</div>
-        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem;">
+        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
           How We Bring Ideas to Life
         </h2>
         <p style="color: var(--text-muted); font-size: 1.05rem;">
@@ -972,8 +899,8 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
         
         <!-- Step 1 -->
-        <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 1.85rem; position: relative;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.25); margin-bottom: 1rem; line-height: 1;">01</div>
+        <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 1.85rem;">
+          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">01</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Briefing & Strategy</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             We align on your project goals, target audience, style references, pacing requirements, and key conversion hooks.
@@ -981,8 +908,8 @@
         </div>
 
         <!-- Step 2 -->
-        <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 1.85rem; position: relative;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.25); margin-bottom: 1rem; line-height: 1;">02</div>
+        <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 1.85rem;">
+          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">02</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Story Structuring & Rough Cut</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             Assembling the narrative spine, eliminating fluff, building curiosity hooks, and establishing a captivating rhythm.
@@ -990,8 +917,8 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="glass-card scroll-reveal reveal-delay-3" style="padding: 1.85rem; position: relative;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.25); margin-bottom: 1rem; line-height: 1;">03</div>
+        <div class="glass-card scroll-reveal reveal-delay-3" style="padding: 1.85rem;">
+          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">03</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Motion Graphics & Sound Polish</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             After Effects motion graphics, premium assets, dynamic sound effects (SFX), and professional audio cleanup and mastering.
@@ -999,8 +926,8 @@
         </div>
 
         <!-- Step 4 -->
-        <div class="glass-card scroll-reveal reveal-delay-4" style="padding: 1.85rem; position: relative;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.25); margin-bottom: 1rem; line-height: 1;">04</div>
+        <div class="glass-card scroll-reveal reveal-delay-4" style="padding: 1.85rem;">
+          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">04</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Review & High-Res Delivery</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             2 free rounds of revisions to ensure absolute perfection, followed by crisp 4K UHD export ready to publish.
@@ -1011,13 +938,13 @@
     </div>
   </section>
 
-  <!-- 6. Software & Technical Stack Section (EXACT MATCH TO SCREENSHOT 1) -->
-  <section id="skills" style="padding: 5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- 6. Software & Technical Stack Section -->
+  <section id="skills" style="padding: 5rem 0; border-top: 1px solid var(--glass-border);">
     <div class="container">
       
       <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
         <div class="section-badge">MASTERED ARSENAL</div>
-        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem;">
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
           Software & Technical Stack
         </h2>
         <p style="color: var(--text-muted); font-size: 1.05rem;">
@@ -1027,72 +954,69 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
         
-        <!-- Left Box: Core Software with Official App Icons & Experience Bars -->
+        <!-- Left Box: Core Software with Official Logos -->
         <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 2.25rem;">
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem;">
-            <span style="color: var(--accent-yellow); font-size: 1.1rem;">■</span> Core Software
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF;">
+            <span style="color: var(--color-yellow); font-size: 1.1rem;">■</span> Core Software
           </h3>
           <div style="display: flex; flex-direction: column; gap: 1.25rem;">
             
-            <!-- Adobe Premiere Pro with Authentic SVG Logo -->
+            <!-- Adobe Premiere Pro -->
             <div class="software-item-row">
               <div class="app-icon-badge pr" title="Adobe Premiere Pro">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="46" height="46" rx="10" fill="#00005B"/>
                   <rect x="0.75" y="0.75" width="44.5" height="44.5" rx="9.25" stroke="#EA77FF" stroke-width="1.5" stroke-opacity="0.9"/>
-                  <!-- Official Adobe Typography Pr -->
                   <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#EA77FF" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5px">Pr</text>
                 </svg>
               </div>
               <div style="flex-grow: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 0.45rem;">
                   <span style="font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">Adobe Premiere Pro</span>
-                  <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">3+ Years Experience</span>
+                  <span style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem;">3+ Years Experience</span>
                 </div>
-                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
-                  <div style="width: 95%; height: 100%; background: linear-gradient(90deg, #EAB308, #FACC15); border-radius: 999px;"></div>
+                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                  <div style="width: 95%; height: 100%; background: var(--color-yellow); border-radius: 999px;"></div>
                 </div>
               </div>
             </div>
 
-            <!-- Adobe After Effects with Authentic SVG Logo -->
+            <!-- Adobe After Effects -->
             <div class="software-item-row">
               <div class="app-icon-badge ae" title="Adobe After Effects">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="46" height="46" rx="10" fill="#00005B"/>
                   <rect x="0.75" y="0.75" width="44.5" height="44.5" rx="9.25" stroke="#D291FF" stroke-width="1.5" stroke-opacity="0.9"/>
-                  <!-- Official Adobe Typography Ae -->
                   <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#D291FF" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5px">Ae</text>
                 </svg>
               </div>
               <div style="flex-grow: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 0.45rem;">
                   <span style="font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">Adobe After Effects</span>
-                  <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">2+ Years Experience</span>
+                  <span style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem;">2+ Years Experience</span>
                 </div>
-                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
-                  <div style="width: 90%; height: 100%; background: linear-gradient(90deg, #EAB308, #FACC15); border-radius: 999px;"></div>
+                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                  <div style="width: 90%; height: 100%; background: var(--color-yellow); border-radius: 999px;"></div>
                 </div>
               </div>
             </div>
 
-            <!-- Adobe Photoshop with Authentic SVG Logo -->
+            <!-- Adobe Photoshop -->
             <div class="software-item-row">
               <div class="app-icon-badge ps" title="Adobe Photoshop">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="46" height="46" rx="10" fill="#001E36"/>
                   <rect x="0.75" y="0.75" width="44.5" height="44.5" rx="9.25" stroke="#31A8FF" stroke-width="1.5" stroke-opacity="0.9"/>
-                  <!-- Official Adobe Typography Ps -->
                   <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#31A8FF" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5px">Ps</text>
                 </svg>
               </div>
               <div style="flex-grow: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 0.45rem;">
                   <span style="font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">Adobe Photoshop</span>
-                  <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">3+ Years Experience</span>
+                  <span style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem;">3+ Years Experience</span>
                 </div>
-                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
-                  <div style="width: 95%; height: 100%; background: linear-gradient(90deg, #EAB308, #FACC15); border-radius: 999px;"></div>
+                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                  <div style="width: 95%; height: 100%; background: var(--color-yellow); border-radius: 999px;"></div>
                 </div>
               </div>
             </div>
@@ -1100,29 +1024,29 @@
           </div>
         </div>
 
-        <!-- Right Box: Technical Specializations matching Screenshot 1 -->
+        <!-- Right Box: Technical Specializations -->
         <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 2.25rem;">
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem;">
-            <span style="color: #38BDF8; font-size: 1.1rem;">■</span> Technical Specializations
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF;">
+            <span style="color: #FFFFFF; font-size: 1.1rem;">■</span> Technical Specializations
           </h3>
           <div style="display: flex; flex-direction: column; gap: 1rem;">
             
-            <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
+            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
               <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Amazing Storytelling & Narrative Flow</h4>
               <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Pacing architecture that builds narrative tension, holds attention, and drives strong watch-time metrics.</p>
             </div>
 
-            <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
+            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
               <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Motion Graphics & Kinetic Captions</h4>
               <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Custom After Effects animations, lower thirds, callout cards, and dynamic synced captions.</p>
             </div>
 
-            <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
+            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
               <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Premium Quality Assets & Sound Effects</h4>
               <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Carefully curated Foley, whooshes, impacts, and riser sound design paired with high-grade motion assets.</p>
             </div>
 
-            <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
+            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
               <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Audio Cleanup, Mastering & Multicam Studio</h4>
               <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Voice de-noising, level normalization, EQ clarity, and seamless multi-camera timeline synchronization.</p>
             </div>
@@ -1134,11 +1058,11 @@
     </div>
   </section>
 
-  <!-- 7. Services Section (EXACT MATCH TO SCREENSHOT 2) -->
-  <section id="services" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06); background: rgba(15, 23, 42, 0.3);">
+  <!-- 7. Services Section (Pure Blue + Black/White + Yellow Accent) -->
+  <section id="services" style="padding: 5.5rem 0; border-top: 1px solid var(--glass-border);">
     <div class="container">
       <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
-        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem;">
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
           Services
         </h2>
         <p style="color: var(--text-muted); font-size: 1.05rem;">
@@ -1151,11 +1075,11 @@
         <!-- Card 1: Short-Form Social Growth -->
         <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 2.25rem; display: flex; flex-direction: column;">
           <div style="margin-bottom: 0.5rem;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: #38BDF8; text-transform: uppercase; letter-spacing: 0.05em;">SOCIAL GROWTH</span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.05em;">SOCIAL GROWTH</span>
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem;">Short–Form Social Growth</h3>
+          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: #FFFFFF;">Short–Form Social Growth</h3>
           
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.12); color: #38BDF8; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.06); color: #FFFFFF; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content; border: 1px solid var(--glass-border);">
             <i class="fa-regular fa-clock"></i> Delivery in 3 to 4 working days
           </div>
 
@@ -1165,38 +1089,38 @@
 
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; flex-grow: 1; font-size: 0.9rem;">
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Delivery in 3 – 4 working days</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Delivery in 3 – 4 working days</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>2 Free Comprehensive Revision Rounds</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>2 Free Comprehensive Revision Rounds</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Viral Hook Optimization & Fast Pacing</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Viral Hook Optimization & Fast Pacing</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Amazing Kinetic Captions & Subtitles</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Amazing Kinetic Captions & Subtitles</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> Immersive Micro-SFX & Audio Enhancement
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Immersive Micro-SFX & Audio Enhancement
             </li>
           </ul>
 
           <a href="#contact" class="btn-glass" style="width: 100%;">Discuss Project</a>
         </div>
 
-        <!-- Card 2: YouTube Long-Form (CREATOR CHOICE - Highlighted Border) -->
-        <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 2.25rem; display: flex; flex-direction: column; border-color: var(--accent-yellow); box-shadow: 0 0 35px -10px var(--accent-yellow-glow); position: relative;">
+        <!-- Card 2: YouTube Long-Form (CREATOR CHOICE - Highlighted with Yellow Glow) -->
+        <div class="glass-card glass-card-yellow-glow scroll-reveal reveal-delay-2" style="padding: 2.25rem; display: flex; flex-direction: column; position: relative;">
           
-          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent-yellow); color: #0A1128; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 1.1rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
+          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--color-yellow); color: #060A14; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 1.1rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 14px var(--color-yellow-glow);">
             CREATOR CHOICE
           </div>
 
           <div style="margin-bottom: 0.5rem; margin-top: 0.5rem;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-yellow); text-transform: uppercase; letter-spacing: 0.05em;">RETENTION ENGINE</span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-yellow); text-transform: uppercase; letter-spacing: 0.05em;">RETENTION ENGINE</span>
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem;">YouTube Long–Form</h3>
+          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: #FFFFFF;">YouTube Long–Form</h3>
           
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(250, 204, 21, 0.15); color: var(--accent-yellow); font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(250, 204, 21, 0.12); color: var(--color-yellow); font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content; border: 1px solid rgba(250, 204, 21, 0.25);">
             <i class="fa-regular fa-clock"></i> 4 to 5 days turnaround
           </div>
 
@@ -1206,22 +1130,22 @@
 
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; flex-grow: 1; font-size: 0.9rem;">
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Amazing Storytelling & Narrative Structure</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Amazing Storytelling & Narrative Structure</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>High-Quality Pacing to Maximize Retention</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>High-Quality Pacing to Maximize Retention</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Custom Motion Graphics & Premium Assets</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Custom Motion Graphics & Premium Assets</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Dynamic Sound Effects & Audio Cleanup</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Dynamic Sound Effects & Audio Cleanup</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Free High–CTR Thumbnail Design Included</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Free High–CTR Thumbnail Design Included</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> 4 – 5 Days Standard Turnaround · 2 Free Revisions
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> 4 – 5 Days Standard Turnaround · 2 Free Revisions
             </li>
           </ul>
 
@@ -1231,33 +1155,33 @@
         <!-- Card 3: Agency & Channel Retainer -->
         <div class="glass-card scroll-reveal reveal-delay-3" style="padding: 2.25rem; display: flex; flex-direction: column;">
           <div style="margin-bottom: 0.5rem;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: #A78BFA; text-transform: uppercase; letter-spacing: 0.05em;">AGENCY & BRAND</span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.05em;">AGENCY & BRAND</span>
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem;">Agency & Channel Retainer</h3>
+          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: #FFFFFF;">Agency & Channel Retainer</h3>
           
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(167, 139, 250, 0.12); color: #A78BFA; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.06); color: #FFFFFF; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content; border: 1px solid var(--glass-border);">
             <i class="fa-regular fa-envelope"></i> Custom Terms Discussed via Email
           </div>
 
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.75rem;">
-            For scaling channels and agencies looking for a dedicated video editor. Connect directly at <a href="mailto:yashpkhalokar@gmail.com" style="color: var(--accent-yellow); text-decoration: none; font-weight: 600;">yashpkhalokar@gmail.com</a>.
+            For scaling channels and agencies looking for a dedicated video editor. Connect directly at <a href="mailto:yashpkhalokar@gmail.com" style="color: var(--color-yellow); text-decoration: none; font-weight: 600;">yashpkhalokar@gmail.com</a>.
           </p>
 
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; flex-grow: 1; font-size: 0.9rem;">
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> <strong>Full Channel Content & Thumbnail Management</strong>
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Full Channel Content & Thumbnail Management</strong>
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> Direct Communication & Dedicated Workflow
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Direct Communication & Dedicated Workflow
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> Multicam Studio Synchronization & Audio Mastering
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Multicam Studio Synchronization & Audio Mastering
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> Tailored Video Batch Volume & Pacing Standards
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Tailored Video Batch Volume & Pacing Standards
             </li>
             <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--accent-yellow); font-weight: 800;">✓</span> Terms & Retainer Rates Discussed in Detail via Email
+              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Terms & Retainer Rates Discussed in Detail via Email
             </li>
           </ul>
 
@@ -1268,12 +1192,12 @@
     </div>
   </section>
 
-  <!-- 8. FAQ Section (EXACT MATCH TO SCREENSHOT 3) -->
-  <section id="faq" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- 8. FAQ Section -->
+  <section id="faq" style="padding: 5.5rem 0; border-top: 1px solid var(--glass-border);">
     <div class="container">
       <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
         <div class="section-badge">GOT QUESTIONS?</div>
-        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem;">
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
           Frequently Asked Questions
         </h2>
         <p style="color: var(--text-muted); font-size: 1.05rem;">
@@ -1305,7 +1229,7 @@
           </div>
         </div>
 
-        <!-- FAQ 3: Raw footage transfer (Active by default in screenshot) -->
+        <!-- FAQ 3: Raw footage transfer -->
         <div class="faq-item active">
           <button class="faq-question" onclick="toggleFaq(this)">
             <span>How do we transfer raw footage files?</span>
@@ -1342,14 +1266,14 @@
     </div>
   </section>
 
-  <!-- 9. START A PROJECT INQUIRY FORM (Web3Forms Automated) -->
-  <section id="contact" style="padding: 5.5rem 0; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- 9. START A PROJECT INQUIRY FORM -->
+  <section id="contact" style="padding: 5.5rem 0; border-top: 1px solid var(--glass-border);">
     <div class="container">
       <div style="max-width: 780px; margin: 0 auto;">
         
         <div class="scroll-reveal" style="text-align: center; margin-bottom: 3rem;">
           <div class="section-badge">LET'S CREATE TOGETHER</div>
-          <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem;">
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
             TELL ME ABOUT YOUR PROJECT
           </h2>
           <p style="color: var(--text-muted); font-size: 1.05rem;">
@@ -1357,7 +1281,7 @@
           </p>
         </div>
 
-        <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 2.5rem; border-color: rgba(250, 204, 21, 0.35); margin-bottom: 3.5rem;">
+        <div class="glass-card glass-card-yellow-glow scroll-reveal reveal-delay-1" style="padding: 2.5rem; margin-bottom: 3.5rem;">
           
           <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
             <!-- Web3Forms Hidden Inputs -->
@@ -1366,24 +1290,18 @@
             <input type="hidden" name="from_name" value="Portfolio Inquiry System" />
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-              
-              <!-- Your Name -->
               <div class="form-group">
                 <label for="name" class="form-label">Your Name *</label>
                 <input type="text" id="name" name="name" required class="form-input" placeholder="e.g. Alex Morgan" />
               </div>
 
-              <!-- Best Way To Reach You -->
               <div class="form-group">
                 <label for="contact_handle" class="form-label">Best Way To Reach You *</label>
                 <input type="text" id="contact_handle" name="contact_handle" required class="form-input" placeholder="Email / WhatsApp / Discord / Instagram" />
               </div>
-
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-              
-              <!-- Project Type -->
               <div class="form-group">
                 <label for="project_type" class="form-label">Project Type *</label>
                 <select id="project_type" name="project_type" class="form-select">
@@ -1395,7 +1313,6 @@
                 </select>
               </div>
 
-              <!-- Final Video Length -->
               <div class="form-group">
                 <label for="video_length" class="form-label">Final Video Length *</label>
                 <select id="video_length" name="video_length" class="form-select">
@@ -1406,12 +1323,9 @@
                   <option value="N/A">N/A</option>
                 </select>
               </div>
-
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-              
-              <!-- Raw Footage / Reference Link (Optional) -->
               <div class="form-group">
                 <label for="footage_link" class="form-label">
                   Raw Footage / Reference Link 
@@ -1420,7 +1334,6 @@
                 <input type="text" id="footage_link" name="footage_link" class="form-input" placeholder="https://drive.google.com/..." />
               </div>
 
-              <!-- Budget Field -->
               <div class="form-group">
                 <label for="budget_field" class="form-label">Budget Range</label>
                 <input 
@@ -1432,29 +1345,24 @@
                   class="form-input" 
                 />
               </div>
-
             </div>
 
-            <!-- Project Details & Notes -->
             <div class="form-group">
               <label for="project_notes" class="form-label">Project Details & Notes</label>
               <textarea id="project_notes" name="project_notes" rows="4" class="form-textarea" placeholder="Describe your channel, project scope, desired pacing references, or special instructions..."></textarea>
             </div>
 
-            <!-- Status message container -->
             <div id="formStatus" style="display: none; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.25rem; font-size: 0.9rem;"></div>
 
-            <!-- Submit Button -->
             <button type="submit" class="btn-yellow" id="submitBtn" style="width: 100%; padding: 0.95rem; font-size: 1rem;">
               Submit Project Request
             </button>
-
           </form>
 
         </div>
 
-        <!-- 10. DIRECT CONTACT BUTTONS (No raw phone number visible, opens WhatsApp & Email directly) -->
-        <div style="text-align: center; padding: 2rem 1.5rem; background: rgba(10, 17, 40, 0.7); border: 1px solid var(--glass-border); border-radius: 1rem;">
+        <!-- 10. DIRECT CONTACT BUTTONS (No raw phone number displayed, opens apps directly) -->
+        <div class="scroll-reveal reveal-delay-2" style="text-align: center; padding: 2rem 1.5rem; background: var(--glass-panel); border: 1px solid var(--glass-border); border-radius: 1rem; backdrop-filter: blur(20px);">
           <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">
             Prefer Instant Direct Messaging?
           </h3>
@@ -1463,11 +1371,11 @@
           </p>
 
           <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-            <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project%20or%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project%20or%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn-direct-chat">
               <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
               Chat on WhatsApp
             </a>
-            <a href="mailto:yashpkhalokar@gmail.com?subject=Video%20Editing%20%26%20Motion%20Design%20Inquiry%20to%20Yash%20Edits&body=Hi%20Yash,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20or%20book%20a%20call.%0A%0AProject%20Details:" class="btn-email-app">
+            <a href="mailto:yashpkhalokar@gmail.com?subject=Video%20Editing%20%26%20Motion%20Design%20Inquiry%20to%20Yash%20Edits&body=Hi%20Yash,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20or%20book%20a%20call.%0A%0AProject%20Details:" class="btn-direct-email">
               <i class="fa-solid fa-envelope" style="font-size: 1.1rem;"></i>
               Send Direct Email
             </a>
@@ -1478,8 +1386,8 @@
     </div>
   </section>
 
-  <!-- 11. Footer matching Screenshot 3 -->
-  <footer style="padding: 4rem 0 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); background: #070B19;">
+  <!-- 11. Footer -->
+  <footer style="padding: 4rem 0 2.5rem; border-top: 1px solid var(--glass-border); background: #05030A;">
     <div class="container">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 2.5rem;">
         
@@ -1492,7 +1400,6 @@
           </p>
         </div>
 
-        <!-- Links matching Screenshot 3 -->
         <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
           <a href="https://www.youtube.com/@mr.khalokar" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='#94A3B8'">
             YouTube (@mr.khalokar)
@@ -1502,14 +1409,13 @@
           </a>
         </div>
 
-        <!-- Back to Top Button matching Screenshot 3 -->
         <button onclick="scrollToTop()" class="btn-glass" style="padding: 0.5rem 1.15rem; font-size: 0.85rem; cursor: pointer;">
           Back to Top ↑
         </button>
 
       </div>
 
-      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--text-subtle);">
+      <div style="border-top: 1px solid var(--glass-border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--text-subtle);">
         <div>
           © 2026 YASH EDITS. All rights reserved.
         </div>
@@ -1554,7 +1460,6 @@
       if (!item) return;
       const isActive = item.classList.contains('active');
       
-      // Close all items
       document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
       
       if (!isActive) {
@@ -1601,7 +1506,6 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
       } else {
-        // Fallback for browsers without IntersectionObserver
         revealElements.forEach(el => el.classList.add('revealed'));
       }
 
@@ -1630,9 +1534,9 @@
             if (result.success) {
               if (formStatus) {
                 formStatus.style.display = 'block';
-                formStatus.style.background = 'rgba(52, 211, 153, 0.15)';
-                formStatus.style.border = '1px solid #34D399';
-                formStatus.style.color = '#34D399';
+                formStatus.style.background = 'rgba(250, 204, 21, 0.15)';
+                formStatus.style.border = '1px solid var(--color-yellow)';
+                formStatus.style.color = '#FACC15';
                 formStatus.innerHTML = '✓ <strong>Project request submitted successfully!</strong> Yash will review your inquiry and reach out within 24 hours.';
               }
               contactForm.reset();
@@ -1640,16 +1544,15 @@
               throw new Error(result.message || 'Submission error');
             }
           } catch (error) {
-            // Direct launch fallback
             const mailto = `mailto:yashpkhalokar@gmail.com?subject=New%20Video%20Editing%20Inquiry%20to%20Yash%20Edits&body=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20project.`;
             const waUrl = `https://wa.me/919421641610?text=Hi%20Yash,%20I%20submitted%20a%20project%20inquiry%20and%20would%20like%20to%20connect`;
 
             if (formStatus) {
               formStatus.style.display = 'block';
               formStatus.style.background = 'rgba(250, 204, 21, 0.15)';
-              formStatus.style.border = '1px solid #FACC15';
+              formStatus.style.border = '1px solid var(--color-yellow)';
               formStatus.style.color = '#FACC15';
-              formStatus.innerHTML = `Project details captured! You can also connect directly via <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: underline; font-weight: 700;">WhatsApp</a> or <a href="${mailto}" style="color: #FFFFFF; text-decoration: underline; font-weight: 700;">Email</a>.`;
+              formStatus.innerHTML = `Project details captured! You can connect directly via <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: underline; font-weight: 700;">WhatsApp</a> or <a href="${mailto}" style="color: #FFFFFF; text-decoration: underline; font-weight: 700;">Email</a>.`;
             }
           } finally {
             if (submitBtn) {
