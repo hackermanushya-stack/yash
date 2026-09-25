@@ -104,6 +104,59 @@
       z-index: 1;
     }
 
+    /* Glowing White Sparkle Star Animations */
+    @keyframes starPulseGlow {
+      0%, 100% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 35px rgba(192, 132, 252, 0.5));
+        opacity: 0.95;
+      }
+      50% {
+        transform: scale(1.18) rotate(12deg);
+        filter: drop-shadow(0 0 14px #FFFFFF) drop-shadow(0 0 28px rgba(255, 255, 255, 0.85)) drop-shadow(0 0 45px rgba(250, 204, 21, 0.4));
+        opacity: 1;
+      }
+    }
+
+    .hero-glowing-star {
+      position: absolute;
+      z-index: 10;
+      pointer-events: none;
+      user-select: none;
+      animation: starPulseGlow 3.5s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-star-top-left {
+      top: -18px;
+      left: -24px;
+      width: 38px;
+      height: 38px;
+    }
+    .hero-star-bottom-right {
+      bottom: -16px;
+      right: -24px;
+      width: 44px;
+      height: 44px;
+      animation-delay: 1.75s;
+    }
+
+    @media (max-width: 640px) {
+      .hero-star-top-left {
+        top: -12px;
+        left: -8px;
+        width: 28px;
+        height: 28px;
+      }
+      .hero-star-bottom-right {
+        bottom: -10px;
+        right: -8px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
     /* Pure Glassmorphic Cards */
     .glass-card {
       background: var(--glass-panel);
@@ -601,9 +654,36 @@
           Video Editor & Motion Designer
         </div>
 
-        <h1 style="font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: #FFFFFF; text-wrap: balance;">
-          Transforming Raw Footage into <span style="color: var(--color-yellow);">High-Converting</span> Visual Stories
-        </h1>
+        <div style="position: relative; display: inline-block; width: 100%;">
+          
+          <!-- Glowing White Star (Top Left of Headline) -->
+          <div class="hero-glowing-star hero-star-top-left" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Radiant Ambient Halo -->
+              <circle cx="12" cy="12" r="7" fill="rgba(255, 255, 255, 0.45)" filter="blur(3px)" />
+              <!-- Primary 4-pointed Sparkle Star -->
+              <path d="M12 0 C12 6.63 17.37 12 24 12 C17.37 12 12 17.37 12 24 C12 17.37 6.63 12 0 12 C6.63 12 12 6.63 12 0 Z" fill="#FFFFFF"/>
+              <!-- Diagonal Micro-Glint Rays -->
+              <path d="M12 5.5 C12 9.09 14.91 12 18.5 12 C14.91 12 12 14.91 12 18.5 C12 14.91 9.09 12 5.5 12 C9.09 12 12 9.09 12 5.5 Z" fill="#FFFFFF" opacity="0.9"/>
+            </svg>
+          </div>
+
+          <!-- Glowing White Star (Bottom Right of Headline) -->
+          <div class="hero-glowing-star hero-star-bottom-right" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Radiant Ambient Halo -->
+              <circle cx="12" cy="12" r="8" fill="rgba(255, 255, 255, 0.5)" filter="blur(3px)" />
+              <!-- Primary 4-pointed Sparkle Star -->
+              <path d="M12 0 C12 6.63 17.37 12 24 12 C17.37 12 12 17.37 12 24 C12 17.37 6.63 12 0 12 C6.63 12 12 6.63 12 0 Z" fill="#FFFFFF"/>
+              <!-- Diagonal Micro-Glint Rays -->
+              <path d="M12 5.5 C12 9.09 14.91 12 18.5 12 C14.91 12 12 14.91 12 18.5 C12 14.91 9.09 12 5.5 12 C9.09 12 12 9.09 12 5.5 Z" fill="#FFFFFF" opacity="0.9"/>
+            </svg>
+          </div>
+
+          <h1 style="font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: #FFFFFF; text-wrap: balance; position: relative; z-index: 2;">
+            Transforming Raw Footage into <span style="color: var(--color-yellow);">High-Converting</span> Visual Stories
+          </h1>
+        </div>
 
         <p style="font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); line-height: 1.65; max-width: 720px; margin: 0 auto 2.5rem; text-wrap: balance;">
           Helping creators, channels, and brands boost retention, views, and subscriber growth through high-impact pacing, dynamic motion design, and premium sound sculpting.
@@ -814,7 +894,7 @@
           </div>
         </div>
 
-        <!-- Graphic Design / Thumbnail 1: (16:9 Uncropped Presentation) -->
+        <!-- Graphic Design / Thumbnail 1: (High-CTR Thumbnail Design) -->
         <div class="glass-card portfolio-item scroll-reveal reveal-delay-2" data-category="graphics">
           <div style="padding: 0.75rem;">
             <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
@@ -825,15 +905,12 @@
                   alt="High-CTR Thumbnail Design by Yash Edits" 
                   loading="lazy"
                 />
-                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(6, 10, 20, 0.85); border: 1px solid var(--color-yellow); color: var(--color-yellow); padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
-                  16:9 Full View
-                </div>
               </div>
             </a>
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design · 16:9</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">Hover to Zoom</span>
             </div>
             <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">High-CTR Thumbnail Design</h4>
@@ -847,7 +924,7 @@
           </div>
         </div>
 
-        <!-- Graphic Design / Thumbnail 2: (16:9 Uncropped Presentation) -->
+        <!-- Graphic Design / Thumbnail 2: (Custom Photoshop Composition) -->
         <div class="glass-card portfolio-item scroll-reveal reveal-delay-3" data-category="graphics">
           <div style="padding: 0.75rem;">
             <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
@@ -858,15 +935,12 @@
                   alt="Custom Photoshop Composition by Yash Edits" 
                   loading="lazy"
                 />
-                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(6, 10, 20, 0.85); border: 1px solid var(--color-yellow); color: var(--color-yellow); padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
-                  16:9 Full View
-                </div>
               </div>
             </a>
           </div>
           <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design · 16:9</span>
+              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">Hover to Zoom</span>
             </div>
             <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Custom Photoshop Composition</h4>
@@ -901,7 +975,7 @@
         
         <!-- Step 1 -->
         <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 1.85rem;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">01</div>
+          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">01</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Briefing & Strategy</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             We align on your project goals, target audience, style references, pacing requirements, and key conversion hooks.
@@ -910,7 +984,7 @@
 
         <!-- Step 2 -->
         <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 1.85rem;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">02</div>
+          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">02</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Story Structuring & Rough Cut</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             Assembling the narrative spine, eliminating fluff, building curiosity hooks, and establishing a captivating rhythm.
@@ -919,7 +993,7 @@
 
         <!-- Step 3 -->
         <div class="glass-card scroll-reveal reveal-delay-3" style="padding: 1.85rem;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">03</div>
+          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">03</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Motion Graphics & Sound Polish</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             After Effects motion graphics, premium assets, dynamic sound effects (SFX), and professional audio cleanup and mastering.
@@ -928,7 +1002,7 @@
 
         <!-- Step 4 -->
         <div class="glass-card scroll-reveal reveal-delay-4" style="padding: 1.85rem;">
-          <div style="font-size: 2.25rem; font-weight: 800; color: rgba(250, 204, 21, 0.35); margin-bottom: 1rem; line-height: 1;">04</div>
+          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">04</div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Review & High-Res Delivery</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
             2 free rounds of revisions to ensure absolute perfection, followed by crisp 4K UHD export ready to publish.
