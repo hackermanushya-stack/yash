@@ -1,1694 +1,3059 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="is-in">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Yash Edits | Video Editor & Motion Designer</title>
-  <meta name="description" content="Transforming raw footage into high-converting visual stories. Portfolio of Yash Edits featuring short-form motion design reels, YouTube long-form edits, high-retention storytelling, thumbnail design, and channel growth management." />
+  <meta name="description" content="Portfolio of Yash Khalokar — Professional Video Editor & Motion Designer specializing in high-retention YouTube edits, viral Shorts/Reels, kinetic typography, and sound design." />
   <meta property="og:title" content="Yash Edits | Video Editor & Motion Designer" />
-  <meta property="og:description" content="Transforming raw footage into high-converting visual stories." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:description" content="High-retention video editing, motion design, and sound architecture for creators and brands." />
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Offcut Editorial Fonts & SF Pro Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:ital,wght@0,300..900;1,300..900&family=Martian+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
+
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     /* ====================================================================
-       COHESIVE PALETTE: Purple Gradient Main Theme + Black & White + Yellow Accent
-       High-end Apple-Grade Glassmorphism & Ambient Purple & Violet Glows
+       OFFCUT DESIGN SYSTEM + GLASSY BLUR BLUE ACCENT PALETTE
        ==================================================================== */
     :root {
-      --bg-base: #07040E;            /* Rich deep midnight obsidian purple */
-      --bg-surface: #120A24;         /* Surface dark violet */
-      --color-purple-glow: #7C3AED;  /* Vibrant royal violet glow */
-      --color-purple-primary: #8B5CF6; /* Primary electric purple */
-      --color-purple-soft: #C084FC;  /* Luminous lilac / orchid highlight */
-      --color-yellow: #FACC15;       /* Sole accent yellow */
-      --color-yellow-hover: #EAB308;
-      --color-yellow-glow: rgba(250, 204, 21, 0.28);
-      
-      --glass-panel: rgba(18, 10, 36, 0.65);
-      --glass-panel-hover: rgba(26, 15, 52, 0.85);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --glass-border-hover: rgba(192, 132, 252, 0.38);
-      --glass-border-yellow: rgba(250, 204, 21, 0.4);
-
-      --text-white: #FFFFFF;
-      --text-offwhite: #F1F5F9;
-      --text-muted: #94A3B8;
-      --text-subtle: #64748B;
-
-      --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --bg: #111315;
+      --bg-rgb: 17, 19, 21;
+      --panel: #16191d;
+      --panel-2: #1c2026;
+      --panel-3: #222730;
+      --bone: #d8dee6;
+      --bone-bright: #f5f5f5;
+      --muted: #8e8e8e;
+      --dim: #444444;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-2: rgba(255, 255, 255, 0.14);
+      --ember: #38bdf8;          /* Glassy cyan / sky blue */
+      --blue-accent: #38bdf8;    /* Glassy primary blue */
+      --blue-accent-rgb: 56, 189, 248;
+      --blue-glow: rgba(56, 189, 248, 0.35);
+      --blue-glow-soft: rgba(56, 189, 248, 0.15);
+      --ease: cubic-bezier(0.19, 1, 0.22, 1);
+      --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --display: "Big Shoulders Display", sans-serif;
+      --body: "SF Pro Display", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      --mono: "Martian Mono", monospace;
+      --pad: clamp(18px, 4vw, 56px);
+      --max: 1360px;
+      --nav: 72px;
+      --r: 20px;
+      --r-sm: 12px;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: var(--font-main);
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--bone);
+      font-family: var(--body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      text-rendering: optimizeLegibility;
     }
 
     body {
-      background-color: #000000;
-      background-image: 
-        radial-gradient(ellipse 90% 45% at 50% 0%, rgba(124, 58, 237, 0.38) 0%, rgba(88, 28, 135, 0.22) 28%, rgba(20, 10, 36, 0.75) 45%, #000000 60%),
-        linear-gradient(180deg, rgba(30, 12, 60, 0.95) 0%, rgba(18, 8, 36, 0.85) 30%, rgba(10, 4, 20, 0.7) 42%, #000000 45%, #000000 100%);
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-      color: var(--text-offwhite);
       min-height: 100vh;
-      line-height: 1.6;
       overflow-x: hidden;
       position: relative;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(56, 189, 248, 0.08), transparent 70%),
+        radial-gradient(ellipse 70% 50% at 85% 60%, rgba(30, 41, 59, 0.35), transparent 70%),
+        radial-gradient(ellipse 70% 50% at 15% 90%, rgba(30, 41, 59, 0.25), transparent 70%),
+        linear-gradient(180deg, #13161a 0%, #101215 50%, #0d0f12 100%);
+      background-attachment: fixed;
+      color: var(--bone);
+      font-family: var(--body);
+      font-weight: 400;
+      cursor: default;
+      padding-bottom: 0;
     }
 
-    /* Ambient Subtle Purple & Violet Deep Glow localized to top 45% */
+    /* Ambient Cinematic Background Glows */
     body::before {
       content: "";
-      position: absolute;
-      top: -100px;
-      left: 15%;
-      width: 70%;
-      height: 45vh;
-      max-height: 550px;
-      background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.22) 0%, rgba(124, 58, 237, 0.12) 40%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    body::after {
-      content: "";
-      position: absolute;
-      top: 15vh;
-      right: 5%;
-      width: 480px;
-      height: 30vh;
-      max-height: 420px;
-      background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(90px);
+      position: fixed;
+      top: -20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+      height: 60vh;
+      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.07) 0%, transparent 68%);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Container Utilities */
-    .container {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      position: relative;
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
       z-index: 1;
     }
 
-    /* Glowing White Sparkle Star Animations */
-    @keyframes starPulseGlow {
-      0%, 100% {
-        transform: scale(1) rotate(0deg);
-        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 35px rgba(192, 132, 252, 0.5));
-        opacity: 0.95;
-      }
-      50% {
-        transform: scale(1.18) rotate(12deg);
-        filter: drop-shadow(0 0 14px #FFFFFF) drop-shadow(0 0 28px rgba(255, 255, 255, 0.85)) drop-shadow(0 0 45px rgba(250, 204, 21, 0.4));
-        opacity: 1;
-      }
+    ::selection {
+      background: var(--blue-accent);
+      color: #000000;
     }
 
-    .hero-glowing-star {
-      position: absolute;
-      z-index: 10;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, iframe {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Headings Typography (Big Shoulders Display) */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--display);
+      letter-spacing: -0.01em;
+    }
+
+    /* Typography Classes */
+    .mono {
+      font-family: var(--mono);
+      font-feature-settings: "tnum" 1, "zero" 1;
+      letter-spacing: -0.02em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .eyebrow i.live {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue-accent);
+      box-shadow: 0 0 10px var(--blue-accent);
+      animation: pulse-dot 2s infinite ease-in-out;
+      display: inline-block;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.85); }
+    }
+
+    /* Wrap Container */
+    .wrap {
+      max-width: var(--max);
+      margin-inline: auto;
+      padding-inline: var(--pad);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Custom Cursor */
+    #cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.25);
+      border: 1.5px solid rgba(56, 189, 248, 0.8);
+      backdrop-filter: blur(4px);
       pointer-events: none;
-      user-select: none;
-      animation: starPulseGlow 3.5s ease-in-out infinite;
+      z-index: 9999;
+      transform: translate3d(-100px, -100px, 0);
+      transition: width 0.3s var(--ease), height 0.3s var(--ease), margin 0.3s var(--ease), background 0.3s, border-color 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .hero-star-top-left {
-      top: -18px;
-      left: -24px;
-      width: 38px;
-      height: 38px;
+    #cursor.is-hover {
+      width: 48px;
+      height: 48px;
+      margin: -24px 0 0 -24px;
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--blue-accent);
     }
-    .hero-star-bottom-right {
-      bottom: -16px;
-      right: -24px;
-      width: 44px;
-      height: 44px;
-      animation-delay: 1.75s;
+    #cursor.is-play {
+      width: 68px;
+      height: 68px;
+      margin: -34px 0 0 -34px;
+      background: rgba(7, 7, 7, 0.88);
+      border-color: var(--blue-accent);
+      box-shadow: 0 0 25px var(--blue-glow);
     }
-
-    @media (max-width: 640px) {
-      .hero-star-top-left {
-        top: -12px;
-        left: -8px;
-        width: 28px;
-        height: 28px;
-      }
-      .hero-star-bottom-right {
-        bottom: -10px;
-        right: -8px;
-        width: 32px;
-        height: 32px;
-      }
-    }
-
-    /* Pure Glassmorphic Cards */
-    .glass-card {
-      background: var(--glass-panel);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 1rem;
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .glass-card:hover {
-      border-color: var(--glass-border-hover);
-      background: var(--glass-panel-hover);
-      box-shadow: 0 24px 45px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(139, 92, 246, 0.18);
-    }
-    .glass-card-yellow-glow {
-      border-color: var(--glass-border-yellow);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(250, 204, 21, 0.1);
-    }
-    .glass-card-yellow-glow:hover {
-      border-color: var(--color-yellow);
-      box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.8), 0 0 35px var(--color-yellow-glow);
-    }
-
-    /* Buttons: Yellow Accent, Glass Neutral, Direct Action */
-    .btn-yellow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background-color: var(--color-yellow);
-      color: #07040E;
+    #cursorLabel {
+      font-family: var(--mono);
+      font-size: 10px;
       font-weight: 700;
-      font-size: 0.925rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 0.55rem;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 20px -3px var(--color-yellow-glow);
-    }
-    .btn-yellow:hover {
-      background-color: var(--color-yellow-hover);
-      box-shadow: 0 6px 28px 0px rgba(250, 204, 21, 0.45);
-      transform: translateY(-2px);
-    }
-
-    .btn-glass {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(12px);
-      color: var(--text-white);
-      font-weight: 600;
-      font-size: 0.925rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 0.55rem;
-      border: 1px solid var(--glass-border);
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.25s ease;
-    }
-    .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-    }
-
-    .btn-direct-chat {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: rgba(139, 92, 246, 0.16);
-      color: #FFFFFF;
-      border: 1px solid rgba(192, 132, 252, 0.35);
-      font-weight: 700;
-      font-size: 0.925rem;
-      padding: 0.8rem 1.75rem;
-      border-radius: 0.55rem;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(12px);
-    }
-    .btn-direct-chat:hover {
-      background: rgba(139, 92, 246, 0.3);
-      border-color: var(--color-purple-soft);
-      box-shadow: 0 0 25px rgba(139, 92, 246, 0.45);
-      transform: translateY(-2px);
-    }
-
-    .btn-direct-email {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: rgba(250, 204, 21, 0.08);
-      color: var(--color-yellow);
-      border: 1px solid rgba(250, 204, 21, 0.35);
-      font-weight: 700;
-      font-size: 0.925rem;
-      padding: 0.8rem 1.75rem;
-      border-radius: 0.55rem;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(12px);
-    }
-    .btn-direct-email:hover {
-      background: rgba(250, 204, 21, 0.18);
-      border-color: var(--color-yellow);
-      box-shadow: 0 0 25px var(--color-yellow-glow);
-      transform: translateY(-2px);
-    }
-
-    /* Section Badges */
-    .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 700;
+      color: var(--blue-accent);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--color-yellow);
-      padding: 0.35rem 0.95rem;
-      background: rgba(250, 204, 21, 0.08);
-      border: 1px solid rgba(250, 204, 21, 0.25);
-      border-radius: 9999px;
-      margin-bottom: 1rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    #cursor.is-play #cursorLabel {
+      opacity: 1;
+    }
+    @media (hover: none) {
+      #cursor { display: none !important; }
     }
 
-    /* Navigation */
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(7, 4, 14, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      transition: all 0.3s ease;
+    /* Pill Buttons (Offcut Style with Glassy Blue Glow) */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.4s var(--ease), background 0.3s, border-color 0.3s, box-shadow 0.3s, color 0.3s;
+      white-space: nowrap;
+      cursor: pointer;
+      position: relative;
     }
-    .nav-container {
+    .pill-blue {
+      background: var(--blue-accent);
+      color: #070707;
+      border: 1px solid var(--blue-accent);
+      box-shadow: 0 0 24px var(--blue-glow);
+    }
+    .pill-blue:hover {
+      background: #7dd3fc;
+      border-color: #7dd3fc;
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.55);
+    }
+    .pill-line {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--bone);
+      border: 1px solid var(--line-2);
+      backdrop-filter: blur(12px);
+    }
+    .pill-line:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--blue-accent);
+      color: var(--bone-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--blue-glow-soft);
+    }
+    .pill-chat {
+      background: #1f7a40;
+      color: #ffffff;
+      border: 1px solid #27a858;
+      box-shadow: 0 0 20px rgba(39, 168, 88, 0.3);
+    }
+    .pill-chat:hover {
+      background: #238b48;
+      border-color: #34d399;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(39, 168, 88, 0.5);
+    }
+
+    /* Floating Pill Header / Navigation */
+    .nav-wrap {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      padding: 0 var(--pad);
+      pointer-events: none;
+    }
+    .nav-inner {
       display: flex;
       align-items: center;
+      gap: 18px;
+      max-width: var(--max);
+      width: 100%;
       justify-content: space-between;
-      height: 4.5rem;
+      pointer-events: auto;
     }
-    .brand-logo {
-      font-size: 1.35rem;
+    .nav-pill {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid var(--line-2);
+      background: rgba(13, 13, 13, 0.82);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
+    }
+    .logo {
       font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text-white);
-      text-decoration: none;
+      font-size: 20px;
+      font-family: var(--display);
+      letter-spacing: 0.04em;
+      color: var(--bone-bright);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .brand-logo .accent-word {
-      color: var(--color-yellow);
+    .logo span {
+      color: var(--blue-accent);
     }
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 2rem;
+      gap: 22px;
       list-style: none;
     }
     .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 14px;
       font-weight: 500;
-      transition: color 0.2s ease;
+      color: var(--muted);
+      transition: color 0.3s;
+      position: relative;
     }
-    .nav-links a:hover {
-      color: var(--text-white);
+    .nav-links a:hover, .nav-links a.is-active {
+      color: var(--bone-bright);
     }
-    .nav-links a.active {
-      color: var(--color-yellow);
+    .nav-cta {
+      height: 44px;
+      padding: 0 20px;
+      font-size: 14px;
+    }
+    .nav-menu {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      height: 44px;
+      padding: 0 16px 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line-2);
+      background: rgba(7, 7, 7, 0.85);
+      color: var(--bone);
+    }
+    .burger {
+      position: relative;
+      width: 16px;
+      height: 10px;
+    }
+    .burger i {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform 0.5s var(--ease), top 0.5s var(--ease);
+    }
+    .burger i:first-child { top: 0; }
+    .burger i:last-child { top: 8.5px; }
+    .nav-menu[aria-expanded="true"] .burger i:first-child {
+      top: 4.25px;
+      transform: rotate(45deg);
+    }
+    .nav-menu[aria-expanded="true"] .burger i:last-child {
+      top: 4.25px;
+      transform: rotate(-45deg);
     }
 
-    /* Filter Tabs */
-    .filter-tab {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-muted);
-      border: 1px solid var(--glass-border);
-      padding: 0.55rem 1.25rem;
-      border-radius: 0.55rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      white-space: nowrap;
-    }
-    .filter-tab:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-white);
-    }
-    .filter-tab.active {
-      background: var(--color-yellow);
-      color: #060A14;
-      border-color: var(--color-yellow);
-      box-shadow: 0 0 20px -2px var(--color-yellow-glow);
-    }
-
-    /* Balanced Work Grid */
-    #portfolioGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2rem;
-      align-items: stretch;
-    }
-    .portfolio-item {
+    /* Mobile Overlay Menu */
+    .menu {
+      position: fixed;
+      inset: 0;
+      z-index: 58;
+      background: var(--bg);
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      justify-content: space-between;
+      padding: calc(var(--nav) + 28px) var(--pad) calc(28px + env(safe-area-inset-bottom));
+      transform: translateY(-100%);
+      visibility: hidden;
+      transition: transform 0.65s var(--ease), visibility 0s 0.65s;
+    }
+    .menu.is-open {
+      transform: none;
+      visibility: visible;
+      transition: transform 0.65s var(--ease);
+    }
+    .menu-links a {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font: 800 clamp(44px, 12vw, 72px)/0.95 var(--display);
+      text-transform: uppercase;
+      color: var(--bone);
+    }
+    .menu-links a:hover {
+      color: var(--blue-accent);
+    }
+    .menu-foot {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: var(--muted);
+      padding-top: 20px;
     }
 
-    /* Video Frame Container */
-    .video-embed-wrapper {
+    /* Hero Section */
+    .hero {
+      max-width: var(--max);
+      margin-inline: auto;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      align-items: center;
+      gap: clamp(32px, 4vw, 64px);
+      padding: calc(var(--nav) + clamp(24px, 5vh, 56px)) var(--pad) clamp(40px, 7vh, 72px);
       position: relative;
+      z-index: 2;
+    }
+    .hero-copy {
+      min-width: 0;
+      position: relative;
+    }
+    .hero-headline-wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin: 18px 0 24px;
+    }
+    .hero-title {
+      font-size: clamp(48px, min(8.2vw, 14vh), 116px);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: var(--bone-bright);
+    }
+    .hero-title .accent-glow {
+      color: var(--blue-accent);
+      text-shadow: 0 0 35px rgba(56, 189, 248, 0.55);
+    }
+    .hero-sub {
+      font-size: clamp(17px, 1.3vw, 20px);
+      max-width: 48ch;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      margin-top: 36px;
+      color: var(--muted);
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .proof b {
+      color: var(--bone-bright);
+      font-weight: 700;
+    }
+
+    /* Hero Glowing 4-Point Star */
+    .hero-glowing-star {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      pointer-events: none;
+      z-index: 3;
+      filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 28px rgba(56, 189, 248, 0.7));
+      animation: star-float 4s ease-in-out infinite alternate;
+    }
+    .hero-star-top-right {
+      top: -34px;
+      right: -24px;
+    }
+    @media (max-width: 768px) {
+      .hero-star-top-right {
+        top: -26px;
+        right: -8px;
+      }
+    }
+    @keyframes star-float {
+      0% { transform: translateY(0px) scale(0.92); opacity: 0.85; }
+      100% { transform: translateY(-8px) scale(1.08); opacity: 1; }
+    }
+
+    /* Featured Edit Showcase Card (Foreign Client Edit) */
+    .hero-reel {
+      min-width: 0;
+    }
+    .hero-reel-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      margin: 0 0 14px auto;
+      justify-content: flex-start;
+      max-width: 420px;
+    }
+    .hero-featured-card {
+      width: 100%;
+      max-width: 420px;
+      margin-left: auto;
+      border-radius: var(--r);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px var(--blue-glow-soft);
+      transition: border-color 0.4s var(--ease), transform 0.4s var(--ease);
+    }
+    .hero-featured-card:hover {
+      border-color: var(--blue-accent);
+      transform: translateY(-4px);
+    }
+    .hero-featured-frame {
+      position: relative;
+      background: #000000;
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      overflow: hidden;
+    }
+    .hero-featured-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .hero-featured-badge-overlay {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-featured-badge-overlay span {
+      background: rgba(7, 7, 7, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      color: var(--bone-bright);
+    }
+    .hero-wide-meta {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--panel-2);
+      border-top: 1px solid var(--line);
+    }
+    .hero-wide-meta .clip-t {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--bone-bright);
+    }
+
+    /* Section Headers */
+    section.wrap {
+      padding-block: clamp(80px, 9vw, 140px);
+    }
+    .sec-head {
+      margin-bottom: clamp(36px, 4vw, 56px);
+    }
+    .sec-head h2 {
+      font-size: clamp(52px, 7vw, 104px);
+      text-transform: uppercase;
+      margin-top: 14px;
+      color: var(--bone-bright);
+    }
+    .sec-note {
+      color: var(--muted);
+      max-width: 54ch;
+      margin-top: 16px;
+      font-size: 1.05rem;
+    }
+
+    /* ====================================================================
+       PORTFOLIO & CUTS SECTION (SEPARATED WITH ZERO DEAD SPACE)
+       ==================================================================== */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line-2);
+      color: var(--bone);
+      font-weight: 600;
+      font-size: 14px;
+      background: var(--panel);
+      cursor: pointer;
+      transition: background 0.3s var(--ease), color 0.3s, border-color 0.3s;
+    }
+    .chip .mono {
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .chip:hover {
+      border-color: var(--blue-accent);
+      color: var(--bone-bright);
+    }
+    .chip.is-on {
+      background: var(--blue-accent);
+      border-color: var(--blue-accent);
+      color: #070707;
+      box-shadow: 0 0 20px var(--blue-glow);
+    }
+    .chip.is-on .mono {
+      color: #070707;
+      font-weight: 700;
+    }
+
+    /* Sub-Section Group */
+    .portfolio-group {
+      margin-top: clamp(40px, 5vw, 64px);
+      padding-top: clamp(28px, 4vw, 48px);
+      border-top: 1px solid var(--line);
+      transition: opacity 0.4s var(--ease);
+    }
+    .portfolio-group.is-hidden {
+      display: none;
+    }
+    .group-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .group-tag {
+      font-size: 11px;
+      color: var(--blue-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .group-title {
+      font: 800 clamp(30px, 3.8vw, 44px)/1 var(--display);
+      text-transform: uppercase;
+      color: var(--bone-bright);
+      letter-spacing: -0.01em;
+    }
+    .group-desc {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 48ch;
+    }
+
+    /* Sub-Section 1: Shorts 4-Column Grid */
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 1080px) {
+      .shorts-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .shorts-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Sub-Section 2: Long-Form 2-Column Grid */
+    .longform-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 860px) {
+      .longform-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Sub-Section 3: Thumbnails 2-Column Grid */
+    .thumbnails-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 860px) {
+      .thumbnails-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Uniform Work Cards */
+    .work-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s;
+      position: relative;
+    }
+    .work-card:hover {
+      border-color: var(--blue-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.9), 0 0 25px var(--blue-glow-soft);
+    }
+
+    /* Shorts Media Box (9:16) */
+    .work-media-shorts {
+      position: relative;
+      aspect-ratio: 9 / 16;
       width: 100%;
       background: #000000;
-      border-radius: 0.75rem;
+      border-bottom: 1px solid var(--line);
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .video-embed-wrapper.aspect-shorts {
-      aspect-ratio: 9 / 16;
-      max-height: 520px;
-      margin: 0 auto;
-    }
-    .video-embed-wrapper.aspect-landscape {
-      aspect-ratio: 16 / 9;
-    }
-    .video-embed-wrapper iframe {
+    .work-media-shorts iframe {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
     }
 
-    /* 16:9 Thumbnail Image Preview Box */
-    .thumb-preview-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #000000;
+    /* Widescreen Media Box (16:9) */
+    .work-media-wide {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      background: #000000;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
     }
-    .thumb-preview-box img {
+    .work-media-wide iframe, .work-media-wide img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      display: block;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 0;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease);
     }
-    .thumb-preview-box:hover img {
-      transform: scale(1.03);
-    }
-
-    /* Core Software Interactive App Badges */
-    .software-item-row {
-      display: flex;
-      align-items: center;
-      gap: 1.15rem;
-      padding: 0.95rem 1.15rem;
-      border-radius: 0.85rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--glass-border);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .software-item-row:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(250, 204, 21, 0.35);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-    .app-icon-badge {
-      width: 46px;
-      height: 46px;
-      min-width: 46px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      overflow: hidden;
-    }
-    .software-item-row:hover .app-icon-badge {
-      transform: scale(1.1) rotate(-3deg);
+    .work-card:hover .work-media-wide img {
+      transform: scale(1.04);
     }
 
-    /* FAQ Accordion */
-    .faq-item {
-      border-bottom: 1px solid var(--glass-border);
+    /* Thumbnail Badges Overlay */
+    .thumb-badge-top {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 2;
     }
-    .faq-item:last-child {
-      border-bottom: none;
+    .ctr-badge {
+      background: rgba(56, 189, 248, 0.2);
+      border: 1px solid var(--blue-accent);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .faq-question {
-      width: 100%;
+    .res-badge {
+      background: rgba(7, 7, 7, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      color: var(--bone);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* Clean Card Info Padding */
+    .work-info {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .work-cat {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.3rem 1.5rem;
-      background: transparent;
-      border: none;
-      color: var(--text-white);
-      font-size: 1.05rem;
-      font-weight: 600;
-      text-align: left;
-      cursor: pointer;
-      transition: color 0.2s ease;
+      margin-bottom: 8px;
     }
-    .faq-question:hover {
-      color: var(--color-yellow);
+    .work-cat span {
+      font-size: 11px;
+      color: var(--blue-accent);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .work-title {
+      font-size: 19px;
+      font-weight: 800;
+      font-family: var(--display);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      color: var(--bone-bright);
+    }
+    .work-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .work-meta-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .work-meta-foot a {
+      color: var(--blue-accent);
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .work-meta-foot a:hover {
+      color: #ffffff;
+    }
+
+    /* Case Study Card */
+    .case-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(24px, 4vw, 48px);
+      box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+    .case-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--blue-glow-soft) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+    }
+    .case-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat-tile {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      padding: 22px 18px;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .stat-tile:hover {
+      border-color: var(--blue-accent);
+    }
+    .stat-num {
+      font: 800 clamp(32px, 3.8vw, 48px)/1 var(--display);
+      color: var(--blue-accent);
+      text-shadow: 0 0 20px var(--blue-glow);
+      margin-bottom: 6px;
+    }
+    .stat-lbl {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--bone-bright);
+    }
+    .stat-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Workflow Timeline */
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      position: relative;
+    }
+    .step-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 28px 22px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .step-card:hover {
+      border-color: var(--blue-accent);
+      transform: translateY(-4px);
+    }
+    .step-num {
+      font: 800 48px/1 var(--display);
+      color: rgba(255, 255, 255, 0.15);
+      margin-bottom: 14px;
+    }
+    .step-card:hover .step-num {
+      color: var(--blue-accent);
+    }
+
+    /* Stack & Software */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+    }
+    .stack-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 32px;
+    }
+    .app-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .app-row:last-child {
+      border-bottom: 0;
+    }
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .service-card.is-featured {
+      border-color: var(--blue-accent);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08) 0%, var(--panel) 100%);
+      box-shadow: 0 0 35px var(--blue-glow-soft);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+    .featured-badge {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: var(--blue-accent);
+      color: #070707;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .service-card h3 {
+      font: 800 32px/1 var(--display);
+      margin: 10px 0 14px;
+      color: var(--bone-bright);
+    }
+    .turnaround-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+    .service-card ul {
+      list-style: none;
+      margin: 24px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      flex-grow: 1;
+    }
+    .service-card li {
+      display: flex;
+      gap: 10px;
+    }
+    .service-card li span.check {
+      color: var(--blue-accent);
+      font-weight: 700;
+    }
+    .service-card li strong {
+      color: var(--bone-bright);
+    }
+
+    /* FAQ */
+    .faq-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-row {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-row.active {
+      border-color: var(--blue-accent);
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 22px 24px;
+      background: none;
+      border: none;
+      color: var(--bone-bright);
+      font: 700 17px var(--body);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
     }
     .faq-icon {
-      transition: transform 0.3s ease;
-      color: var(--color-yellow);
-      font-size: 1.35rem;
-      line-height: 1;
+      font-size: 20px;
+      color: var(--blue-accent);
+      transition: transform 0.3s;
     }
-    .faq-item.active .faq-icon {
+    .faq-row.active .faq-icon {
       transform: rotate(45deg);
     }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.5rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+    .faq-a {
+      padding: 0 24px 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      display: none;
     }
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding-bottom: 1.35rem;
-    }
-
-    /* Form Inputs */
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-    .form-label {
+    .faq-row.active .faq-a {
       display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #F1F5F9;
-      margin-bottom: 0.4rem;
     }
-    .form-input, .form-select, .form-textarea {
+
+    /* ====================================================================
+       INTERACTIVE LIVE CRAFT SECTION (FROM OFFCUT) — POSITIONED ABOVE CONTACT
+       Pacing (BPM), Colour (Real Photo Log/Graded), Motion (Ease), Sound (Duck)
+       ==================================================================== */
+    .craft-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(16px, 2vw, 28px);
+    }
+    @media (max-width: 860px) {
+      .craft-grid { grid-template-columns: 1fr; }
+    }
+    .tile {
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(20px, 2.2vw, 30px);
+      transition: border-color 0.4s var(--ease), box-shadow 0.4s;
+      position: relative;
+      min-height: 380px;
+    }
+    .tile:hover {
+      border-color: var(--blue-accent);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.9), 0 0 25px var(--blue-glow-soft);
+    }
+    .tile-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .tile-head h3 {
+      font: 800 clamp(28px, 3.2vw, 36px)/1 var(--display);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--bone-bright);
+    }
+    .tile-read {
+      font-size: 13px;
+      color: var(--blue-accent);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--blue-accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .tile-canvas {
       width: 100%;
-      background: rgba(18, 10, 36, 0.7);
-      border: 1px solid var(--glass-border);
-      border-radius: 0.55rem;
-      padding: 0.75rem 1rem;
-      font-size: 0.925rem;
-      color: var(--text-white);
-      font-family: inherit;
+      height: 190px;
+      background: #000000;
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      margin-bottom: 18px;
+      display: block;
+      cursor: crosshair;
+    }
+    .tile-copy {
+      font-size: 14.5px;
+      color: var(--bone);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .tile-hint {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: auto;
+    }
+
+    /* Colour Grading Real Photo Comparison Slider */
+    .color-slider-wrap {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background: #000000;
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      margin-bottom: 14px;
+      overflow: hidden;
+      user-select: none;
+      cursor: ew-resize;
+    }
+    .color-slide-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .color-slide-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Raw S-Log3: flat, milky blacks, desaturated, lifted pedestal */
+    .color-slide-layer.is-raw img {
+      filter: contrast(0.52) brightness(1.28) saturate(0.28) sepia(0.06);
+    }
+    /* Graded Rec.709: rich film contrast, saturated skin tones, deep blacks */
+    .color-slide-layer.is-graded img {
+      filter: contrast(1.1) brightness(1.0) saturate(1.08);
+    }
+    .color-badge {
+      position: absolute;
+      top: 10px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .badge-raw {
+      left: 10px;
+      background: rgba(15, 15, 15, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #d1d5db;
+    }
+    .badge-graded {
+      right: 10px;
+      background: rgba(56, 189, 248, 0.25);
+      border: 1px solid var(--blue-accent);
+      color: #38bdf8;
+      backdrop-filter: blur(8px);
+    }
+    .color-slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+      pointer-events: none;
+      z-index: 5;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .handle-knob {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #000000;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 14px var(--blue-glow);
+    }
+    .color-scene-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .scene-switcher {
+      display: flex;
+      gap: 8px;
+    }
+    .scene-btn {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-family: var(--mono);
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .scene-btn:hover {
+      border-color: var(--blue-accent);
+      color: var(--bone-bright);
+    }
+    .scene-btn.is-active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--blue-accent);
+      color: var(--blue-accent);
+      font-weight: 700;
+    }
+    .color-lut-tag {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* Contact Section */
+    .contact-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(28px, 5vw, 64px);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form-field {
+      margin-bottom: 20px;
+    }
+    .form-lbl {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-family: var(--mono);
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .form-ctrl {
+      width: 100%;
+      height: 50px;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      padding: 0 16px;
+      color: var(--bone-bright);
+      font: 500 15px var(--body);
       outline: none;
-      transition: all 0.2s ease;
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--color-yellow);
-      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
-      background: rgba(26, 15, 52, 0.95);
+    textarea.form-ctrl {
+      height: 120px;
+      padding: 14px 16px;
+      resize: vertical;
     }
-    .form-select option {
-      background: #120A24;
-      color: #F8FAFC;
+    .form-ctrl:focus {
+      border-color: var(--blue-accent);
+      box-shadow: 0 0 16px var(--blue-glow-soft);
     }
 
-    /* Apple-Style Smooth Scroll Reveal System */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(24px) scale(0.985);
-      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
+    /* Giant Animated "YASH EDITS" Signature Section at very end */
+    .yash-signature-section {
+      position: relative;
+      padding: clamp(60px, 8vw, 120px) var(--pad) clamp(40px, 6vw, 80px);
+      background: linear-gradient(180deg, transparent 0%, rgba(56, 189, 248, 0.04) 50%, rgba(20, 24, 30, 0.8) 100%);
+      border-top: 1px solid var(--line);
+      overflow: hidden;
+      text-align: center;
     }
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0) scale(1);
+    .yash-signature-glow {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(300px, 70vw, 900px);
+      height: 220px;
+      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.22) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 75%);
+      filter: blur(40px);
+      pointer-events: none;
+      z-index: 0;
+      animation: signature-pulse 5s ease-in-out infinite alternate;
     }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    @keyframes signature-pulse {
+      0% { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    }
+    .yash-signature-wrapper {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .yash-signature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--blue-accent);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .yash-signature-title {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(64px, 15vw, 210px);
+      line-height: 0.85;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin: 0;
+      cursor: default;
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0 0.18em;
+    }
+    .yash-signature-title .word {
+      display: inline-flex;
+    }
+    .yash-signature-title .char {
+      display: inline-block;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 45%, #64748b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), -webkit-text-stroke 0.3s, filter 0.3s, color 0.3s;
+      animation: letter-breath 6s ease-in-out infinite;
+    }
+    .yash-signature-title .char:hover {
+      transform: translateY(-16px) scale(1.12);
+      -webkit-text-stroke: 1.5px var(--blue-accent);
+      color: var(--blue-accent);
+      filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.85));
+    }
+    .yash-signature-title .char-accent {
+      background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 55%, #0284c7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-stroke: 1.5px rgba(56, 189, 248, 0.6);
+      filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.4));
+    }
+    @keyframes letter-breath {
+      0%, 100% {
+        filter: drop-shadow(0 0 0px transparent);
+      }
+      50% {
+        filter: drop-shadow(0 0 22px rgba(56, 189, 248, 0.35));
+      }
+    }
+    .yash-signature-sub {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(12px, 1.4vw, 15px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      max-width: 600px;
+    }
 
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
+    /* Giant Editorial Footer Marquee */
+    .marquee-strip {
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+      background: #0f1216;
+      position: relative;
+    }
+    .marquee-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee-roll 28s linear infinite;
+    }
+    .marquee-text {
+      font: 900 clamp(48px, 7vw, 92px)/1 var(--display);
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.16);
+      letter-spacing: -0.01em;
+      transition: color 0.4s;
+    }
+    .marquee-strip:hover .marquee-text {
+      color: rgba(56, 189, 248, 0.6);
+    }
+    @keyframes marquee-roll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Site Colophon */
+    .foot-bar {
+      padding: 36px var(--pad);
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: calc(var(--nav) + 40px);
+        min-height: auto;
+      }
+      .hero-reel {
+        margin-top: 24px;
+      }
+      .hero-featured-card {
+        margin: 0 auto;
+      }
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stack-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
       .nav-links {
         display: none;
       }
-      .nav-links.mobile-open {
+      .nav-menu {
         display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 4.5rem;
-        left: 0;
-        right: 0;
-        background: #0D071C;
-        padding: 1.5rem;
-        border-bottom: 1px solid var(--glass-border);
-        gap: 1rem;
       }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .case-study-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-      .case-study-stats {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 0.75rem !important;
-      }
-      .case-study-stat-box {
-        padding: 1.1rem 0.75rem !important;
-      }
-      .case-study-stat-number {
-        font-size: 1.7rem !important;
-      }
-      .case-study-stat-label {
-        font-size: 0.75rem !important;
-      }
-      .case-study-actions {
-        flex-direction: column !important;
-        width: 100% !important;
-      }
-      .case-study-actions a {
-        width: 100% !important;
-        text-align: center !important;
+      .form-grid {
+        grid-template-columns: 1fr;
       }
     }
-    @media (min-width: 769px) {
-      .mobile-menu-btn {
-        display: none;
+    @media (max-width: 580px) {
+      .timeline-steps {
+        grid-template-columns: 1fr;
+      }
+      .hero-ctas {
+        flex-direction: column;
+      }
+      .hero-ctas .pill {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. Sticky Navigation Bar -->
-  <header class="nav-bar">
-    <div class="container nav-container">
-      <a href="#home" class="brand-logo">
-        YASH <span class="accent-word">EDITS</span>
-      </a>
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true">
+    <span id="cursorLabel">PLAY</span>
+  </div>
 
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#process">Process</a></li>
+  <!-- Floating Navigation -->
+  <header class="nav-wrap">
+    <div class="nav-inner">
+      <nav class="nav-pill">
+        <a href="#" class="logo">
+          YASH <span>EDITS</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#case-study">Growth</a></li>
+          <li><a href="#workflow">Workflow</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#craft">The Craft</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="#contact" class="btn-yellow" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="#contact" class="pill pill-blue nav-cta" data-magnetic>
           Book a Call
         </a>
-        <button class="mobile-menu-btn btn-glass" id="mobileMenuBtn" aria-label="Toggle Navigation" style="padding: 0.5rem 0.75rem;">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <button class="nav-menu" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="mono" style="font-size: 11px;">MENU</span>
+          <div class="burger">
+            <i></i>
+            <i></i>
+          </div>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- 2. Hero Section (Above the Fold) -->
-  <section id="home" style="padding: 5.5rem 0 4.5rem; text-align: center; position: relative;">
-    <div class="container">
-      <div style="max-width: 860px; margin: 0 auto;">
-        
-        <div class="section-badge">
-          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--color-yellow); margin-right: 4px;"></span>
-          Video Editor & Motion Designer
-        </div>
+  <!-- Mobile Fullscreen Menu -->
+  <div class="menu" id="mobileMenu" aria-hidden="true">
+    <div class="menu-links">
+      <a href="#work" onclick="closeMenu()">Portfolio</a>
+      <a href="#case-study" onclick="closeMenu()">Growth</a>
+      <a href="#workflow" onclick="closeMenu()">Workflow</a>
+      <a href="#skills" onclick="closeMenu()">Software</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#craft" onclick="closeMenu()">The Craft</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+    <div class="menu-foot" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%;">
+      <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-chat" style="font-size: 13px; height: 38px; padding: 0 18px;">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+      <a href="mailto:yashpkhalokar@gmail.com" class="pill pill-line" style="font-size: 13px; height: 38px; padding: 0 18px;">
+        <i class="fa-regular fa-envelope"></i> Send an Email
+      </a>
+    </div>
+  </div>
 
-        <div style="position: relative; display: inline-block; width: 100%;">
-          
-          <!-- Glowing White Star (Top Left of Headline) -->
-          <div class="hero-glowing-star hero-star-top-left" aria-hidden="true">
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow mono"><i class="live"></i>Senior Video Editor & Motion Designer</p>
+
+        <!-- User Requested Headline with Single Glowing White Star with Ample Spacing -->
+        <div class="hero-headline-wrap">
+          <!-- Single Glowing White Star (Generous distance from text) -->
+          <div class="hero-glowing-star hero-star-top-right" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Radiant Ambient Halo -->
-              <circle cx="12" cy="12" r="7" fill="rgba(255, 255, 255, 0.45)" filter="blur(3px)" />
-              <!-- Primary 4-pointed Sparkle Star -->
+              <circle cx="12" cy="12" r="7" fill="rgba(255, 255, 255, 0.55)" filter="blur(3px)" />
               <path d="M12 0 C12 6.63 17.37 12 24 12 C17.37 12 12 17.37 12 24 C12 17.37 6.63 12 0 12 C6.63 12 12 6.63 12 0 Z" fill="#FFFFFF"/>
-              <!-- Diagonal Micro-Glint Rays -->
-              <path d="M12 5.5 C12 9.09 14.91 12 18.5 12 C14.91 12 12 14.91 12 18.5 C12 14.91 9.09 12 5.5 12 C9.09 12 12 9.09 12 5.5 Z" fill="#FFFFFF" opacity="0.9"/>
+              <path d="M12 5.5 C12 9.09 14.91 12 18.5 12 C14.91 12 12 14.91 12 18.5 C12 14.91 9.09 12 5.5 12 C9.09 12 12 9.09 12 5.5 Z" fill="#FFFFFF" opacity="0.95"/>
             </svg>
           </div>
 
-          <!-- Glowing White Star (Bottom Right of Headline) -->
-          <div class="hero-glowing-star hero-star-bottom-right" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Radiant Ambient Halo -->
-              <circle cx="12" cy="12" r="8" fill="rgba(255, 255, 255, 0.5)" filter="blur(3px)" />
-              <!-- Primary 4-pointed Sparkle Star -->
-              <path d="M12 0 C12 6.63 17.37 12 24 12 C17.37 12 12 17.37 12 24 C12 17.37 6.63 12 0 12 C6.63 12 12 6.63 12 0 Z" fill="#FFFFFF"/>
-              <!-- Diagonal Micro-Glint Rays -->
-              <path d="M12 5.5 C12 9.09 14.91 12 18.5 12 C14.91 12 12 14.91 12 18.5 C12 14.91 9.09 12 5.5 12 C9.09 12 12 9.09 12 5.5 Z" fill="#FFFFFF" opacity="0.9"/>
-            </svg>
-          </div>
-
-          <h1 style="font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: #FFFFFF; text-wrap: balance; position: relative; z-index: 2;">
-            Transforming Raw Footage into <span style="color: var(--color-yellow);">High-Converting</span> Visual Stories
+          <h1 class="hero-title">
+            <span style="display: block;">Edits that</span>
+            <span style="display: block;"><span class="accent-glow">hold the scroll.</span></span>
           </h1>
         </div>
 
-        <p style="font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); line-height: 1.65; max-width: 720px; margin: 0 auto 2.5rem; text-wrap: balance;">
-          Helping creators, channels, and brands boost retention, views, and subscriber growth through high-impact pacing, dynamic motion design, and premium sound sculpting.
+        <p class="hero-sub">
+          I edit for creators, channels, and brands: hooks that stop the thumb, captions that hit on the beat, motion graphics that elevate the narrative, and pacing cut for retention.
         </p>
 
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem;">
-          <a href="#portfolio" class="btn-yellow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Explore Work
+        <div class="hero-ctas">
+          <a href="#work" class="pill pill-blue" data-magnetic>
+            See the work
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
           </a>
-          <a href="#contact" class="btn-glass">
-            <i class="fa-solid fa-calendar-check"></i>
-            Book a Strategy Call
-          </a>
-          <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project%20or%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn-direct-chat">
-            <i class="fa-brands fa-whatsapp"></i>
-            Direct WhatsApp
+          <a href="#contact" class="pill pill-line" data-magnetic>Book a Call</a>
+          <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-chat" data-magnetic>
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
           </a>
         </div>
 
+        <ul class="proof mono" aria-label="At a glance">
+          <li><b>100+</b> videos delivered</li>
+          <li><b>1.1M+</b> total views gained</li>
+          <li><b>3+</b> years editing</li>
+          <li><b>20+</b> clients</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- 3. Featured Channel Growth Spotlight: Mr.khalokar (Balanced, Proper Alignment) -->
-  <section style="padding: 1.5rem 0 4rem;">
-    <div class="container">
-      <div class="glass-card glass-card-yellow-glow scroll-reveal" style="padding: 2.5rem; position: relative;">
-        
-        <div class="case-study-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
-          
+      <!-- Featured Reel: FOREIGN CLIENT EDIT (User Explicit Request) -->
+      <div class="hero-reel">
+        <p class="mono hero-reel-label"><i class="rec"></i>Featured edit · Foreign client edit</p>
+        <div class="hero-featured-card" data-cursor="play">
+          <div class="hero-featured-frame">
+            <div class="hero-featured-badge-overlay">
+              <span class="mono"><i class="live"></i> High Retention</span>
+              <span class="mono">Global Client</span>
+            </div>
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?rel=0&modestbranding=1" 
+              title="Foreign client edit" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="hero-wide-meta">
+            <div>
+              <div class="clip-t">Foreign client edit</div>
+              <div class="mono" style="color: var(--blue-accent); font-size: 11px; margin-top: 3px;">
+                International Client Standard · Rhythmic Motion & SFX
+              </div>
+            </div>
+            <a href="https://youtube.com/shorts/x0bXugX4fKg?feature=share" target="_blank" rel="noopener noreferrer" class="pill pill-line" style="height: 38px; padding: 0 16px; font-size: 13px;">Watch ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Portfolio & Cuts (Separated by Shorts, Long-Form, Thumbnails — Zero Dead Space) -->
+    <section class="wrap" id="work">
+      <div class="sec-head">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
           <div>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(250, 204, 21, 0.12); border: 1px solid var(--color-yellow); color: var(--color-yellow); font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 9999px; margin-bottom: 1rem; text-transform: uppercase;">
-              ★ FEATURED CHANNEL GROWTH CASE STUDY
-            </div>
-            
-            <h3 style="font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; color: #FFFFFF; line-height: 1.25;">
-              Manager & Video Editor — Mr.khalokar YT Channel
-            </h3>
-            
-            <p style="font-size: 0.875rem; font-weight: 600; color: var(--color-yellow); margin-bottom: 1rem;">
-              Apr 2023 - Till Now · End-to-End Content Management
-            </p>
-            
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.75rem;">
-              Managed content strategy, community engagement, and full video post-production for the official YouTube channel <strong>Mr .khalokar</strong>. Handled everything from click-magnet thumbnail designs to high-retention video edits.
-            </p>
-
-            <div class="case-study-actions" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-              <a href="https://www.youtube.com/@mr.khalokar" target="_blank" rel="noopener noreferrer" class="btn-yellow" style="padding: 0.65rem 1.4rem; font-size: 0.9rem;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Visit Channel (@mr.khalokar)
-              </a>
-              <a href="#contact" class="btn-glass" style="padding: 0.65rem 1.4rem; font-size: 0.9rem;">
-                Hire for Your Channel
-              </a>
-            </div>
+            <p class="eyebrow mono"><i class="live"></i>Selected works</p>
+            <h2>Portfolio & Cuts</h2>
           </div>
-
-          <!-- Highlight Metric Stats -->
-          <div class="case-study-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            
-            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: var(--color-yellow); line-height: 1.1; margin-bottom: 0.35rem;">
-                11,69,447+
-              </div>
-              <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Total Views Gained</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Across video catalog</div>
-            </div>
-
-            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.35rem;">
-                0 → 2,500+
-              </div>
-              <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Subscribers Grew</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Organic community growth</div>
-            </div>
-
-            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.35rem;">
-                100%
-              </div>
-              <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Production Ownership</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">From thumbnail to export</div>
-            </div>
-
-            <div class="case-study-stat-box" style="background: rgba(10, 18, 38, 0.85); border: 1px solid var(--glass-border); border-radius: 0.75rem; padding: 1.4rem; text-align: center;">
-              <div class="case-study-stat-number" style="font-size: 2.2rem; font-weight: 800; color: var(--color-yellow); line-height: 1.1; margin-bottom: 0.35rem;">
-                Since 2023
-              </div>
-              <div class="case-study-stat-label" style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Ongoing Retention</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Consistent upload velocity</div>
-            </div>
-
+          <!-- Clean Filter Chips -->
+          <div class="filters">
+            <button class="chip is-on" data-filter="all" onclick="filterPortfolio('all', this)">All Work <span class="mono">8</span></button>
+            <button class="chip" data-filter="shorts" onclick="filterPortfolio('shorts', this)">Shorts / Reels <span class="mono">4</span></button>
+            <button class="chip" data-filter="longform" onclick="filterPortfolio('longform', this)">Long-Form <span class="mono">2</span></button>
+            <button class="chip" data-filter="thumbnails" onclick="filterPortfolio('thumbnails', this)">Thumbnails <span class="mono">2</span></button>
           </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. Work Section (Proper Grid Alignment in All Tab) -->
-  <section id="portfolio" style="padding: 4.5rem 0 5.5rem; border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      <div class="scroll-reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 3rem;">
-        <div class="section-badge">Selected Works</div>
-        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
-          Portfolio & Production Work
-        </h2>
-        <p style="color: var(--text-muted); max-width: 650px; font-size: 1.05rem; margin-bottom: 2rem;">
-          Motion design reels, full YouTube long-form edits, and high-impact custom thumbnails.
-        </p>
-
-        <!-- Clean Filter Tabs -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; background: rgba(10, 18, 38, 0.75); padding: 0.4rem; border-radius: 0.75rem; border: 1px solid var(--glass-border); backdrop-filter: blur(12px);">
-          <button class="filter-tab active" onclick="filterPortfolio('all', this)">All Work</button>
-          <button class="filter-tab" onclick="filterPortfolio('shorts', this)">Shorts / Reels</button>
-          <button class="filter-tab" onclick="filterPortfolio('youtube', this)">YouTube Long-Form</button>
-          <button class="filter-tab" onclick="filterPortfolio('graphics', this)">Thumbnails & Graphics</button>
         </div>
       </div>
 
-      <!-- Balanced Portfolio Grid with Symmetrical Alignment -->
-      <div id="portfolioGrid">
+      <!-- SUB-SECTION 1: Shorts & Vertical Reels (9:16) -->
+      <div class="portfolio-group" id="group-shorts">
+        <div class="group-header">
+          <div>
+            <div class="group-tag mono"><i class="live"></i> 9:16 Aspect Ratio · Mobile First</div>
+            <h3 class="group-title">Short-Form & Reels</h3>
+          </div>
+          <p class="group-desc mono">Hover or tap to play instantly. Clean cinematic presentation.</p>
+        </div>
         
-        <!-- Video 1: Motion Design Reel (Hw-QpfJNj8M) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-1" data-category="shorts">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
-            <div class="video-embed-wrapper aspect-shorts">
+        <div class="shorts-grid">
+          <!-- Short 1: motion design edit (Hw-QpfJNj8M) -->
+          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="Hw-QpfJNj8M">
+            <div class="work-media-shorts">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?rel=0&modestbranding=1" 
-                title="motion design edit - Yash Edits" 
+                id="yt-short-1"
+                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                title="motion design edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
               </iframe>
             </div>
           </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Shorts / Reels</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">motion design edit</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Dynamic kinetic typography, fluid After Effects motion design, seamless frame pacing, and precision audio effects designed to hook mobile viewers instantly.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>Turnaround: 24–48h</span>
-              <a href="https://youtube.com/shorts/Hw-QpfJNj8M?feature=share" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Video 2: Short-Form Edit (ahJT6WyDSCA) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-2" data-category="shorts">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
-            <div class="video-embed-wrapper aspect-shorts">
+          <!-- Short 2: Foreign client edit (x0bXugX4fKg) -->
+          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="x0bXugX4fKg">
+            <div class="work-media-shorts">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?rel=0&modestbranding=1" 
-                title="tech motion graphic edit - Yash Edits" 
+                id="yt-short-2"
+                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                title="Foreign client edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
               </iframe>
             </div>
           </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Shorts / Reels</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">tech motion graphic edit</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Punchy transitions, sound design, rhythmic editing, and captivating storytelling formatted specifically for 9:16 mobile feeds.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>Turnaround: 24–48h</span>
-              <a href="https://youtube.com/shorts/ahJT6WyDSCA?feature=share" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Video 3: High-Retention Short-Form Edit (8KGy-W0Il7A) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-3" data-category="shorts">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
-            <div class="video-embed-wrapper aspect-shorts">
+          <!-- Short 3: tech motion graphic edit (ahJT6WyDSCA) -->
+          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="ahJT6WyDSCA">
+            <div class="work-media-shorts">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?rel=0&modestbranding=1" 
-                title="Motion design reel 2 - Yash Edits" 
+                id="yt-short-3"
+                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                title="tech motion graphic edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
               </iframe>
             </div>
           </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Shorts / Reels</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Motion design reel 2</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Snappy jump cuts, visual hooks in the first 3 seconds, animated captions, and sound design engineered to boost swipe-through rate and retention.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>Turnaround: 24–48h</span>
-              <a href="https://youtu.be/8KGy-W0Il7A" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
+
+          <!-- Short 4: Motion design reel 2 (8KGy-W0Il7A) -->
+          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="8KGy-W0Il7A">
+            <div class="work-media-shorts">
+              <iframe 
+                id="yt-short-4"
+                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                title="Motion design reel 2" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Video 4: YouTube Long-Form (8ETFrvZku5o) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-2" data-category="youtube">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
-            <div class="video-embed-wrapper aspect-landscape">
+      <!-- SUB-SECTION 2: YouTube Long-Form Edits (16:9) -->
+      <div class="portfolio-group" id="group-longform">
+        <div class="group-header">
+          <div>
+            <div class="group-tag mono"><i class="live"></i> 16:9 Widescreen · High Retention</div>
+            <h3 class="group-title">YouTube Long-Form Videos</h3>
+          </div>
+          <p class="group-desc mono">Hover or tap to play instantly. Full documentary & vlogs.</p>
+        </div>
+
+        <div class="longform-grid">
+          <!-- Long-Form 1: Documentary on Ganpati Mandal (8ETFrvZku5o) -->
+          <div class="work-card" data-category="longform" data-cursor="play" data-yt-id="8ETFrvZku5o">
+            <div class="work-media-wide">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?rel=0&modestbranding=1" 
+                id="yt-long-1"
+                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="Documentary on Ganpati Mandal in Amravati" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
               </iframe>
             </div>
           </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">YouTube Long-Form</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Documentary on Ganpati Mandal in Amravati 🌺 | Vidharbha cha Raja</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Crafted with custom After Effects motion graphics, immersive multi-layered SFX, and structured narrative arcs keeping viewers engaged end-to-end.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>Turnaround: 3–5 Days</span>
-              <a href="https://youtu.be/8ETFrvZku5o" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Video 5: YouTube Long-Form (FLfUsi4Jfx4) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-3" data-category="youtube">
-          <div style="padding: 0.75rem; background: rgba(0,0,0,0.4);">
-            <div class="video-embed-wrapper aspect-landscape">
+          <!-- Long-Form 2: Wedding Vlog (FLfUsi4Jfx4) -->
+          <div class="work-card" data-category="longform" data-cursor="play" data-yt-id="FLfUsi4Jfx4">
+            <div class="work-media-wide">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?rel=0&modestbranding=1" 
-                title="I Attended a ₹1 Crore IBPS PO Wedding 😳 | Full Vlog" 
+                id="yt-long-2"
+                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                title="I Attended a ₹1 Crore IBPS PO Wedding" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
               </iframe>
             </div>
           </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">YouTube Long-Form</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">I Attended a ₹1 Crore IBPS PO Wedding 😳 | Full Vlog</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Multicam synchronization, crisp audio mastering, sound effects build-ups, and seamless visual transitions that hold attention.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>Full Post-Production</span>
-              <a href="https://youtu.be/FLfUsi4Jfx4" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">Watch on YouTube ↗</a>
-            </div>
+        </div>
+      </div>
+
+      <!-- SUB-SECTION 3: High-CTR Thumbnails & Graphic Design (16:9) -->
+      <div class="portfolio-group" id="group-thumbnails">
+        <div class="group-header">
+          <div>
+            <div class="group-tag mono"><i class="live"></i> 16:9 4K Graphics · Click Architecture</div>
+            <h3 class="group-title">Thumbnails & Graphic Design</h3>
           </div>
+          <p class="group-desc mono">Click to view 4K master graphics.</p>
         </div>
 
-        <!-- Graphic Design / Thumbnail 1: (High-CTR Thumbnail Design) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-2" data-category="graphics">
-          <div style="padding: 0.75rem;">
-            <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
-              <div class="thumb-preview-box">
+        <div class="thumbnails-grid">
+          <!-- Thumbnail 1: High-CTR Thumbnail Design -->
+          <div class="work-card" data-category="thumbnails">
+            <div class="work-media-wide">
+              <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
                 <img 
                   src="https://i.ibb.co/Xfbyn4kz/ibps-clerk-6.jpg" 
                   onerror="this.onerror=null; this.src='https://i.ibb.co/mrGvnBFH/ibps-clerk-6.jpg';"
-                  alt="High-CTR Thumbnail Design by Yash Edits" 
+                  alt="High-CTR Thumbnail Design" 
                   loading="lazy"
                 />
-              </div>
-            </a>
-          </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design</span>
-              <span style="font-size: 0.75rem; color: var(--text-muted);">Hover to Zoom</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">High-CTR Thumbnail Design</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Custom Photoshop composition, facial expression isolation, dynamic depth lighting, and click-magnet visual hierarchy designed to maximize CTR without edge cropping.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>Adobe Photoshop</span>
-              <a href="https://ibb.co/357fxsY0" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">View Asset ↗</a>
+              </a>
             </div>
           </div>
-        </div>
 
-        <!-- Graphic Design / Thumbnail 2: (Custom Photoshop Composition) -->
-        <div class="glass-card portfolio-item scroll-reveal reveal-delay-3" data-category="graphics">
-          <div style="padding: 0.75rem;">
-            <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
-              <div class="thumb-preview-box">
+          <!-- Thumbnail 2: Custom Photoshop Composition -->
+          <div class="work-card" data-category="thumbnails">
+            <div class="work-media-wide">
+              <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
                 <img 
                   src="https://i.ibb.co/HDvBFk01/DHCL-sacm-Recovered-copy-last.jpg" 
                   onerror="this.onerror=null; this.src='https://i.ibb.co/wNHB0xT3/DHCL-sacm-Recovered-copy-last.jpg';"
-                  alt="Custom Photoshop Composition by Yash Edits" 
+                  alt="Custom Photoshop Composition" 
                   loading="lazy"
                 />
-              </div>
-            </a>
-          </div>
-          <div style="padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: #FFFFFF; font-weight: 700; text-transform: uppercase;">Graphic Design</span>
-              <span style="font-size: 0.75rem; color: var(--text-muted);">Hover to Zoom</span>
+              </a>
             </div>
-            <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Custom Photoshop Composition</h4>
-            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.6;">
-              Clean focal contrast, bold graphical typography, color separation, and storytelling visual elements that hook browsing eyes in a true 16:9 ratio.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Featured Channel Growth Case Study -->
+    <section class="wrap" id="case-study">
+      <div class="case-card">
+        <div class="case-grid">
+          <div>
+            <p class="eyebrow mono" style="margin-bottom: 12px;">
+              <i class="live"></i>Channel Growth Spotlight
             </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 0.75rem; font-size: 0.8rem; color: var(--text-subtle);">
-              <span>High Resolution</span>
-              <a href="https://ibb.co/JRLmBMN0" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); font-weight: 700; text-decoration: none;">View Asset ↗</a>
+            <h2 style="font-size: clamp(38px, 4.5vw, 64px); line-height: 0.95; margin-bottom: 16px;">
+              Manager & Video Editor — Mr.khalokar
+            </h2>
+            <p class="mono" style="color: var(--blue-accent); margin-bottom: 16px;">
+              Apr 2023 - Till Now · End-to-End Content Management
+            </p>
+            <p style="color: var(--muted); line-height: 1.6; margin-bottom: 28px;">
+              Managed channel content strategy, community engagement, and full video post-production for the official YouTube channel <strong>Mr .khalokar</strong>. Handled everything from click-magnet thumbnail designs to high-retention video edits.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/@mr.khalokar" target="_blank" rel="noopener noreferrer" class="pill pill-blue" data-magnetic>
+                Visit Channel (@mr.khalokar) ↗
+              </a>
+              <a href="#contact" class="pill pill-line" data-magnetic>Hire for Your Channel</a>
+            </div>
+          </div>
+
+          <div class="case-stats">
+            <div class="stat-tile">
+              <div class="stat-num">1.1M+</div>
+              <div class="stat-lbl">Lifetime Views</div>
+              <div class="stat-sub mono">Organic YouTube Growth</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-num">+48%</div>
+              <div class="stat-lbl">Retention Lift</div>
+              <div class="stat-sub mono">Pacing & Hook Optimization</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-num">9.8%</div>
+              <div class="stat-lbl">Average CTR</div>
+              <div class="stat-sub mono">Photoshop Thumbnail Packaging</div>
+            </div>
+            <div class="stat-tile">
+              <div class="stat-num">100+</div>
+              <div class="stat-lbl">Uploads Delivered</div>
+              <div class="stat-sub mono">Consistent Weekly Pipeline</div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 5. The Process ("How I Work") Section -->
-  <section id="process" style="padding: 5rem 0; border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
-        <div class="section-badge">Streamlined Workflow</div>
-        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
-          How We Bring Ideas to Life
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1.05rem;">
-          Zero chaos, rapid turnarounds, and crystal-clear communication from the moment you drop your footage into the drive.
-        </p>
+    <!-- 4. Workflow Timeline -->
+    <section class="wrap" id="workflow">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>Process</p>
+        <h2>Production Timeline</h2>
+        <p class="sec-note">A systematic post-production pipeline built for velocity, creative precision, and zero friction.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-        
-        <!-- Step 1 -->
-        <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 1.85rem;">
-          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">01</div>
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Briefing & Strategy</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-            We align on your project goals, target audience, style references, pacing requirements, and key conversion hooks.
+      <div class="timeline-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Ingest & Selects</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Cloud ingest via Drive/Dropbox. A-roll transcript analysis, cutting dead air, and building the strongest hook.
           </p>
         </div>
 
-        <!-- Step 2 -->
-        <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 1.85rem;">
-          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">02</div>
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Story Structuring & Rough Cut</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-            Assembling the narrative spine, eliminating fluff, building curiosity hooks, and establishing a captivating rhythm.
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">The Assembly Cut</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Rhythmic pacing to musical transients, multi-cam switching, and narrative structural arcs designed to hold attention.
           </p>
         </div>
 
-        <!-- Step 3 -->
-        <div class="glass-card scroll-reveal reveal-delay-3" style="padding: 1.85rem;">
-          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">03</div>
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Motion Graphics & Sound Polish</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-            After Effects motion graphics, premium assets, dynamic sound effects (SFX), and professional audio cleanup and mastering.
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Sound & Visual FX</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Kinetic After Effects typography, multi-layered Foley sound effects, dynamic music ducking, and color grading.
           </p>
         </div>
 
-        <!-- Step 4 -->
-        <div class="glass-card scroll-reveal reveal-delay-4" style="padding: 1.85rem;">
-          <div style="font-size: 2.35rem; font-weight: 900; color: #FACC15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.3); margin-bottom: 1rem; line-height: 1; letter-spacing: -0.02em;">04</div>
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">Review & High-Res Delivery</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-            2 free rounds of revisions to ensure absolute perfection, followed by crisp 4K UHD export ready to publish.
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Final Mastering</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Frame.io client review, 2 rounds of timestamped revisions, 4K ProRes/H.265 master delivery, and free 16:9 thumbnail.
           </p>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 6. Software & Technical Stack Section -->
-  <section id="skills" style="padding: 5rem 0; border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      
-      <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
-        <div class="section-badge">MASTERED ARSENAL</div>
-        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
-          Software & Technical Stack
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1.05rem;">
-          Specialized in high-retention video editing, motion design, and thumbnail graphic design.
-        </p>
+    <!-- 5. Software & Skills Stack -->
+    <section class="wrap" id="skills">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>Toolkit</p>
+        <h2>Software & Skills</h2>
+        <p class="sec-note">Industry standard Creative Cloud tools and technical capabilities dialed in over 3+ years.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-        
-        <!-- Left Box: Core Software with Official Logos -->
-        <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 2.25rem;">
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF;">
-            <span style="color: var(--color-yellow); font-size: 1.1rem;">■</span> Core Software
-          </h3>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            
-            <!-- Adobe Premiere Pro -->
-            <div class="software-item-row">
-              <div class="app-icon-badge pr" title="Adobe Premiere Pro">
-                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="46" height="46" rx="10" fill="#00005B"/>
-                  <rect x="0.75" y="0.75" width="44.5" height="44.5" rx="9.25" stroke="#EA77FF" stroke-width="1.5" stroke-opacity="0.9"/>
-                  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#EA77FF" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5px">Pr</text>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 0.45rem;">
-                  <span style="font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">Adobe Premiere Pro</span>
-                  <span style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem;">3+ Years Experience</span>
-                </div>
-                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
-                  <div style="width: 95%; height: 100%; background: var(--color-yellow); border-radius: 999px;"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Adobe After Effects -->
-            <div class="software-item-row">
-              <div class="app-icon-badge ae" title="Adobe After Effects">
-                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="46" height="46" rx="10" fill="#00005B"/>
-                  <rect x="0.75" y="0.75" width="44.5" height="44.5" rx="9.25" stroke="#D291FF" stroke-width="1.5" stroke-opacity="0.9"/>
-                  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#D291FF" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5px">Ae</text>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 0.45rem;">
-                  <span style="font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">Adobe After Effects</span>
-                  <span style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem;">2+ Years Experience</span>
-                </div>
-                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
-                  <div style="width: 90%; height: 100%; background: var(--color-yellow); border-radius: 999px;"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Adobe Photoshop -->
-            <div class="software-item-row">
-              <div class="app-icon-badge ps" title="Adobe Photoshop">
-                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="46" height="46" rx="10" fill="#001E36"/>
-                  <rect x="0.75" y="0.75" width="44.5" height="44.5" rx="9.25" stroke="#31A8FF" stroke-width="1.5" stroke-opacity="0.9"/>
-                  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#31A8FF" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5px">Ps</text>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 0.45rem;">
-                  <span style="font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">Adobe Photoshop</span>
-                  <span style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem;">3+ Years Experience</span>
-                </div>
-                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
-                  <div style="width: 95%; height: 100%; background: var(--color-yellow); border-radius: 999px;"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right Box: Technical Specializations -->
-        <div class="glass-card scroll-reveal reveal-delay-2" style="padding: 2.25rem;">
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF;">
-            <span style="color: #FFFFFF; font-size: 1.1rem;">■</span> Technical Specializations
-          </h3>
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            
-            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
-              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Amazing Storytelling & Narrative Flow</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Pacing architecture that builds narrative tension, holds attention, and drives strong watch-time metrics.</p>
-            </div>
-
-            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
-              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Motion Graphics & Kinetic Captions</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Custom After Effects animations, lower thirds, callout cards, and dynamic synced captions.</p>
-            </div>
-
-            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
-              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Premium Quality Assets & Sound Effects</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Carefully curated Foley, whooshes, impacts, and riser sound design paired with high-grade motion assets.</p>
-            </div>
-
-            <div style="padding: 1.1rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 0.65rem;">
-              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.3rem;">Audio Cleanup, Mastering & Multicam Studio</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Voice de-noising, level normalization, EQ clarity, and seamless multi-camera timeline synchronization.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Services Section (Pure Blue + Black/White + Yellow Accent) -->
-  <section id="services" style="padding: 5.5rem 0; border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
-        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
-          Services
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1.05rem;">
-          Dedicated editing solutions customized to your channel's specific volume, style, and growth goals.
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: stretch;">
-        
-        <!-- Card 1: Short-Form Social Growth -->
-        <div class="glass-card scroll-reveal reveal-delay-1" style="padding: 2.25rem; display: flex; flex-direction: column;">
-          <div style="margin-bottom: 0.5rem;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.05em;">SOCIAL GROWTH</span>
-          </div>
-          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: #FFFFFF;">Short–Form Social Growth</h3>
+      <div class="stack-grid">
+        <div class="stack-panel">
+          <h3 style="font-size: 26px; margin-bottom: 20px; color: var(--bone-bright);">Core Software</h3>
           
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.06); color: #FFFFFF; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content; border: 1px solid var(--glass-border);">
-            <i class="fa-regular fa-clock"></i> Delivery in 3 to 4 working days
+          <!-- Adobe Premiere Pro -->
+          <div class="app-row">
+            <div class="app-icon" style="background: transparent; border: none; padding: 0;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block;">
+                <!-- Official Premiere Pro Rounded Container -->
+                <rect width="24" height="24" rx="5.4" fill="#00005B"/>
+                <!-- Official Pr Typography Mark -->
+                <path d="M10.15 8.42a2.93 2.93 0 00-1.18-.2 13.9 13.9 0 00-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03a1.45 1.45 0 00-.93-1.46zM12.66 12c-.4.56-.96.98-1.61 1.22-.68.25-1.43.34-2.25.34l-.5-.01-.43-.01v3.21a.12.12 0 01-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01.76-.02.87-.02.91-.01c.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.15.42.23.85.23 1.3 0 .86-.2 1.57-.6 2.13zm6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 00-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 01-.16-.12v-5.58l-.01-.75-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 01.07-.11h1.78c.1 0 .18.07.2.16a3.03 3.03 0 01.13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 011.52-.39c.07-.01.13.04.14.11v.04z" fill="#EA77FF"/>
+              </svg>
+            </div>
+            <div style="flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: var(--bone-bright);">Adobe Premiere Pro</span>
+                <span class="mono" style="color: var(--blue-accent); font-size: 11px;">3+ Years</span>
+              </div>
+              <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                <div style="width: 95%; height: 100%; background: var(--blue-accent); box-shadow: 0 0 10px var(--blue-accent);"></div>
+              </div>
+            </div>
           </div>
 
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.75rem;">
-            Engineered specifically for YouTube Shorts, Instagram Reels, and TikTok to seize attention immediately and maximize watch loops.
-          </p>
+          <!-- Adobe After Effects -->
+          <div class="app-row">
+            <div class="app-icon" style="background: transparent; border: none; padding: 0;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block;">
+                <!-- Official After Effects Rounded Container -->
+                <rect width="24" height="24" rx="5.4" fill="#00005B"/>
+                <!-- Official Ae Typography Mark -->
+                <path d="M8.54 10.73c-.1-.31-.19-.61-.29-.92s-.19-.6-.27-.89c-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.13.51-.29.98-.44 1.4h2.54c-.06-.21-.14-.46-.23-.72-.09-.27-.18-.56-.27-.86zm8.58-.29c-.55-.03-1.07.26-1.33.76-.12.23-.19.47-.22.72h2.109c.26 0 .45 0 .57-.01.08-.01.16-.03.23-.08v-.1c0-.13-.021-.25-.061-.37-.178-.56-.708-.94-1.298-.92zM12.71 16.811h-2.09c-.07.01-.14-.041-.16-.11l-.82-2.4H5.92l-.76 2.36c-.02.09-.1.15-.19.14H3.09c-.11 0-.14-.06-.11-.18L6.2 7.39c.03-.1.06-.19.1-.31.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.07 0 .12.03.13.08l3.65 10.25c.03.11.001.161-.1.161zm7.851-3.991c-.021.189-.031.33-.041.42-.01.07-.069.13-.14.13-.06 0-.17.01-.33.021-.159.02-.35.029-.579.029-.23 0-.471-.04-.73-.04h-3.17c.039.31.14.62.31.89.181.271.431.48.729.601.4.17.841.26 1.281.25.35-.011.699-.04 1.039-.11.311-.039.61-.119.891-.23.05-.039.08-.02.08.08v1.531c0 .039-.01.08-.021.119-.021.03-.04.051-.069.07-.32.14-.65.24-1 .3-.471.09-.94.13-1.42.12-.761 0-1.4-.12-1.92-.35-.49-.211-.921-.541-1.261-.95-.319-.39-.55-.83-.69-1.31-.14-.471-.209-.961-.209-1.461 0-.539.08-1.07.25-1.59.16-.5.41-.96.75-1.37.33-.4.739-.72 1.209-.95.471-.23 1.03-.31 1.67-.31.531-.01 1.06.09 1.55.31.41.18.77.45 1.05.8.26.34.47.72.601 1.14.129.4.189.81.189 1.22 0 .24-.01.45-.019.64z" fill="#D291FF"/>
+              </svg>
+            </div>
+            <div style="flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: var(--bone-bright);">Adobe After Effects</span>
+                <span class="mono" style="color: var(--blue-accent); font-size: 11px;">2+ Years</span>
+              </div>
+              <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                <div style="width: 90%; height: 100%; background: var(--blue-accent); box-shadow: 0 0 10px var(--blue-accent);"></div>
+              </div>
+            </div>
+          </div>
 
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; flex-grow: 1; font-size: 0.9rem;">
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Delivery in 3 – 4 working days</strong>
+          <!-- Adobe Photoshop -->
+          <div class="app-row">
+            <div class="app-icon" style="background: transparent; border: none; padding: 0;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block;">
+                <!-- Official Photoshop Rounded Container -->
+                <rect width="24" height="24" rx="5.4" fill="#001E36"/>
+                <!-- Official Ps Typography Mark -->
+                <path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zm2.509 3.23c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z" fill="#31A8FF"/>
+              </svg>
+            </div>
+            <div style="flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: var(--bone-bright);">Adobe Photoshop</span>
+                <span class="mono" style="color: var(--blue-accent); font-size: 11px;">3+ Years</span>
+              </div>
+              <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                <div style="width: 95%; height: 100%; background: var(--blue-accent); box-shadow: 0 0 10px var(--blue-accent);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-panel">
+          <h3 style="font-size: 26px; margin-bottom: 20px; color: var(--bone-bright);">Specializations</h3>
+          <ul style="display: flex; flex-direction: column; gap: 14px;">
+            <li style="padding: 14px 18px; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-sm);">
+              <h4 style="font-size: 17px; margin-bottom: 4px; color: var(--bone-bright);">Narrative Storytelling & Retention Architecture</h4>
+              <p style="font-size: 13.5px; color: var(--muted);">Pacing calibrated for watch time and algorithm lift.</p>
             </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>2 Free Comprehensive Revision Rounds</strong>
+            <li style="padding: 14px 18px; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-sm);">
+              <h4 style="font-size: 17px; margin-bottom: 4px; color: var(--bone-bright);">Motion Graphics & Kinetic Typography</h4>
+              <p style="font-size: 13.5px; color: var(--muted);">Custom animated accents, callouts, and synced captions.</p>
             </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Viral Hook Optimization & Fast Pacing</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Amazing Kinetic Captions & Subtitles</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Immersive Micro-SFX & Audio Enhancement
+            <li style="padding: 14px 18px; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-sm);">
+              <h4 style="font-size: 17px; margin-bottom: 4px; color: var(--bone-bright);">Sound Design & Audio Mastering</h4>
+              <p style="font-size: 13.5px; color: var(--muted);">Layered SFX, vocal EQ enhancement, and ducking mastery.</p>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
 
-          <a href="#contact" class="btn-glass" style="width: 100%;">Discuss Project</a>
+    <!-- 6. Services & Packages Section -->
+    <section class="wrap" id="services">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>Packages</p>
+        <h2>Services & Production</h2>
+        <p class="sec-note">Dedicated editing solutions tailored to your channel volume and creative goals.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Short-Form Social -->
+        <div class="service-card">
+          <p class="mono" style="color: var(--blue-accent);">Social Growth</p>
+          <h3>Short–Form Reels</h3>
+          <div class="turnaround-pill">
+            <i class="fa-regular fa-clock"></i> 3 to 4 working days
+          </div>
+          <p style="color: var(--muted); font-size: 14px;">
+            Designed for Shorts, Reels, and TikTok to stop thumbs immediately and drive high replay loops.
+          </p>
+          <ul>
+            <li><span class="check">✓</span> <strong>Delivery in 3–4 working days</strong></li>
+            <li><span class="check">✓</span> <strong>2 Free Comprehensive Revisions</strong></li>
+            <li><span class="check">✓</span> <strong>Hook Optimization & Pacing</strong></li>
+            <li><span class="check">✓</span> <strong>Kinetic Typography & Captions</strong></li>
+            <li><span class="check">✓</span> Dynamic SFX & Audio Polish</li>
+          </ul>
+          <a href="#contact" class="pill pill-line" style="width: 100%;" data-magnetic>Discuss Project</a>
         </div>
 
-        <!-- Card 2: YouTube Long-Form (CREATOR CHOICE - Highlighted with Yellow Glow) -->
-        <div class="glass-card glass-card-yellow-glow scroll-reveal reveal-delay-2" style="padding: 2.25rem; display: flex; flex-direction: column; position: relative;">
-          
-          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--color-yellow); color: #060A14; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 1.1rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 14px var(--color-yellow-glow);">
-            CREATOR CHOICE
-          </div>
-
-          <div style="margin-bottom: 0.5rem; margin-top: 0.5rem;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-yellow); text-transform: uppercase; letter-spacing: 0.05em;">RETENTION ENGINE</span>
-          </div>
-          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: #FFFFFF;">YouTube Long–Form</h3>
-          
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(250, 204, 21, 0.12); color: var(--color-yellow); font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content; border: 1px solid rgba(250, 204, 21, 0.25);">
+        <!-- Service 2: YouTube Long-Form (Featured) -->
+        <div class="service-card is-featured">
+          <span class="featured-badge">CREATOR CHOICE</span>
+          <p class="mono" style="color: var(--blue-accent);">Retention Engine</p>
+          <h3>YouTube Long–Form</h3>
+          <div class="turnaround-pill" style="border-color: var(--blue-accent); color: var(--blue-accent);">
             <i class="fa-regular fa-clock"></i> 4 to 5 days turnaround
           </div>
-
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.75rem;">
-            Full end-to-end video post-production built around high-quality pacing, compelling narrative arcs, and click-through packaging.
+          <p style="color: var(--muted); font-size: 14px;">
+            Full end-to-end post-production engineered around retention arcs and high-CTR thumbnail packaging.
           </p>
-
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; flex-grow: 1; font-size: 0.9rem;">
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Amazing Storytelling & Narrative Structure</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>High-Quality Pacing to Maximize Retention</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Custom Motion Graphics & Premium Assets</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Dynamic Sound Effects & Audio Cleanup</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Free High–CTR Thumbnail Design Included</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> 4 – 5 Days Standard Turnaround · 2 Free Revisions
-            </li>
+          <ul>
+            <li><span class="check">✓</span> <strong>Storytelling & Narrative Flow</strong></li>
+            <li><span class="check">✓</span> <strong>Paced to Maximize Retention</strong></li>
+            <li><span class="check">✓</span> <strong>Custom Motion Graphics & SFX</strong></li>
+            <li><span class="check">✓</span> <strong>Free High–CTR 16:9 Thumbnail</strong></li>
+            <li><span class="check">✓</span> 2 Free Revisions Included</li>
           </ul>
-
-          <a href="#contact" class="btn-yellow" style="width: 100%;">Select Package</a>
+          <a href="#contact" class="pill pill-blue" style="width: 100%;" data-magnetic>Select Package</a>
         </div>
 
-        <!-- Card 3: Agency & Channel Retainer -->
-        <div class="glass-card scroll-reveal reveal-delay-3" style="padding: 2.25rem; display: flex; flex-direction: column;">
-          <div style="margin-bottom: 0.5rem;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.05em;">AGENCY & BRAND</span>
+        <!-- Service 3: Agency Retainer -->
+        <div class="service-card">
+          <p class="mono" style="color: var(--blue-accent);">Agency & Channel</p>
+          <h3>Monthly Retainer</h3>
+          <div class="turnaround-pill">
+            <i class="fa-regular fa-envelope"></i> Terms discussed via email
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: #FFFFFF;">Agency & Channel Retainer</h3>
-          
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.06); color: #FFFFFF; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 0.5rem; margin-bottom: 1.5rem; width: fit-content; border: 1px solid var(--glass-border);">
-            <i class="fa-regular fa-envelope"></i> Custom Terms Discussed via Email
-          </div>
-
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.75rem;">
-            For scaling channels and agencies looking for a dedicated video editor. Connect directly at <a href="mailto:yashpkhalokar@gmail.com" style="color: var(--color-yellow); text-decoration: none; font-weight: 600;">yashpkhalokar@gmail.com</a>.
+          <p style="color: var(--muted); font-size: 14px;">
+            For scaling channels and agencies looking for a dedicated video editor on continuous pipeline.
           </p>
-
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; flex-grow: 1; font-size: 0.9rem;">
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> <strong>Full Channel Content & Thumbnail Management</strong>
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Direct Communication & Dedicated Workflow
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Multicam Studio Synchronization & Audio Mastering
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Tailored Video Batch Volume & Pacing Standards
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <span style="color: var(--color-yellow); font-weight: 800;">✓</span> Terms & Retainer Rates Discussed in Detail via Email
-            </li>
+          <ul>
+            <li><span class="check">✓</span> <strong>Full Channel Content Management</strong></li>
+            <li><span class="check">✓</span> Direct Line & Priority Turnarounds</li>
+            <li><span class="check">✓</span> Multicam Studio Audio & Video Polish</li>
+            <li><span class="check">✓</span> Tailored Batch Volume & Standards</li>
+            <li><span class="check">✓</span> Flexible Terms & Dedicated Pipeline</li>
           </ul>
-
-          <a href="mailto:yashpkhalokar@gmail.com?subject=Agency%20%2F%20Retainer%20Inquiry%20to%20Yash%20Edits" class="btn-glass" style="width: 100%;">Email Yash Directly</a>
+          <a href="mailto:yashpkhalokar@gmail.com?subject=Agency%20Retainer%20Inquiry" class="pill pill-line" style="width: 100%;" data-magnetic>Email Yash Directly</a>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 8. FAQ Section -->
-  <section id="faq" style="padding: 5.5rem 0; border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      <div class="scroll-reveal" style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
-        <div class="section-badge">GOT QUESTIONS?</div>
-        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
-          Frequently Asked Questions
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1.05rem;">
-          Everything you need to know about revisions, delivery times, media transfers, and workflow.
-        </p>
+    <!-- 7. FAQ Section -->
+    <section class="wrap" id="faq">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>Got questions?</p>
+        <h2>Frequently Asked Questions</h2>
       </div>
 
-      <div class="glass-card scroll-reveal reveal-delay-1" style="max-width: 860px; margin: 0 auto; overflow: hidden;">
-        
-        <!-- FAQ 1: Revisions policy -->
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+      <div class="faq-wrap">
+        <div class="faq-row">
+          <button class="faq-q" onclick="toggleFaq(this)">
             <span>What is your revision policy?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
-            Every project includes <strong>2 free comprehensive rounds of revisions</strong> to guarantee the final cut matches your vision. You can leave precise timestamped notes so every cut, caption, and audio cue is dialed in.
+          <div class="faq-a">
+            Every project includes <strong>2 free comprehensive rounds of revisions</strong> to guarantee the final cut matches your exact vision. You can leave precise timestamped notes so every cut, caption, and audio cue is dialed in.
           </div>
         </div>
 
-        <!-- FAQ 2: Turnaround times -->
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-row">
+          <button class="faq-q" onclick="toggleFaq(this)">
             <span>What are your typical turnaround times?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-a">
             Short-form reels and motion design content are typically delivered within <strong>24 to 48 hours</strong> (or 3-4 working days for batch volumes). Full YouTube long-form edits take <strong>4 to 5 days</strong>.
           </div>
         </div>
 
-        <!-- FAQ 3: Raw footage transfer -->
-        <div class="faq-item active">
-          <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-row active">
+          <button class="faq-q" onclick="toggleFaq(this)">
             <span>How do we transfer raw footage files?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
-            We support Google Drive, Dropbox, WeTransfer, or Frame.io. Simply include your shared folder link in the project request form or email it directly to <strong>yashpkhalokar@gmail.com</strong>.
+          <div class="faq-a">
+            We support Google Drive, Dropbox, WeTransfer, or Frame.io. Simply include your shared folder link in the project request form or send it over email or WhatsApp directly.
           </div>
         </div>
 
-        <!-- FAQ 4: YouTube thumbnails -->
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-row">
+          <button class="faq-q" onclick="toggleFaq(this)">
             <span>Do you design YouTube thumbnails as well?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-a">
             Yes! High-CTR thumbnail design in true 16:9 ratio is included <strong>completely free</strong> with every full YouTube long-form package, or can be ordered separately for maximum click-through rates.
           </div>
         </div>
 
-        <!-- FAQ 5: Payment terms -->
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-row">
+          <button class="faq-q" onclick="toggleFaq(this)">
             <span>What are your payment terms?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-a">
             For individual projects, we operate on a standard 50% upfront deposit and 50% upon final approval prior to un-watermarked high-res exports. Monthly retainers are invoiced at the beginning of each billing cycle.
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 9. START A PROJECT INQUIRY FORM -->
-  <section id="contact" style="padding: 5.5rem 0; border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      <div style="max-width: 780px; margin: 0 auto;">
-        
-        <div class="scroll-reveal" style="text-align: center; margin-bottom: 3rem;">
-          <div class="section-badge">LET'S CREATE TOGETHER</div>
-          <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #FFFFFF;">
-            TELL ME ABOUT YOUR PROJECT
-          </h2>
-          <p style="color: var(--text-muted); font-size: 1.05rem;">
-            Fill out your project details below to receive a custom quote, timeline, and production scope.
-          </p>
-        </div>
+    <!-- 8. THE CRAFT, LIVE (MOVED DIRECTLY ABOVE CONTACT AS REQUESTED) -->
+    <!-- Interactive Panels: Pacing (BPM), Colour (Real Photo Comparison), Motion (Ease), Sound (Duck) -->
+    <section class="craft wrap" id="craft">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>What every edit gets</p>
+        <h2>The craft, live.</h2>
+        <p class="sec-note">
+          Each panel runs the real editing technique interactively in your browser. Move your cursor across each panel to experience how the edits are engineered.
+        </p>
+      </div>
 
-        <div class="glass-card glass-card-yellow-glow scroll-reveal reveal-delay-1" style="padding: 2.5rem; margin-bottom: 3.5rem;">
-          
-          <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-            <!-- Web3Forms Hidden Inputs -->
-            <input type="hidden" name="access_key" value="128afa25-dc06-4d15-9e3a-16521c170424" />
-            <input type="hidden" name="subject" value="New Video Editing Inquiry - Yash Edits Portfolio" />
-            <input type="hidden" name="from_name" value="Portfolio Inquiry System" />
+      <div class="craft-grid">
+        <!-- Interactive 1: Pacing (BPM & Cut Timeline) -->
+        <article class="tile" data-demo="pace">
+          <div class="tile-head">
+            <h3>Pacing</h3>
+            <span class="mono tile-read" id="paceRead">128 BPM</span>
+          </div>
+          <canvas aria-hidden="true" class="tile-canvas" id="canvasPace"></canvas>
+          <p class="tile-copy">Cuts timed to the beat and paced to hold attention, for Shorts, long form or anything between.</p>
+          <p class="mono tile-hint">Move cursor across to change the tempo</p>
+        </article>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-              <div class="form-group">
-                <label for="name" class="form-label">Your Name *</label>
-                <input type="text" id="name" name="name" required class="form-input" placeholder="e.g. Alex Morgan" />
-              </div>
+        <!-- Interactive 2: Colour (Raw Log Profile vs Cinematic Grade Real Photo Slider) -->
+        <article class="tile" data-demo="grade">
+          <div class="tile-head">
+            <div>
+              <h3>Colour</h3>
+              <p class="mono" style="color: var(--blue-accent); font-size: 11px; margin-top: 2px;">
+                Raw Log Profile vs Cinematic Grade
+              </p>
+            </div>
+            <span class="mono tile-read" id="gradeRead">Log 50% / 50% Graded</span>
+          </div>
 
-              <div class="form-group">
-                <label for="contact_handle" class="form-label">Best Way To Reach You *</label>
-                <input type="text" id="contact_handle" name="contact_handle" required class="form-input" placeholder="Email / WhatsApp / Discord / Instagram" />
-              </div>
+          <!-- Real Photo Before/After Comparison Slider -->
+          <div class="color-slider-wrap" id="colorSlider">
+            <!-- Graded Image (Background) -->
+            <div class="color-slide-layer is-graded">
+              <img src="/assets/cinematic_grade_doc.jpg" id="imgGraded" alt="Cinematic Rec.709 Grade" />
+              <span class="color-badge badge-graded mono">REC.709 CINEMATIC GRADE</span>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-              <div class="form-group">
-                <label for="project_type" class="form-label">Project Type *</label>
-                <select id="project_type" name="project_type" class="form-select">
-                  <option value="Short-Form Motion Design & Reels">Short-Form Motion Design & Reels</option>
-                  <option value="YouTube Long-Form Video" selected>YouTube Long-Form Video</option>
-                  <option value="Thumbnail & Graphic Design">Thumbnail & Graphic Design</option>
-                  <option value="Full Channel Retainer">Full Channel Retainer</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="video_length" class="form-label">Final Video Length *</label>
-                <select id="video_length" name="video_length" class="form-select">
-                  <option value="15-30 sec">15-30 sec</option>
-                  <option value="30-60 sec">30-60 sec</option>
-                  <option value="3-5 minutes">3-5 minutes</option>
-                  <option value="8-12+ minutes" selected>8-12+ minutes</option>
-                  <option value="N/A">N/A</option>
-                </select>
-              </div>
+            <!-- Raw Log Image (Clipped Foreground) -->
+            <div class="color-slide-layer is-raw" id="layerRaw" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <img src="/assets/cinematic_grade_doc.jpg" id="imgRaw" alt="Sony S-Log3 Raw Profile" />
+              <span class="color-badge badge-raw mono">RAW S-LOG3 PROFILE</span>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-              <div class="form-group">
-                <label for="footage_link" class="form-label">
-                  Raw Footage / Reference Link 
-                  <span style="font-weight: 400; color: var(--text-muted); font-size: 0.8rem;">(Optional — Paste Google Drive / Dropbox link)</span>
-                </label>
-                <input type="text" id="footage_link" name="footage_link" class="form-input" placeholder="https://drive.google.com/..." />
-              </div>
-
-              <div class="form-group">
-                <label for="budget_field" class="form-label">Budget Range</label>
-                <input 
-                  type="text" 
-                  id="budget_field" 
-                  name="budget" 
-                  value="To be discussed / Quote upon request" 
-                  readonly 
-                  class="form-input" 
-                />
+            <!-- Dividing Split Handle -->
+            <div class="color-slider-handle" id="sliderHandle" style="left: 50%;">
+              <div class="handle-knob">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>
+                </svg>
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="project_notes" class="form-label">Project Details & Notes</label>
-              <textarea id="project_notes" name="project_notes" rows="4" class="form-textarea" placeholder="Describe your channel, project scope, desired pacing references, or special instructions..."></textarea>
+          <!-- Scene Selector Switcher -->
+          <div class="color-scene-bar">
+            <div class="scene-switcher">
+              <button class="scene-btn is-active" id="btnSceneDoc" onclick="switchColorScene('doc')">
+                <i class="fa-solid fa-camera"></i> Scene 01: 35mm Documentary
+              </button>
+              <button class="scene-btn" id="btnSceneUrban" onclick="switchColorScene('urban')">
+                <i class="fa-solid fa-film"></i> Scene 02: Neon Cyberpunk
+              </button>
+            </div>
+            <span class="mono color-lut-tag">LUT: KODAK 2383 PRINT</span>
+          </div>
+
+          <p class="tile-copy">A grade that sets the mood, separates skin tones, and gives your channel a signature cinematic look.</p>
+          <p class="mono tile-hint">Drag or hover slider across to compare Raw Log vs Graded</p>
+        </article>
+
+        <!-- Interactive 3: Motion (Ease 3.0 Bezier Curve) -->
+        <article class="tile" data-demo="motion">
+          <div class="tile-head">
+            <h3>Motion</h3>
+            <span class="mono tile-read" id="motionRead">Ease 3.0</span>
+          </div>
+          <canvas aria-hidden="true" class="tile-canvas" id="canvasMotion"></canvas>
+          <p class="tile-copy">Motion graphics and effects eased properly with Bezier curves, so they serve the story instead of shouting over it.</p>
+          <p class="mono tile-hint">Move cursor up and down to bend the curve</p>
+        </article>
+
+        <!-- Interactive 4: Sound (Voiceover Dynamic Ducking) -->
+        <article class="tile" data-demo="sound">
+          <div class="tile-head">
+            <h3>Sound</h3>
+            <span class="mono tile-read" id="soundRead">Duck −12 dB</span>
+          </div>
+          <canvas aria-hidden="true" class="tile-canvas" id="canvasSound"></canvas>
+          <p class="tile-copy">Music that steps aside dynamically for the voice, and sound impacts that land with surgical precision on cuts.</p>
+          <p class="mono tile-hint">Move cursor across to set how far the music ducks</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 9. Contact Section -->
+    <section class="wrap" id="contact">
+      <div class="contact-wrap">
+        <p class="eyebrow mono" style="margin-bottom: 14px;"><i class="live"></i>Taking new clients</p>
+        <h2 style="font-size: clamp(48px, 8vw, 110px); line-height: 0.9; margin-bottom: 16px;">
+          Send me your footage.
+        </h2>
+        <p style="color: var(--muted); font-size: 18px; max-width: 48ch; margin-bottom: 36px;">
+          Tell me what you're making and where it's going. I'll reply with how I'd cut it, timeline, and custom quote.
+        </p>
+
+        <!-- Project Submission Form -->
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+          <input type="hidden" name="access_key" value="128afa25-dc06-4d15-9e3a-16521c170424" />
+          <input type="hidden" name="subject" value="New Video Editing Inquiry - Yash Edits" />
+          <input type="hidden" name="from_name" value="Yash Edits Portfolio" />
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name" class="form-lbl">Your Name *</label>
+              <input type="text" id="name" name="name" required class="form-ctrl" placeholder="Alex Morgan" />
             </div>
 
-            <div id="formStatus" style="display: none; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.25rem; font-size: 0.9rem;"></div>
+            <div class="form-field">
+              <label for="contact_handle" class="form-lbl">Best Way To Reach You *</label>
+              <input type="text" id="contact_handle" name="contact_handle" required class="form-ctrl" placeholder="Email / WhatsApp / Discord" />
+            </div>
+          </div>
 
-            <button type="submit" class="btn-yellow" id="submitBtn" style="width: 100%; padding: 0.95rem; font-size: 1rem;">
-              Submit Project Request
-            </button>
-          </form>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="project_type" class="form-lbl">Project Type *</label>
+              <select id="project_type" name="project_type" class="form-ctrl">
+                <option value="Short-Form Motion Design & Reels">Short-Form Motion Design & Reels</option>
+                <option value="YouTube Long-Form Video" selected>YouTube Long-Form Video</option>
+                <option value="Thumbnail & Graphic Design">Thumbnail & Graphic Design</option>
+                <option value="Full Channel Retainer">Full Channel Retainer</option>
+              </select>
+            </div>
 
-        </div>
+            <div class="form-field">
+              <label for="video_length" class="form-lbl">Video Length *</label>
+              <select id="video_length" name="video_length" class="form-ctrl">
+                <option value="15-30 sec">15-30 sec</option>
+                <option value="30-60 sec">30-60 sec</option>
+                <option value="3-5 minutes">3-5 minutes</option>
+                <option value="8-12+ minutes" selected>8-12+ minutes</option>
+              </select>
+            </div>
+          </div>
 
-        <!-- 10. DIRECT CONTACT BUTTONS (No raw phone number displayed, opens apps directly) -->
-        <div class="scroll-reveal reveal-delay-2" style="text-align: center; padding: 2rem 1.5rem; background: var(--glass-panel); border: 1px solid var(--glass-border); border-radius: 1rem; backdrop-filter: blur(20px);">
-          <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: #FFFFFF;">
-            Prefer Instant Direct Messaging?
-          </h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-            Click below to launch WhatsApp or open your email client directly without having to copy details manually.
-          </p>
+          <div class="form-field">
+            <label for="footage_link" class="form-lbl">Raw Footage / Reference Link (Drive / Dropbox)</label>
+            <input type="text" id="footage_link" name="footage_link" class="form-ctrl" placeholder="https://drive.google.com/..." />
+          </div>
 
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-            <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project%20or%20book%20a%20call" target="_blank" rel="noopener noreferrer" class="btn-direct-chat">
-              <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
-              Chat on WhatsApp
+          <div class="form-field">
+            <label for="message" class="form-lbl">Project Brief & Creative Vision *</label>
+            <textarea id="message" name="message" required class="form-ctrl" placeholder="Tell me about your channel style, deadline, and reference videos you admire..."></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="pill pill-blue" style="width: 100%; height: 54px; font-size: 16px;" data-magnetic>
+            Submit Project Request
+          </button>
+
+          <div id="formStatus" style="margin-top: 16px; padding: 12px 18px; border-radius: 8px; font-size: 14px; display: none;"></div>
+        </form>
+
+        <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <p class="mono" style="font-size: 11px; color: var(--muted); text-transform: uppercase;">Prefer Direct Messaging?</p>
+            <p style="font-size: 15px; color: var(--bone-bright); margin-top: 2px;">Chat directly with Yash on WhatsApp or Email</p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-chat" data-magnetic>
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
             </a>
-            <a href="mailto:yashpkhalokar@gmail.com?subject=Video%20Editing%20%26%20Motion%20Design%20Inquiry%20to%20Yash%20Edits&body=Hi%20Yash,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20or%20book%20a%20call.%0A%0AProject%20Details:" class="btn-direct-email">
-              <i class="fa-solid fa-envelope" style="font-size: 1.1rem;"></i>
-              Send Direct Email
+            <a href="mailto:yashpkhalokar@gmail.com" class="pill pill-line" data-magnetic>
+              <i class="fa-regular fa-envelope"></i> Send an Email
             </a>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- Giant Animated Yash Edits Signature Section -->
+    <section class="yash-signature-section" id="yash-signature">
+      <div class="yash-signature-glow" aria-hidden="true"></div>
+      <div class="yash-signature-wrapper">
+        <div class="yash-signature-badge mono">
+          <i class="live"></i> Senior Video Editor & Motion Designer
+        </div>
+        <div class="yash-signature-title" aria-label="Yash Edits">
+          <span class="word">
+            <span class="char" style="animation-delay: 0.1s;">Y</span>
+            <span class="char" style="animation-delay: 0.2s;">A</span>
+            <span class="char" style="animation-delay: 0.3s;">S</span>
+            <span class="char" style="animation-delay: 0.4s;">H</span>
+          </span>
+          <span class="word">
+            <span class="char char-accent" style="animation-delay: 0.5s;">E</span>
+            <span class="char char-accent" style="animation-delay: 0.6s;">D</span>
+            <span class="char char-accent" style="animation-delay: 0.7s;">I</span>
+            <span class="char char-accent" style="animation-delay: 0.8s;">T</span>
+            <span class="char char-accent" style="animation-delay: 0.9s;">S</span>
+          </span>
+        </div>
+        <p class="yash-signature-sub mono">
+          Retention Cuts · Motion Graphics · Sound Architecture · Color Grading
+        </p>
+      </div>
+    </section>
+
+    <!-- Giant Foot Marquee -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-text">YASH EDITS · HIGH RETENTION CUTS · MOTION DESIGN · KINETIC TYPOGRAPHY · SOUND ARCHITECTURE · COLOR GRADING · YASH EDITS · HIGH RETENTION CUTS · MOTION DESIGN · KINETIC TYPOGRAPHY · SOUND ARCHITECTURE · COLOR GRADING · </span>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- 11. Footer -->
-  <footer style="padding: 4rem 0 2.5rem; border-top: 1px solid var(--glass-border); background: #000000;">
-    <div class="container">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 2.5rem;">
-        
-        <div>
-          <a href="#home" class="brand-logo" style="display: inline-block; margin-bottom: 0.5rem;">
-            YASH <span class="accent-word">EDITS</span>
-          </a>
-          <p style="color: var(--text-muted); font-size: 0.875rem; max-width: 360px;">
-            High-converting video editing, motion graphics, and channel growth for creators and brands.
-          </p>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-          <a href="https://www.youtube.com/@mr.khalokar" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='#94A3B8'">
-            YouTube (@mr.khalokar)
-          </a>
-          <a href="mailto:yashpkhalokar@gmail.com" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='#94A3B8'">
-            yashpkhalokar@gmail.com
-          </a>
-        </div>
-
-        <button onclick="scrollToTop()" class="btn-glass" style="padding: 0.5rem 1.15rem; font-size: 0.85rem; cursor: pointer;">
-          Back to Top ↑
-        </button>
-
-      </div>
-
-      <div style="border-top: 1px solid var(--glass-border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--text-subtle);">
-        <div>
-          © 2026 YASH EDITS. All rights reserved.
-        </div>
-        <div>
-          Designed for High Retention & Visual Storytelling.
-        </div>
-      </div>
+  <!-- Site Colophon -->
+  <footer class="foot-bar">
+    <div class="mono" style="color: var(--bone);">
+      © <span id="yr">2026</span> Yash Khalokar. All edits reserved.
+    </div>
+    <div class="mono" style="font-size: 11px; color: var(--muted);">
+      Crafted with Big Shoulders Display & SF Pro Display · 24 FPS
     </div>
   </footer>
 
-  <!-- JavaScript Logic -->
+  <!-- Interactive JavaScript Engine -->
   <script>
-    // Smooth Scroll to Top
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 1. Current Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // 2. Custom Cursor Follower
+    const cursor = document.getElementById('cursor');
+    const cursorLabel = document.getElementById('cursorLabel');
+    let mouseX = -100, mouseY = -100;
+    let cursorX = -100, cursorY = -100;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function updateCursor() {
+      cursorX += (mouseX - cursorX) * 0.22;
+      cursorY += (mouseY - cursorY) * 0.22;
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+      requestAnimationFrame(updateCursor);
     }
+    requestAnimationFrame(updateCursor);
 
-    // Portfolio Filter Function (All Work, Shorts, YouTube, Graphics)
-    window.filterPortfolio = function(category, element) {
-      document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
-      if (element) element.classList.add('active');
-
-      const items = document.querySelectorAll('.portfolio-item');
-      items.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (category === 'all' || itemCategory === category) {
-          item.style.display = 'flex';
-          item.style.opacity = '0';
-          setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transition = 'opacity 0.25s ease';
-          }, 20);
+    document.querySelectorAll('a, button, [data-cursor]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        if (el.dataset.cursor === 'play') {
+          cursor.classList.add('is-play');
+          cursorLabel.textContent = 'PLAY';
         } else {
-          item.style.display = 'none';
+          cursor.classList.add('is-hover');
         }
       });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('is-hover', 'is-play');
+      });
+    });
+
+    // Hover-to-Play for YouTube Video Cards (using YouTube iframe API postMessage)
+    document.querySelectorAll('.work-card, .hero-featured-card').forEach(card => {
+      const iframe = card.querySelector('iframe');
+      if (!iframe) return;
+
+      card.addEventListener('mouseenter', () => {
+        try {
+          iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        } catch (e) {}
+      });
+
+      card.addEventListener('mouseleave', () => {
+        try {
+          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        } catch (e) {}
+      });
+    });
+
+    // 3. Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu() {
+      if (menuToggle && mobileMenu) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    }
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        mobileMenu.classList.toggle('is-open', !isOpen);
+        mobileMenu.setAttribute('aria-hidden', isOpen);
+      });
+    }
+
+    // 5. Portfolio Section Filter (Separated Sub-Sections with Zero Dead Space)
+    window.filterPortfolio = function(category, btn) {
+      // Update chip active state
+      document.querySelectorAll('.filters .chip').forEach(c => c.classList.remove('is-on'));
+      if (btn) btn.classList.add('is-on');
+
+      const groupShorts = document.getElementById('group-shorts');
+      const groupLongform = document.getElementById('group-longform');
+      const groupThumbnails = document.getElementById('group-thumbnails');
+
+      if (category === 'all') {
+        if (groupShorts) groupShorts.classList.remove('is-hidden');
+        if (groupLongform) groupLongform.classList.remove('is-hidden');
+        if (groupThumbnails) groupThumbnails.classList.remove('is-hidden');
+      } else if (category === 'shorts') {
+        if (groupShorts) {
+          groupShorts.classList.remove('is-hidden');
+          groupShorts.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (groupLongform) groupLongform.classList.add('is-hidden');
+        if (groupThumbnails) groupThumbnails.classList.add('is-hidden');
+      } else if (category === 'longform') {
+        if (groupShorts) groupShorts.classList.add('is-hidden');
+        if (groupLongform) {
+          groupLongform.classList.remove('is-hidden');
+          groupLongform.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (groupThumbnails) groupThumbnails.classList.add('is-hidden');
+      } else if (category === 'thumbnails') {
+        if (groupShorts) groupShorts.classList.add('is-hidden');
+        if (groupLongform) groupLongform.classList.add('is-hidden');
+        if (groupThumbnails) {
+          groupThumbnails.classList.remove('is-hidden');
+          groupThumbnails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
     };
 
-    // FAQ Accordion Toggle
+    // 6. FAQ Accordion Toggle
     window.toggleFaq = function(btn) {
-      const item = btn.closest('.faq-item');
-      if (!item) return;
-      const isActive = item.classList.contains('active');
-      
-      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
+      const row = btn.parentElement;
+      const isActive = row.classList.contains('active');
+      document.querySelectorAll('.faq-row').forEach(r => r.classList.remove('active'));
+      if (!isActive) row.classList.add('active');
+    };
+
+    // 7. Timeline Scrubber Progress Sync
+    const timelineFill = document.getElementById('timelineFill');
+    const timelineHead = document.getElementById('timelineHead');
+    const timelineTrack = document.getElementById('timelineTrack');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = Math.min(Math.max((scrollY / maxScroll) * 100, 0), 100);
+      if (timelineFill && timelineHead) {
+        timelineFill.style.width = `${pct}%`;
+        timelineHead.style.left = `${pct}%`;
+      }
+    }, { passive: true });
+
+    if (timelineTrack) {
+      timelineTrack.addEventListener('click', (e) => {
+        const rect = timelineTrack.getBoundingClientRect();
+        const clickRatio = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo({
+          top: clickRatio * maxScroll,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // ====================================================================
+    // OFFCUT CANVAS ENGINE FOR PACING, SOUND, MOTION & REAL PHOTO COLOR SLIDER
+    // ====================================================================
+    const palette = {
+      ink: '#070707',
+      ink2: '#0e0e0e',
+      ink3: '#181818',
+      paper: '#efe8dd',
+      paper2: '#d9cdbd',
+      haze: '#8e8e8e',
+      dim: '#2e2e2e',
+      white: '#ffffff',
+      accent: '#38bdf8' // Glassy blue accent
+    };
+
+    // Helper: Deterministic pseudo noise function (from Offcut)
+    const U = (t) => {
+      const i = Math.sin(t * 127.1 + 311.7) * 43758.5453123;
+      return i - Math.floor(i);
+    };
+
+    // Helper: Fractional part
+    const fract = (t) => t - Math.floor(t);
+
+    // Helper: Draw mono label
+    function drawLabel(ctx, text, x, y, col = palette.haze, align = 'left') {
+      ctx.font = '500 10px "Martian Mono", monospace';
+      ctx.fillStyle = col;
+      ctx.textAlign = align;
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText(text.toUpperCase(), x, y);
+    }
+
+    // --- 8A. Interactive 1: Pacing (BPM & Cut Blocks from Offcut) ---
+    const canvasPace = document.getElementById('canvasPace');
+    const paceRead = document.getElementById('paceRead');
+    let paceHoverX = 0.5;
+    let paceBeat = 0;
+
+    if (canvasPace) {
+      const ctx = canvasPace.getContext('2d');
+      let w = 0, h = 0;
+
+      function resizePace() {
+        const rect = canvasPace.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        w = rect.width;
+        h = rect.height;
+        canvasPace.width = w * dpr;
+        canvasPace.height = h * dpr;
+        ctx.resetTransform();
+        ctx.scale(dpr, dpr);
+      }
+      resizePace();
+      window.addEventListener('resize', resizePace);
+
+      canvasPace.addEventListener('mousemove', (e) => {
+        const rect = canvasPace.getBoundingClientRect();
+        paceHoverX = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+      });
+      canvasPace.addEventListener('mouseleave', () => {
+        paceHoverX = 0.5;
+      });
+
+      let lastTimePace = performance.now();
+      function renderPace(now) {
+        const delta = Math.min((now - lastTimePace) / 1000, 0.1);
+        lastTimePace = now;
+
+        const bpm = 84 + paceHoverX * 88;
+        paceBeat += delta * (bpm / 60);
+
+        if (paceRead) paceRead.textContent = `${Math.round(bpm)} BPM`;
+
+        ctx.fillStyle = palette.ink;
+        ctx.fillRect(0, 0, w, h);
+
+        const r = Math.max(54, w / 7.5);
+        const u = paceBeat * r;
+        const d = w * 0.4;
+        const f = 24, blockH = 46;
+        const waveY = h * 0.72, waveH = h * 0.18;
+
+        const v = Math.floor((u - d) / r) - 1;
+        const S = v + Math.ceil(w / r) + 2;
+
+        // Draw cut blocks
+        for (let p = v; p <= S; p++) {
+          const x = d + (p * r - u);
+          ctx.fillStyle = palette.ink3;
+          ctx.fillRect(Math.round(x), f + blockH + 8, 1, h - f - blockH - 18);
+
+          const a = U(p);
+          const blockColor = a > 0.88 ? palette.accent : (a > 0.55 ? palette.paper2 : (a > 0.28 ? palette.paper : palette.haze));
+          const gx = x + 2, bw = r - 4;
+
+          if (x + r <= d + 0.5) {
+            ctx.fillStyle = blockColor;
+            ctx.beginPath();
+            ctx.roundRect(gx, f, bw, blockH, 6);
+            ctx.fill();
+          } else if (x < d) {
+            ctx.fillStyle = blockColor;
+            ctx.beginPath();
+            ctx.roundRect(gx, f, Math.max(0, d - gx), blockH, 6);
+            ctx.fill();
+            ctx.strokeStyle = palette.dim;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.roundRect(gx + 0.5, f + 0.5, bw - 1, blockH - 1, 6);
+            ctx.stroke();
+          } else {
+            ctx.strokeStyle = palette.dim;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.roundRect(gx + 0.5, f + 0.5, bw - 1, blockH - 1, 6);
+            ctx.stroke();
+          }
+        }
+
+        // Draw audio beats waveform under the blocks
+        for (let p = 0; p < w; p += 4) {
+          const x = (p - d + u) / r;
+          const a = Math.exp(-fract(x) * 6);
+          const noise = U(Math.floor(x * 8)) * 0.35;
+          const g = (0.12 + 0.72 * a + noise * (1 - a)) * waveH;
+          ctx.fillStyle = p < d ? palette.haze : palette.dim;
+          ctx.fillRect(p, waveY - g, 2, g * 2);
+        }
+
+        // Playhead with bright transient beat flash
+        const L = Math.exp(-fract(paceBeat) * 10);
+        ctx.fillStyle = palette.white;
+        ctx.fillRect(Math.round(d) - 1, f - 6, 2, h - f - 4);
+
+        if (L > 0.05) {
+          ctx.globalAlpha = L;
+          ctx.fillStyle = palette.accent;
+          ctx.fillRect(Math.round(d) - 3, f - 6, 6, h - f - 4);
+          ctx.globalAlpha = 1;
+        }
+
+        drawLabel(ctx, 'CUT', d + 8, f - 10, palette.white);
+
+        requestAnimationFrame(renderPace);
+      }
+      requestAnimationFrame(renderPace);
+    }
+
+    // --- 8B. Interactive 2: Colour (Real Photo Comparison Slider) ---
+    const colorSlider = document.getElementById('colorSlider');
+    const layerRaw = document.getElementById('layerRaw');
+    const sliderHandle = document.getElementById('sliderHandle');
+    const gradeRead = document.getElementById('gradeRead');
+    const imgGraded = document.getElementById('imgGraded');
+    const imgRaw = document.getElementById('imgRaw');
+    let colorPct = 50;
+
+    function updateColorSlider(pct) {
+      colorPct = Math.min(Math.max(pct, 0), 100);
+      if (layerRaw) layerRaw.style.clipPath = `polygon(0 0, ${colorPct}% 0, ${colorPct}% 100%, 0 100%)`;
+      if (sliderHandle) sliderHandle.style.left = `${colorPct}%`;
+      if (gradeRead) {
+        gradeRead.textContent = `Log ${Math.round(colorPct)}% / ${Math.round(100 - colorPct)}% Graded`;
+      }
+    }
+
+    if (colorSlider) {
+      let isDraggingColor = false;
+
+      function handleColorMove(e) {
+        const rect = colorSlider.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const pct = ((clientX - rect.left) / rect.width) * 100;
+        updateColorSlider(pct);
+      }
+
+      colorSlider.addEventListener('mousedown', (e) => {
+        isDraggingColor = true;
+        handleColorMove(e);
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (isDraggingColor) handleColorMove(e);
+      });
+      window.addEventListener('mouseup', () => {
+        isDraggingColor = false;
+      });
+
+      // Hover reactive
+      colorSlider.addEventListener('mousemove', (e) => {
+        if (!isDraggingColor) handleColorMove(e);
+      });
+
+      // Touch events for mobile
+      colorSlider.addEventListener('touchstart', (e) => {
+        isDraggingColor = true;
+        handleColorMove(e);
+      }, { passive: true });
+      colorSlider.addEventListener('touchmove', (e) => {
+        if (isDraggingColor) handleColorMove(e);
+      }, { passive: true });
+      colorSlider.addEventListener('touchend', () => {
+        isDraggingColor = false;
+      });
+    }
+
+    window.switchColorScene = function(scene) {
+      const btnDoc = document.getElementById('btnSceneDoc');
+      const btnUrban = document.getElementById('btnSceneUrban');
+
+      if (scene === 'doc') {
+        if (btnDoc) btnDoc.classList.add('is-active');
+        if (btnUrban) btnUrban.classList.remove('is-active');
+        if (imgGraded) imgGraded.src = '/assets/cinematic_grade_doc.jpg';
+        if (imgRaw) imgRaw.src = '/assets/cinematic_grade_doc.jpg';
+      } else {
+        if (btnDoc) btnDoc.classList.remove('is-active');
+        if (btnUrban) btnUrban.classList.add('is-active');
+        if (imgGraded) imgGraded.src = '/assets/cinematic_grade_urban.jpg';
+        if (imgRaw) imgRaw.src = '/assets/cinematic_grade_urban.jpg';
       }
     };
 
-    // Setup on Page Load
-    document.addEventListener('DOMContentLoaded', () => {
-      // Mobile Nav Toggle
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const navLinks = document.getElementById('navLinks');
-      if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', () => {
-          navLinks.classList.toggle('mobile-open');
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('mobile-open');
-          });
-        });
+    // --- 8C. Interactive 3: Motion (Bezier Easing Curve from Offcut) ---
+    const canvasMotion = document.getElementById('canvasMotion');
+    const motionRead = document.getElementById('motionRead');
+    let motionHoverY = 0.5;
+
+    if (canvasMotion) {
+      const ctx = canvasMotion.getContext('2d');
+      let w = 0, h = 0;
+
+      function resizeMotion() {
+        const rect = canvasMotion.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        w = rect.width;
+        h = rect.height;
+        canvasMotion.width = w * dpr;
+        canvasMotion.height = h * dpr;
+        ctx.resetTransform();
+        ctx.scale(dpr, dpr);
       }
+      resizeMotion();
+      window.addEventListener('resize', resizeMotion);
 
-      // Default to All Work view
-      const allTab = document.querySelector('.filter-tab');
-      if (allTab) {
-        window.filterPortfolio('all', allTab);
-      }
+      canvasMotion.addEventListener('mousemove', (e) => {
+        const rect = canvasMotion.getBoundingClientRect();
+        motionHoverY = Math.min(Math.max((e.clientY - rect.top) / rect.height, 0), 1);
+      });
+      canvasMotion.addEventListener('mouseleave', () => {
+        motionHoverY = 0.5;
+      });
 
-      // Apple-Style Smooth Scroll Reveal Intersection Observer
-      const revealElements = document.querySelectorAll('.scroll-reveal');
-      if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.12,
-          rootMargin: '0px 0px -40px 0px'
-        });
+      let clockMotion = 0;
+      let lastTimeMotion = performance.now();
 
-        revealElements.forEach(el => revealObserver.observe(el));
-      } else {
-        revealElements.forEach(el => el.classList.add('revealed'));
-      }
+      function renderMotion(now) {
+        const delta = Math.min((now - lastTimeMotion) / 1000, 0.1);
+        lastTimeMotion = now;
+        clockMotion += delta;
 
-      // Web3Forms Form submission handler
-      const contactForm = document.getElementById('contactForm');
-      const formStatus = document.getElementById('formStatus');
-      const submitBtn = document.getElementById('submitBtn');
+        const easePower = 1.2 + (1 - motionHoverY) * 4.3;
+        if (motionRead) motionRead.textContent = `Ease ${easePower.toFixed(1)}`;
 
-      if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Submitting Request...';
+        const easeFn = (a) => 1 - Math.pow(1 - a, easePower);
+        const period = 2.4, duration = 1.5;
+        const progress = (clockMotion % period) / duration;
+        const clampedProg = Math.min(1, progress);
+
+        ctx.fillStyle = palette.ink;
+        ctx.fillRect(0, 0, w, h);
+
+        const isNarrow = w < 440;
+        const leftPad = isNarrow ? 24 : 36;
+        const rightPad = isNarrow ? 24 : 36;
+        const trackW = w - leftPad - rightPad;
+
+        const tracks = [
+          [h * 0.34, (a) => a, 'Linear', palette.haze],
+          [h * 0.70, easeFn, 'Eased', palette.accent]
+        ];
+
+        for (const [yPos, fn, label, color] of tracks) {
+          // Rail line
+          ctx.fillStyle = palette.ink3;
+          ctx.fillRect(leftPad, yPos - 1, trackW, 2);
+
+          // Keyframe interval markers
+          for (let step = 0; step <= 10; step++) {
+            const markX = leftPad + trackW * fn(step / 10);
+            ctx.strokeStyle = palette.dim;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(markX, yPos, isNarrow ? 4 : 6, 0, Math.PI * 2);
+            ctx.stroke();
           }
 
-          const formData = new FormData(contactForm);
+          // Animated Traveling Ball
+          const ballX = leftPad + trackW * fn(clampedProg);
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.arc(ballX, yPos, isNarrow ? 7 : 9, 0, Math.PI * 2);
+          ctx.fill();
 
-          try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              body: formData
-            });
-            const result = await response.json();
+          drawLabel(ctx, label, leftPad, yPos - 14, color);
+        }
 
-            if (result.success) {
-              if (formStatus) {
-                formStatus.style.display = 'block';
-                formStatus.style.background = 'rgba(250, 204, 21, 0.15)';
-                formStatus.style.border = '1px solid var(--color-yellow)';
-                formStatus.style.color = '#FACC15';
-                formStatus.innerHTML = '✓ <strong>Project request submitted successfully!</strong> Yash will review your inquiry and reach out within 24 hours.';
-              }
-              contactForm.reset();
+        requestAnimationFrame(renderMotion);
+      }
+      requestAnimationFrame(renderMotion);
+    }
+
+    // --- 8D. Interactive 4: Sound (Voiceover Dynamic Ducking from Offcut) ---
+    const canvasSound = document.getElementById('canvasSound');
+    const soundRead = document.getElementById('soundRead');
+    let soundHoverX = 0.5;
+    let soundScroll = 0;
+
+    if (canvasSound) {
+      const ctx = canvasSound.getContext('2d');
+      let w = 0, h = 0;
+
+      function resizeSound() {
+        const rect = canvasSound.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        w = rect.width;
+        h = rect.height;
+        canvasSound.width = w * dpr;
+        canvasSound.height = h * dpr;
+        ctx.resetTransform();
+        ctx.scale(dpr, dpr);
+      }
+      resizeSound();
+      window.addEventListener('resize', resizeSound);
+
+      canvasSound.addEventListener('mousemove', (e) => {
+        const rect = canvasSound.getBoundingClientRect();
+        soundHoverX = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+      });
+      canvasSound.addEventListener('mouseleave', () => {
+        soundHoverX = 0.5;
+      });
+
+      let lastTimeSound = performance.now();
+
+      function renderSound(now) {
+        const delta = Math.min((now - lastTimeSound) / 1000, 0.1);
+        lastTimeSound = now;
+
+        const duckDb = 3 + soundHoverX * 15;
+        if (soundRead) soundRead.textContent = `Duck −${Math.round(duckDb)} dB`;
+
+        const duckRatio = Math.pow(10, -duckDb / 20);
+        soundScroll += delta * 46;
+
+        ctx.fillStyle = palette.ink;
+        ctx.fillRect(0, 0, w, h);
+
+        const u = 70;
+        const d = w * 0.5;
+
+        // Speech burst presence function
+        const speechBurst = (a) => U(Math.floor(a / 1.6)) > 0.42 ? 1 : 0;
+        const smoothVoice = (a) => {
+          let s = 0;
+          for (let g = -3; g <= 3; g++) s += speechBurst(a + g * 0.07);
+          return s / 7;
+        };
+
+        const voiceY = h * 0.14, voiceH = h * 0.26;
+        const musicY = h * 0.56, musicH = h * 0.32;
+
+        drawLabel(ctx, 'VOICE (0 dB)', 16, voiceY - 4, palette.white);
+        drawLabel(ctx, `MUSIC (−${Math.round(duckDb)} dB)`, 16, musicY - 4, palette.accent);
+
+        ctx.strokeStyle = palette.accent;
+        ctx.lineWidth = 2;
+
+        const points = [];
+        let prevBurst = null;
+
+        for (let a = 0; a < w; a += 4) {
+          const samplePos = (a - d + soundScroll) / u;
+          const vAmp = smoothVoice(samplePos);
+
+          // Top Track: Voiceover Waveform
+          if (vAmp > 0.01) {
+            const vHeight = (0.3 + 0.7 * U(Math.floor(samplePos * 22))) * vAmp * voiceH * 0.5;
+            ctx.fillStyle = a < d ? palette.paper : palette.dim;
+            ctx.fillRect(a, voiceY + voiceH / 2 - vHeight, 2, vHeight * 2);
+          }
+
+          // Bottom Track: Music Waveform (Ducked dynamically under voice)
+          const duckFactor = 1 - (1 - duckRatio) * vAmp;
+          const mHeight = (0.35 + 0.4 * Math.exp(-fract(samplePos * 2) * 5) + 0.25 * U(Math.floor(samplePos * 30))) * duckFactor * musicH * 0.5;
+          ctx.fillStyle = a < d ? palette.haze : palette.dim;
+          ctx.fillRect(a, musicY + musicH / 2 - mHeight, 2, mHeight * 2);
+
+          // Envelope curve coordinates
+          const curveY = musicY + 4 + (1 - duckFactor) * (musicH - 8);
+          points.push([a, curveY]);
+
+          const currBurst = speechBurst(samplePos);
+          if (prevBurst !== null && currBurst !== prevBurst) {
+            points.push(['k', a]);
+          }
+          prevBurst = currBurst;
+        }
+
+        // Draw sidechain ducking curve line
+        ctx.beginPath();
+        let isFirst = true;
+        for (const pt of points) {
+          if (pt[0] !== 'k') {
+            if (isFirst) {
+              ctx.moveTo(pt[0], pt[1]);
+              isFirst = false;
             } else {
-              throw new Error(result.message || 'Submission error');
+              ctx.lineTo(pt[0], pt[1]);
             }
-          } catch (error) {
-            const mailto = `mailto:yashpkhalokar@gmail.com?subject=New%20Video%20Editing%20Inquiry%20to%20Yash%20Edits&body=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20project.`;
-            const waUrl = `https://wa.me/919421641610?text=Hi%20Yash,%20I%20submitted%20a%20project%20inquiry%20and%20would%20like%20to%20connect`;
+          }
+        }
+        ctx.stroke();
 
+        // Ducking keyframe dots
+        ctx.fillStyle = palette.accent;
+        for (let i = 0; i < points.length; i++) {
+          if (points[i][0] === 'k') {
+            const kx = points[i][1];
+            const targetPt = points.find(p => p[0] !== 'k' && p[0] >= kx) || points[points.length - 1];
+            ctx.beginPath();
+            ctx.arc(kx, targetPt[1], 3, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        // Playhead vertical line
+        ctx.fillStyle = palette.white;
+        ctx.fillRect(Math.round(d) - 1, voiceY - 10, 2, h - voiceY + 4);
+
+        requestAnimationFrame(renderSound);
+      }
+      requestAnimationFrame(renderSound);
+    }
+
+    // 9. Magnetic Spring Buttons
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - (rect.left + rect.width / 2);
+        const y = e.clientY - (rect.top + rect.height / 2);
+        btn.style.transform = `translate3d(${x * 0.25}px, ${y * 0.25}px, 0)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate3d(0, 0, 0)';
+      });
+    });
+
+    // 10. Web3Forms Project Intake Form
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting Request...';
+        }
+
+        const formData = new FormData(contactForm);
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          });
+          const data = await res.json();
+          if (data.success) {
             if (formStatus) {
               formStatus.style.display = 'block';
-              formStatus.style.background = 'rgba(250, 204, 21, 0.15)';
-              formStatus.style.border = '1px solid var(--color-yellow)';
-              formStatus.style.color = '#FACC15';
-              formStatus.innerHTML = `Project details captured! You can connect directly via <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: underline; font-weight: 700;">WhatsApp</a> or <a href="${mailto}" style="color: #FFFFFF; text-decoration: underline; font-weight: 700;">Email</a>.`;
+              formStatus.style.background = 'rgba(56, 189, 248, 0.15)';
+              formStatus.style.border = '1px solid var(--blue-accent)';
+              formStatus.style.color = '#38BDF8';
+              formStatus.innerHTML = '✓ <strong>Project request received!</strong> Yash will review your footage and reach out within 24 hours.';
             }
-          } finally {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = 'Submit Project Request';
-            }
+            contactForm.reset();
+          } else {
+            throw new Error(data.message || 'Error submitting');
           }
-        });
-      }
-    });
+        } catch (err) {
+          const waUrl = "https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project";
+          if (formStatus) {
+            formStatus.style.display = 'block';
+            formStatus.style.background = 'rgba(56, 189, 248, 0.15)';
+            formStatus.style.border = '1px solid var(--blue-accent)';
+            formStatus.style.color = '#38BDF8';
+            formStatus.innerHTML = `Details noted! Connect directly on <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline; font-weight: 700;">WhatsApp</a> or <a href="mailto:yashpkhalokar@gmail.com" style="color: #fff; text-decoration: underline; font-weight: 700;">Email</a>.`;
+          }
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Project Request';
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>
