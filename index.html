@@ -175,56 +175,15 @@
       z-index: 2;
     }
 
-    /* Custom Cursor */
-    #cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      margin: -10px 0 0 -10px;
-      border-radius: 50%;
-      background: rgba(56, 189, 248, 0.25);
-      border: 1.5px solid rgba(56, 189, 248, 0.8);
-      backdrop-filter: blur(4px);
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate3d(-100px, -100px, 0);
-      transition: width 0.3s var(--ease), height 0.3s var(--ease), margin 0.3s var(--ease), background 0.3s, border-color 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* Native Browser Cursor Behavior */
+    html, body {
+      cursor: auto;
     }
-    #cursor.is-hover {
-      width: 48px;
-      height: 48px;
-      margin: -24px 0 0 -24px;
-      background: rgba(56, 189, 248, 0.18);
-      border-color: var(--blue-accent);
+    a, button, [role="button"], input[type="submit"], input[type="button"], .chip, .tile-tab, .faq-q, .scene-btn {
+      cursor: pointer;
     }
-    #cursor.is-play {
-      width: 68px;
-      height: 68px;
-      margin: -34px 0 0 -34px;
-      background: rgba(7, 7, 7, 0.88);
-      border-color: var(--blue-accent);
-      box-shadow: 0 0 25px var(--blue-glow);
-    }
-    #cursorLabel {
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--blue-accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    #cursor.is-play #cursorLabel {
-      opacity: 1;
-    }
-    @media (hover: none) {
-      #cursor { display: none !important; }
+    input, textarea {
+      cursor: text;
     }
 
     /* Pill Buttons (Offcut Style with Glassy Blue Glow) */
@@ -482,24 +441,37 @@
       font-weight: 700;
     }
 
-    /* Hero Glowing 4-Point Star */
+    /* Hero Headline & Single Glowing 4-Point Star */
+    .hero-headline-wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin: 18px 0 24px;
+    }
+    .hero-title-line {
+      display: block;
+    }
+    .hero-scroll-line {
+      position: relative;
+      display: inline-block;
+    }
     .hero-glowing-star {
       position: absolute;
-      width: 28px;
-      height: 28px;
+      top: -18px;
+      right: -46px;
+      width: 26px;
+      height: 26px;
       pointer-events: none;
       z-index: 3;
       filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 28px rgba(56, 189, 248, 0.7));
       animation: star-float 4s ease-in-out infinite alternate;
     }
-    .hero-star-top-right {
-      top: -34px;
-      right: -24px;
-    }
     @media (max-width: 768px) {
-      .hero-star-top-right {
-        top: -26px;
-        right: -8px;
+      .hero-glowing-star {
+        top: -14px;
+        right: -36px;
+        width: 20px;
+        height: 20px;
       }
     }
     @keyframes star-float {
@@ -507,79 +479,45 @@
       100% { transform: translateY(-8px) scale(1.08); opacity: 1; }
     }
 
-    /* Featured Edit Showcase Card (Foreign Client Edit) */
+    /* Featured Edit 9:16 Showcase Card */
     .hero-reel {
       min-width: 0;
-    }
-    .hero-reel-label {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      margin: 0 0 14px auto;
-      justify-content: flex-start;
-      max-width: 420px;
     }
     .hero-featured-card {
       width: 100%;
-      max-width: 420px;
-      margin-left: auto;
+      max-width: 320px;
+      aspect-ratio: 9 / 16;
       border-radius: var(--r);
-      background: var(--panel);
-      border: 1px solid var(--line);
+      background: #000000;
+      border: 1px solid var(--line-2);
       overflow: hidden;
+      position: relative;
       box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px var(--blue-glow-soft);
-      transition: border-color 0.4s var(--ease), transform 0.4s var(--ease);
+      transition: border-color 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s;
     }
     .hero-featured-card:hover {
       border-color: var(--blue-accent);
       transform: translateY(-4px);
+      box-shadow: 0 30px 75px -10px rgba(0, 0, 0, 0.95), 0 0 45px var(--blue-glow);
     }
-    .hero-featured-frame {
-      position: relative;
-      background: #000000;
-      aspect-ratio: 9 / 16;
-      width: 100%;
-      overflow: hidden;
-    }
-    .hero-featured-frame iframe {
+    .hero-featured-card iframe {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
     }
-    .hero-featured-badge-overlay {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      right: 14px;
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .hero-featured-badge-overlay span {
-      background: rgba(7, 7, 7, 0.75);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 10.5px;
-      color: var(--bone-bright);
-    }
-    .hero-wide-meta {
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--panel-2);
-      border-top: 1px solid var(--line);
-    }
-    .hero-wide-meta .clip-t {
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--bone-bright);
+    @media (max-width: 768px) {
+      .hero-reel {
+        justify-content: center;
+        margin-top: 24px;
+      }
+      .hero-featured-card {
+        max-width: 280px;
+      }
     }
 
     /* Section Headers */
@@ -740,7 +678,6 @@
       aspect-ratio: 9 / 16;
       width: 100%;
       background: #000000;
-      border-bottom: 1px solid var(--line);
       overflow: hidden;
     }
     .work-media-shorts iframe {
@@ -757,7 +694,6 @@
       aspect-ratio: 16 / 9;
       width: 100%;
       background: #000000;
-      border-bottom: 1px solid var(--line);
       overflow: hidden;
     }
     .work-media-wide iframe, .work-media-wide img {
@@ -1548,11 +1484,6 @@
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div id="cursor" aria-hidden="true">
-    <span id="cursorLabel">PLAY</span>
-  </div>
-
   <!-- Floating Navigation -->
   <header class="nav-wrap">
     <div class="nav-inner">
@@ -1615,18 +1546,19 @@
 
         <!-- User Requested Headline with Single Glowing White Star with Ample Spacing -->
         <div class="hero-headline-wrap">
-          <!-- Single Glowing White Star (Generous distance from text) -->
-          <div class="hero-glowing-star hero-star-top-right" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="7" fill="rgba(255, 255, 255, 0.55)" filter="blur(3px)" />
-              <path d="M12 0 C12 6.63 17.37 12 24 12 C17.37 12 12 17.37 12 24 C12 17.37 6.63 12 0 12 C6.63 12 12 6.63 12 0 Z" fill="#FFFFFF"/>
-              <path d="M12 5.5 C12 9.09 14.91 12 18.5 12 C14.91 12 12 14.91 12 18.5 C12 14.91 9.09 12 5.5 12 C9.09 12 12 9.09 12 5.5 Z" fill="#FFFFFF" opacity="0.95"/>
-            </svg>
-          </div>
-
           <h1 class="hero-title">
-            <span style="display: block;">Edits that</span>
-            <span style="display: block;"><span class="accent-glow">hold the scroll.</span></span>
+            <span class="hero-title-line">Edits that</span>
+            <span class="hero-title-line hero-scroll-line">
+              <span class="accent-glow">hold the scroll.</span>
+              <!-- Single Glowing 4-Point Star (Generous distance from text) -->
+              <span class="hero-glowing-star" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="7" fill="rgba(255, 255, 255, 0.6)" filter="blur(4px)" />
+                  <path d="M12 0 C12 6.63 17.37 12 24 12 C17.37 12 12 17.37 12 24 C12 17.37 6.63 12 0 12 C6.63 12 12 6.63 12 0 Z" fill="#FFFFFF"/>
+                  <path d="M12 5 C12 8.87 15.13 12 19 12 C15.13 12 12 15.13 12 19 C12 15.13 8.87 12 5 12 C8.87 12 12 8.87 12 5 Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+            </span>
           </h1>
         </div>
 
@@ -1653,31 +1585,16 @@
         </ul>
       </div>
 
-      <!-- Featured Reel: FOREIGN CLIENT EDIT (User Explicit Request) -->
+      <!-- Featured Reel: Exact 9:16 Frame · Pure Video Only (No Titles, No Descriptions, No Badges) -->
       <div class="hero-reel">
-        <p class="mono hero-reel-label"><i class="rec"></i>Featured edit · Foreign client edit</p>
-        <div class="hero-featured-card" data-cursor="play">
-          <div class="hero-featured-frame">
-            <div class="hero-featured-badge-overlay">
-              <span class="mono"><i class="live"></i> High Retention</span>
-              <span class="mono">Global Client</span>
-            </div>
-            <iframe 
-              src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?rel=0&modestbranding=1" 
-              title="Foreign client edit" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="hero-wide-meta">
-            <div>
-              <div class="clip-t">Foreign client edit</div>
-              <div class="mono" style="color: var(--blue-accent); font-size: 11px; margin-top: 3px;">
-                International Client Standard · Rhythmic Motion & SFX
-              </div>
-            </div>
-            <a href="https://youtube.com/shorts/x0bXugX4fKg?feature=share" target="_blank" rel="noopener noreferrer" class="pill pill-line" style="height: 38px; padding: 0 16px; font-size: 13px;">Watch ↗</a>
-          </div>
+        <div class="hero-featured-card" data-yt-id="x0bXugX4fKg">
+          <iframe 
+            id="hero-featured-iframe"
+            src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+            title="Featured Edit" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -1712,11 +1629,11 @@
         
         <div class="shorts-grid">
           <!-- Short 1: motion design edit (Hw-QpfJNj8M) -->
-          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="Hw-QpfJNj8M">
+          <div class="work-card" data-category="shorts" data-yt-id="Hw-QpfJNj8M">
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-1"
-                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
                 title="motion design edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1725,11 +1642,11 @@
           </div>
 
           <!-- Short 2: Foreign client edit (x0bXugX4fKg) -->
-          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="x0bXugX4fKg">
+          <div class="work-card" data-category="shorts" data-yt-id="x0bXugX4fKg">
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-2"
-                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
                 title="Foreign client edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1738,11 +1655,11 @@
           </div>
 
           <!-- Short 3: tech motion graphic edit (ahJT6WyDSCA) -->
-          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="ahJT6WyDSCA">
+          <div class="work-card" data-category="shorts" data-yt-id="ahJT6WyDSCA">
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-3"
-                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
                 title="tech motion graphic edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1751,11 +1668,11 @@
           </div>
 
           <!-- Short 4: Motion design reel 2 (8KGy-W0Il7A) -->
-          <div class="work-card" data-category="shorts" data-cursor="play" data-yt-id="8KGy-W0Il7A">
+          <div class="work-card" data-category="shorts" data-yt-id="8KGy-W0Il7A">
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-4"
-                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
                 title="Motion design reel 2" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1777,11 +1694,11 @@
 
         <div class="longform-grid">
           <!-- Long-Form 1: Documentary on Ganpati Mandal (8ETFrvZku5o) -->
-          <div class="work-card" data-category="longform" data-cursor="play" data-yt-id="8ETFrvZku5o">
+          <div class="work-card" data-category="longform" data-yt-id="8ETFrvZku5o">
             <div class="work-media-wide">
               <iframe 
                 id="yt-long-1"
-                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
                 title="Documentary on Ganpati Mandal in Amravati" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1790,11 +1707,11 @@
           </div>
 
           <!-- Long-Form 2: Wedding Vlog (FLfUsi4Jfx4) -->
-          <div class="work-card" data-category="longform" data-cursor="play" data-yt-id="FLfUsi4Jfx4">
+          <div class="work-card" data-category="longform" data-yt-id="FLfUsi4Jfx4">
             <div class="work-media-wide">
               <iframe 
                 id="yt-long-2"
-                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
                 title="I Attended a ₹1 Crore IBPS PO Wedding" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -2404,53 +2321,21 @@
     // 1. Current Year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // 2. Custom Cursor Follower
-    const cursor = document.getElementById('cursor');
-    const cursorLabel = document.getElementById('cursorLabel');
-    let mouseX = -100, mouseY = -100;
-    let cursorX = -100, cursorY = -100;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function updateCursor() {
-      cursorX += (mouseX - cursorX) * 0.22;
-      cursorY += (mouseY - cursorY) * 0.22;
-      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
-      requestAnimationFrame(updateCursor);
-    }
-    requestAnimationFrame(updateCursor);
-
-    document.querySelectorAll('a, button, [data-cursor]').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        if (el.dataset.cursor === 'play') {
-          cursor.classList.add('is-play');
-          cursorLabel.textContent = 'PLAY';
-        } else {
-          cursor.classList.add('is-hover');
-        }
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('is-hover', 'is-play');
-      });
-    });
-
-    // Hover-to-Play for YouTube Video Cards (using YouTube iframe API postMessage)
+    // 2. Video Hover-to-Play (Instant playback on mouse hover via YouTube postMessage API)
     document.querySelectorAll('.work-card, .hero-featured-card').forEach(card => {
       const iframe = card.querySelector('iframe');
       if (!iframe) return;
 
       card.addEventListener('mouseenter', () => {
         try {
-          iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: '' }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: '' }), '*');
         } catch (e) {}
       });
 
       card.addEventListener('mouseleave', () => {
         try {
-          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: '' }), '*');
         } catch (e) {}
       });
     });
