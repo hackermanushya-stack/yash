@@ -380,17 +380,16 @@
       padding-top: 20px;
     }
 
-    /* Hero Section */
+    /* Hero Section - Compact & Cinematic */
     .hero {
       max-width: var(--max);
       margin-inline: auto;
-      min-height: 100vh;
-      min-height: 100svh;
+      min-height: auto;
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
       align-items: center;
-      gap: clamp(32px, 4vw, 64px);
-      padding: calc(var(--nav) + clamp(24px, 5vh, 56px)) var(--pad) clamp(40px, 7vh, 72px);
+      gap: clamp(24px, 3.5vw, 48px);
+      padding: calc(var(--nav) + clamp(18px, 3vh, 32px)) var(--pad) clamp(20px, 3vh, 36px);
       position: relative;
       z-index: 2;
     }
@@ -520,24 +519,27 @@
       }
     }
 
-    /* Section Headers */
+    /* Section Headers & Compact Layout */
     section.wrap {
-      padding-block: clamp(80px, 9vw, 140px);
+      padding-block: clamp(32px, 3.8vw, 54px);
+    }
+    #work.wrap {
+      padding-top: clamp(14px, 1.8vw, 24px);
     }
     .sec-head {
-      margin-bottom: clamp(36px, 4vw, 56px);
+      margin-bottom: clamp(18px, 2.2vw, 28px);
     }
     .sec-head h2 {
-      font-size: clamp(52px, 7vw, 104px);
+      font-size: clamp(48px, 6vw, 92px);
       text-transform: uppercase;
-      margin-top: 14px;
+      margin-top: 10px;
       color: var(--bone-bright);
     }
     .sec-note {
       color: var(--muted);
       max-width: 54ch;
-      margin-top: 16px;
-      font-size: 1.05rem;
+      margin-top: 10px;
+      font-size: 1.02rem;
     }
 
     /* ====================================================================
@@ -582,10 +584,10 @@
       font-weight: 700;
     }
 
-    /* Sub-Section Group */
+    /* Sub-Section Group - Compact Zero Dead Space */
     .portfolio-group {
-      margin-top: clamp(40px, 5vw, 64px);
-      padding-top: clamp(28px, 4vw, 48px);
+      margin-top: clamp(20px, 2.5vw, 32px);
+      padding-top: clamp(14px, 1.8vw, 22px);
       border-top: 1px solid var(--line);
       transition: opacity 0.4s var(--ease);
     }
@@ -597,8 +599,8 @@
       justify-content: space-between;
       align-items: flex-end;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 24px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
     .group-tag {
       font-size: 11px;
@@ -1288,7 +1290,7 @@
     /* Giant Animated "YASH EDITS" Signature Section at very end */
     .yash-signature-section {
       position: relative;
-      padding: clamp(60px, 8vw, 120px) var(--pad) clamp(40px, 6vw, 80px);
+      padding: clamp(32px, 4vw, 56px) var(--pad) clamp(20px, 3vw, 36px);
       background: linear-gradient(180deg, transparent 0%, rgba(56, 189, 248, 0.04) 50%, rgba(20, 24, 30, 0.8) 100%);
       border-top: 1px solid var(--line);
       overflow: hidden;
@@ -1396,7 +1398,7 @@
       white-space: nowrap;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      padding: 24px 0;
+      padding: 14px 0;
       background: #0f1216;
       position: relative;
     }
@@ -1422,7 +1424,7 @@
 
     /* Site Colophon */
     .foot-bar {
-      padding: 36px var(--pad);
+      padding: 22px var(--pad);
       max-width: var(--max);
       margin: 0 auto;
       display: flex;
@@ -1590,7 +1592,7 @@
         <div class="hero-featured-card" data-yt-id="x0bXugX4fKg">
           <iframe 
             id="hero-featured-iframe"
-            src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+            src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
             title="Featured Edit" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
@@ -1633,7 +1635,7 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-1"
-                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="motion design edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1646,7 +1648,7 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-2"
-                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="Foreign client edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1659,7 +1661,7 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-3"
-                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="tech motion graphic edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1672,7 +1674,7 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-4"
-                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="Motion design reel 2" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1698,7 +1700,7 @@
             <div class="work-media-wide">
               <iframe 
                 id="yt-long-1"
-                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="Documentary on Ganpati Mandal in Amravati" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -1711,7 +1713,7 @@
             <div class="work-media-wide">
               <iframe 
                 id="yt-long-2"
-                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=1" 
+                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
                 title="I Attended a ₹1 Crore IBPS PO Wedding" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -2321,17 +2323,21 @@
     // 1. Current Year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // 2. Video Hover-to-Play (Instant playback on mouse hover via YouTube postMessage API)
+    // 2. Video Playback with Unmuted Audio (Instant playback via YouTube postMessage API)
     document.querySelectorAll('.work-card, .hero-featured-card').forEach(card => {
       const iframe = card.querySelector('iframe');
       if (!iframe) return;
 
-      card.addEventListener('mouseenter', () => {
+      const startPlayback = () => {
         try {
-          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: '' }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: '' }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
           iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: '' }), '*');
         } catch (e) {}
-      });
+      };
+
+      card.addEventListener('mouseenter', startPlayback);
+      card.addEventListener('click', startPlayback);
 
       card.addEventListener('mouseleave', () => {
         try {
