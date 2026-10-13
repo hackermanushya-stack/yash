@@ -227,17 +227,31 @@
       transform: translateY(-2px);
       box-shadow: 0 0 20px var(--blue-glow-soft);
     }
+    /* WhatsApp Button - Styled like Book a Call button (.pill-line) */
+    .pill-whatsapp,
     .pill-chat {
-      background: #1f7a40;
-      color: #ffffff;
-      border: 1px solid #27a858;
-      box-shadow: 0 0 20px rgba(39, 168, 88, 0.3);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--bone);
+      border: 1px solid var(--line-2);
+      backdrop-filter: blur(12px);
     }
+    .pill-whatsapp i,
+    .pill-chat i {
+      color: #25d366;
+      font-size: 1.15em;
+      transition: transform 0.3s;
+    }
+    .pill-whatsapp:hover,
     .pill-chat:hover {
-      background: #238b48;
-      border-color: #34d399;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--blue-accent);
+      color: var(--bone-bright);
       transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(39, 168, 88, 0.5);
+      box-shadow: 0 0 20px var(--blue-glow-soft);
+    }
+    .pill-whatsapp:hover i,
+    .pill-chat:hover i {
+      transform: scale(1.1);
     }
 
     /* Floating Pill Header / Navigation */
@@ -380,7 +394,7 @@
       padding-top: 20px;
     }
 
-    /* Hero Section - Compact & Cinematic */
+    /* Hero Section - Compact & Cinematic (Zero Dead Space) */
     .hero {
       max-width: var(--max);
       margin-inline: auto;
@@ -388,8 +402,8 @@
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
       align-items: center;
-      gap: clamp(24px, 3.5vw, 48px);
-      padding: calc(var(--nav) + clamp(18px, 3vh, 32px)) var(--pad) clamp(20px, 3vh, 36px);
+      gap: clamp(20px, 3vw, 42px);
+      padding: calc(var(--nav) + clamp(12px, 2vh, 20px)) var(--pad) clamp(14px, 2vh, 22px);
       position: relative;
       z-index: 2;
     }
@@ -401,10 +415,10 @@
       position: relative;
       display: inline-block;
       width: 100%;
-      margin: 18px 0 24px;
+      margin: 10px 0 16px;
     }
     .hero-title {
-      font-size: clamp(48px, min(8.2vw, 14vh), 116px);
+      font-size: clamp(46px, min(7.8vw, 13vh), 110px);
       line-height: 0.88;
       text-transform: uppercase;
       letter-spacing: -0.015em;
@@ -415,24 +429,31 @@
       text-shadow: 0 0 35px rgba(56, 189, 248, 0.55);
     }
     .hero-sub {
-      font-size: clamp(17px, 1.3vw, 20px);
+      font-size: clamp(16px, 1.25vw, 19px);
       max-width: 48ch;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.55;
     }
     .hero-ctas {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 20px;
+    }
+    .cta-text-short {
+      display: none;
+    }
+    .cta-text-full {
+      display: inline;
     }
     .proof {
       display: flex;
       flex-wrap: wrap;
       gap: 12px 28px;
-      margin-top: 36px;
+      margin-top: 20px;
       color: var(--muted);
-      padding-top: 24px;
+      padding-top: 16px;
       border-top: 1px solid var(--line);
     }
     .proof b {
@@ -441,12 +462,6 @@
     }
 
     /* Hero Headline & Single Glowing 4-Point Star */
-    .hero-headline-wrap {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      margin: 18px 0 24px;
-    }
     .hero-title-line {
       display: block;
     }
@@ -478,12 +493,74 @@
       100% { transform: translateY(-8px) scale(1.08); opacity: 1; }
     }
 
-    /* Featured Edit 9:16 Showcase Card */
+    /* Featured Video Titler & Showreel Showcase (9:16) */
     .hero-reel {
       min-width: 0;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+    }
+    .hero-reel-container {
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hero-reel-titler {
+      background: rgba(22, 25, 29, 0.85);
+      border: 1px solid var(--line-2);
+      border-radius: var(--r-sm);
+      padding: 10px 14px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+      transition: border-color 0.3s;
+    }
+    .hero-reel-titler:hover {
+      border-color: var(--blue-accent);
+    }
+    .titler-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .titler-tag {
+      font-size: 11px;
+      color: var(--blue-accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+    }
+    .titler-ratio {
+      font-size: 10px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+    .titler-heading {
+      font-family: var(--display);
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--bone-bright);
+      margin: 0;
+    }
+    .titler-sub {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 3px;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .hero-featured-card {
       width: 100%;
@@ -512,34 +589,37 @@
     @media (max-width: 768px) {
       .hero-reel {
         justify-content: center;
-        margin-top: 24px;
+        margin-top: 18px;
+      }
+      .hero-reel-container {
+        max-width: 280px;
       }
       .hero-featured-card {
         max-width: 280px;
       }
     }
 
-    /* Section Headers & Compact Layout */
+    /* Section Headers & Compact Layout (Tight Zero Dead Space) */
     section.wrap {
-      padding-block: clamp(32px, 3.8vw, 54px);
+      padding-block: clamp(20px, 2.4vw, 32px);
     }
     #work.wrap {
-      padding-top: clamp(14px, 1.8vw, 24px);
+      padding-top: 8px;
     }
     .sec-head {
-      margin-bottom: clamp(18px, 2.2vw, 28px);
+      margin-bottom: clamp(12px, 1.5vw, 18px);
     }
     .sec-head h2 {
-      font-size: clamp(48px, 6vw, 92px);
+      font-size: clamp(38px, 4.8vw, 76px);
       text-transform: uppercase;
-      margin-top: 10px;
+      margin-top: 6px;
       color: var(--bone-bright);
     }
     .sec-note {
       color: var(--muted);
       max-width: 54ch;
-      margin-top: 10px;
-      font-size: 1.02rem;
+      margin-top: 6px;
+      font-size: 0.98rem;
     }
 
     /* ====================================================================
@@ -803,7 +883,7 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: clamp(24px, 4vw, 48px);
+      padding: clamp(20px, 2.8vw, 36px);
       box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.85);
       position: relative;
       overflow: hidden;
@@ -821,7 +901,7 @@
     .case-grid {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      gap: clamp(28px, 4vw, 56px);
+      gap: clamp(20px, 3vw, 36px);
       align-items: center;
     }
     .case-stats {
@@ -833,7 +913,7 @@
       background: var(--panel-2);
       border: 1px solid var(--line);
       border-radius: var(--r-sm);
-      padding: 22px 18px;
+      padding: 18px 16px;
       text-align: center;
       transition: border-color 0.3s;
     }
@@ -861,14 +941,14 @@
     .timeline-steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 16px;
       position: relative;
     }
     .step-card {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: 28px 22px;
+      padding: 20px 18px;
       position: relative;
       transition: border-color 0.3s, transform 0.3s;
     }
@@ -877,9 +957,9 @@
       transform: translateY(-4px);
     }
     .step-num {
-      font: 800 48px/1 var(--display);
+      font: 800 44px/1 var(--display);
       color: rgba(255, 255, 255, 0.15);
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
     .step-card:hover .step-num {
       color: var(--blue-accent);
@@ -889,19 +969,19 @@
     .stack-grid {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      gap: 24px;
+      gap: 20px;
     }
     .stack-panel {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: 32px;
+      padding: 22px 24px;
     }
     .app-row {
       display: flex;
       align-items: center;
       gap: 16px;
-      padding: 16px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--line);
     }
     .app-row:last-child {
@@ -1062,10 +1142,10 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: clamp(20px, 2.2vw, 30px);
+      padding: clamp(16px, 1.8vw, 24px);
       transition: border-color 0.4s var(--ease), box-shadow 0.4s;
       position: relative;
-      min-height: 380px;
+      min-height: 320px;
     }
     .tile:hover {
       border-color: var(--blue-accent);
@@ -1245,17 +1325,17 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: clamp(28px, 5vw, 64px);
+      padding: clamp(22px, 3.5vw, 42px);
       box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
       position: relative;
     }
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 16px;
     }
     .form-field {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
     .form-lbl {
       display: block;
@@ -1263,11 +1343,11 @@
       text-transform: uppercase;
       font-family: var(--mono);
       color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .form-ctrl {
       width: 100%;
-      height: 50px;
+      height: 48px;
       background: var(--panel-2);
       border: 1px solid var(--line);
       border-radius: var(--r-sm);
@@ -1278,8 +1358,8 @@
       transition: border-color 0.3s, box-shadow 0.3s;
     }
     textarea.form-ctrl {
-      height: 120px;
-      padding: 14px 16px;
+      height: 110px;
+      padding: 12px 16px;
       resize: vertical;
     }
     .form-ctrl:focus {
@@ -1290,7 +1370,7 @@
     /* Giant Animated "YASH EDITS" Signature Section at very end */
     .yash-signature-section {
       position: relative;
-      padding: clamp(32px, 4vw, 56px) var(--pad) clamp(20px, 3vw, 36px);
+      padding: clamp(20px, 2.5vw, 36px) var(--pad) clamp(16px, 2vw, 24px);
       background: linear-gradient(180deg, transparent 0%, rgba(56, 189, 248, 0.04) 50%, rgba(20, 24, 30, 0.8) 100%);
       border-top: 1px solid var(--line);
       overflow: hidden;
@@ -1471,15 +1551,113 @@
         grid-template-columns: 1fr;
       }
     }
+    @media (max-width: 768px) {
+      .hero-ctas {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        width: 100% !important;
+      }
+      .hero-ctas .pill {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        width: auto !important;
+        height: 40px !important;
+        padding: 0 12px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+      }
+      .pill-whatsapp,
+      .pill-chat {
+        height: 38px;
+        font-size: 13px;
+        padding: 0 16px;
+        gap: 6px;
+      }
+      .hero-ctas .pill-whatsapp,
+      .hero-ctas .pill-chat {
+        height: 40px !important;
+        font-size: 13px !important;
+        padding: 0 12px !important;
+        width: auto !important;
+        align-self: auto !important;
+      }
+    }
     @media (max-width: 580px) {
       .timeline-steps {
         grid-template-columns: 1fr;
       }
+      /* On phones: See work, Book Call, and WhatsApp are placed on the EXACT SAME ROW */
       .hero-ctas {
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+        width: 100% !important;
       }
       .hero-ctas .pill {
-        width: 100%;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        width: auto !important;
+        height: 38px !important;
+        padding: 0 8px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.01em !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        gap: 4px !important;
+      }
+      .hero-ctas .pill svg {
+        width: 13px !important;
+        height: 13px !important;
+        flex-shrink: 0 !important;
+      }
+      .hero-ctas .pill i {
+        font-size: 13px !important;
+        flex-shrink: 0 !important;
+      }
+      .cta-text-full {
+        display: none !important;
+      }
+      .cta-text-short {
+        display: inline !important;
+      }
+      .hero-ctas .pill-whatsapp,
+      .hero-ctas .pill-chat,
+      .pill-whatsapp,
+      .pill-chat {
+        height: 38px !important;
+        font-size: 12px !important;
+        padding: 0 8px !important;
+        width: auto !important;
+        align-self: auto !important;
+        gap: 4px !important;
+      }
+    }
+    @media (max-width: 380px) {
+      .hero-ctas {
+        gap: 4px !important;
+      }
+      .hero-ctas .pill {
+        height: 36px !important;
+        padding: 0 5px !important;
+        font-size: 10.5px !important;
+        gap: 3px !important;
+      }
+      .hero-ctas .pill svg {
+        width: 11px !important;
+        height: 11px !important;
+      }
+      .hero-ctas .pill i {
+        font-size: 11px !important;
       }
     }
   </style>
@@ -1570,12 +1748,18 @@
 
         <div class="hero-ctas">
           <a href="#work" class="pill pill-blue" data-magnetic>
-            See the work
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+            <span class="cta-text-full">See the work</span>
+            <span class="cta-text-short">See work</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
           </a>
-          <a href="#contact" class="pill pill-line" data-magnetic>Book a Call</a>
-          <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-chat" data-magnetic>
-            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          <a href="#contact" class="pill pill-line" data-magnetic>
+            <span class="cta-text-full">Book a Call</span>
+            <span class="cta-text-short">Book Call</span>
+          </a>
+          <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-line pill-whatsapp" data-magnetic>
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="cta-text-full">Chat on WhatsApp</span>
+            <span class="cta-text-short">WhatsApp</span>
           </a>
         </div>
 
@@ -1587,16 +1771,31 @@
         </ul>
       </div>
 
-      <!-- Featured Reel: Exact 9:16 Frame · Pure Video Only (No Titles, No Descriptions, No Badges) -->
+      <!-- Featured Showreel with Feature Video Titler -->
       <div class="hero-reel">
-        <div class="hero-featured-card" data-yt-id="x0bXugX4fKg">
-          <iframe 
-            id="hero-featured-iframe"
-            src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
-            title="Featured Edit" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+        <div class="hero-reel-container">
+          <!-- Feature Video Titler Header -->
+          <div class="hero-reel-titler">
+            <div class="titler-badge-row">
+              <span class="titler-tag mono"><i class="live"></i> FEATURE VIDEO</span>
+              <span class="titler-ratio mono">9:16 REEL</span>
+            </div>
+            <h3 class="titler-heading">High-Retention Motion Edit</h3>
+            <p class="titler-sub mono">
+              <span>Client Showcase Edit</span>
+              <span class="titler-sound-hint"><i class="fa-solid fa-volume-high"></i> Unmuted</span>
+            </p>
+          </div>
+
+          <div class="hero-featured-card" data-yt-id="x0bXugX4fKg">
+            <iframe 
+              id="hero-featured-iframe"
+              src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
+              title="Featured Video Showreel" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -1626,7 +1825,7 @@
             <div class="group-tag mono"><i class="live"></i> 9:16 Aspect Ratio · Mobile First</div>
             <h3 class="group-title">Short-Form & Reels</h3>
           </div>
-          <p class="group-desc mono">Hover or tap to play instantly. Clean cinematic presentation.</p>
+          <p class="group-desc mono">Tap or click to play with full unmuted sound. Clean cinematic presentation.</p>
         </div>
         
         <div class="shorts-grid">
@@ -1635,9 +1834,9 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-1"
-                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/Hw-QpfJNj8M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="motion design edit" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
             </div>
@@ -1648,9 +1847,9 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-2"
-                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/x0bXugX4fKg?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="Foreign client edit" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
             </div>
@@ -1661,9 +1860,9 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-3"
-                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/ahJT6WyDSCA?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="tech motion graphic edit" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
             </div>
@@ -1674,9 +1873,9 @@
             <div class="work-media-shorts">
               <iframe 
                 id="yt-short-4"
-                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="Motion design reel 2" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
             </div>
@@ -1691,7 +1890,7 @@
             <div class="group-tag mono"><i class="live"></i> 16:9 Widescreen · High Retention</div>
             <h3 class="group-title">YouTube Long-Form Videos</h3>
           </div>
-          <p class="group-desc mono">Hover or tap to play instantly. Full documentary & vlogs.</p>
+          <p class="group-desc mono">Tap or click to play with full unmuted sound. Full documentary & vlogs.</p>
         </div>
 
         <div class="longform-grid">
@@ -1700,9 +1899,9 @@
             <div class="work-media-wide">
               <iframe 
                 id="yt-long-1"
-                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/8ETFrvZku5o?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="Documentary on Ganpati Mandal in Amravati" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
             </div>
@@ -1713,9 +1912,9 @@
             <div class="work-media-wide">
               <iframe 
                 id="yt-long-2"
-                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/FLfUsi4Jfx4?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="I Attended a ₹1 Crore IBPS PO Wedding" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
             </div>
@@ -2255,13 +2454,13 @@
           <div id="formStatus" style="margin-top: 16px; padding: 12px 18px; border-radius: 8px; font-size: 14px; display: none;"></div>
         </form>
 
-        <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div>
             <p class="mono" style="font-size: 11px; color: var(--muted); text-transform: uppercase;">Prefer Direct Messaging?</p>
             <p style="font-size: 15px; color: var(--bone-bright); margin-top: 2px;">Chat directly with Yash on WhatsApp or Email</p>
           </div>
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-chat" data-magnetic>
+            <a href="https://wa.me/919421641610?text=Hi%20Yash,%20I'd%20like%20to%20discuss%20a%20video%20project" target="_blank" rel="noopener noreferrer" class="pill pill-line pill-whatsapp" data-magnetic>
               <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
             </a>
             <a href="mailto:yashpkhalokar@gmail.com" class="pill pill-line" data-magnetic>
@@ -2323,12 +2522,13 @@
     // 1. Current Year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // 2. Video Playback with Unmuted Audio (Instant playback via YouTube postMessage API)
+    // 2. Video Playback with Guaranteed Unmuted Audio
+    // When the user plays any video, ensure audio is explicitly unmuted at full volume
     document.querySelectorAll('.work-card, .hero-featured-card').forEach(card => {
       const iframe = card.querySelector('iframe');
       if (!iframe) return;
 
-      const startPlayback = () => {
+      const ensureUnmuted = () => {
         try {
           iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: '' }), '*');
           iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
@@ -2336,14 +2536,9 @@
         } catch (e) {}
       };
 
-      card.addEventListener('mouseenter', startPlayback);
-      card.addEventListener('click', startPlayback);
-
-      card.addEventListener('mouseleave', () => {
-        try {
-          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: '' }), '*');
-        } catch (e) {}
-      });
+      // User click or tap triggers unmuted playback with full audio
+      card.addEventListener('click', ensureUnmuted);
+      card.addEventListener('touchend', ensureUnmuted, { passive: true });
     });
 
     // 3. Mobile Menu
