@@ -603,14 +603,24 @@
     }
     @media (max-width: 768px) {
       .hero-reel {
-        justify-content: center;
-        margin-top: 18px;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
       }
       .hero-reel-container {
-        max-width: 280px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .hero-reel-titler {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
       }
       .hero-featured-card {
-        max-width: 280px;
+        max-width: 310px;
+        margin: 0 auto;
       }
     }
 
@@ -719,17 +729,29 @@
       max-width: 48ch;
     }
 
-    /* Sub-Section 1: Shorts 4-Column Grid */
+    /* Sub-Section 1: Shorts 4-Column Grid on Desktop, 2-Column Grid on Mobile */
     .shorts-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
     @media (max-width: 1080px) {
-      .shorts-grid { grid-template-columns: repeat(2, 1fr); }
+      .shorts-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 16px;
+      }
     }
-    @media (max-width: 560px) {
-      .shorts-grid { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      .shorts-grid { 
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 12px !important; 
+      }
+    }
+    @media (max-width: 440px) {
+      .shorts-grid { 
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 8px !important; 
+      }
     }
 
     /* Sub-Section 2: Long-Form 2-Column Grid */
@@ -1213,19 +1235,21 @@
       position: relative;
       width: 100%;
       height: 190px;
-      background: #000000;
+      background: #14171c;
       border: 1px solid var(--line);
       border-radius: var(--r-sm);
       margin-bottom: 14px;
       overflow: hidden;
       user-select: none;
       cursor: ew-resize;
+      touch-action: none;
     }
     .color-slide-layer {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
+      background: #14171c;
     }
     .color-slide-layer img {
       width: 100%;
@@ -1383,30 +1407,57 @@
     }
 
     /* Giant Animated "YASH EDITS" Signature Section at very end */
+    /* Redesigned Cinematic Yash Edits Signature Section */
     .yash-signature-section {
       position: relative;
-      padding: clamp(20px, 2.5vw, 36px) var(--pad) clamp(16px, 2vw, 24px);
-      background: linear-gradient(180deg, transparent 0%, rgba(56, 189, 248, 0.04) 50%, rgba(20, 24, 30, 0.8) 100%);
+      padding: clamp(40px, 5.5vw, 76px) var(--pad) clamp(28px, 4vw, 48px);
+      background: radial-gradient(ellipse 90% 60% at 50% 65%, rgba(56, 189, 248, 0.08) 0%, rgba(15, 23, 42, 0.4) 40%, #0d0f12 100%);
       border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       overflow: hidden;
       text-align: center;
     }
     .yash-signature-glow {
       position: absolute;
-      bottom: -40px;
+      bottom: -30px;
       left: 50%;
       transform: translateX(-50%);
-      width: clamp(300px, 70vw, 900px);
-      height: 220px;
-      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.22) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 75%);
-      filter: blur(40px);
+      width: clamp(340px, 80vw, 1050px);
+      height: 280px;
+      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.32) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 75%);
+      filter: blur(55px);
       pointer-events: none;
       z-index: 0;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       animation: signature-pulse 5s ease-in-out infinite alternate;
     }
     @keyframes signature-pulse {
       0% { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
-      100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+    }
+    .yash-signature-section:hover .yash-signature-glow {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.3);
+      filter: blur(45px);
+    }
+    .yash-sig-reticle {
+      position: absolute;
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.28);
+      letter-spacing: 0.12em;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .reticle-tl {
+      top: 20px;
+      left: var(--pad);
+    }
+    .reticle-tr {
+      top: 20px;
+      right: var(--pad);
+    }
+    @media (max-width: 640px) {
+      .yash-sig-reticle { display: none; }
     }
     .yash-signature-wrapper {
       position: relative;
@@ -1414,77 +1465,165 @@
       display: inline-flex;
       flex-direction: column;
       align-items: center;
+      max-width: 100%;
     }
     .yash-signature-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
+      gap: 9px;
+      padding: 6px 16px;
       border-radius: 999px;
       background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       color: var(--blue-accent);
       font-size: 11px;
+      font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .sig-rec-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue-accent);
+      box-shadow: 0 0 8px var(--blue-accent);
+      animation: pulse-dot 1.8s ease-in-out infinite alternate;
+    }
+    @keyframes pulse-dot {
+      0% { opacity: 0.4; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1.15); }
+    }
+    .yash-signature-wrapper:hover .yash-signature-badge {
+      border-color: var(--blue-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Redesigned Glitch-Free Scale Animation Container */
+    .yash-signature-interactive {
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: var(--r);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center center;
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+    .yash-signature-interactive:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 45px rgba(56, 189, 248, 0.75));
     }
     .yash-signature-title {
       font-family: var(--display);
       font-weight: 900;
-      font-size: clamp(64px, 15vw, 210px);
-      line-height: 0.85;
+      font-size: clamp(48px, 12.8vw, 180px);
+      line-height: 0.88;
       text-transform: uppercase;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
       margin: 0;
-      cursor: default;
       user-select: none;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 0 0.18em;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 0 0.22em;
+      pointer-events: none;
     }
     .yash-signature-title .word {
       display: inline-flex;
+      flex-wrap: nowrap;
     }
-    .yash-signature-title .char {
+    /* "YASH": Solid Polished Titanium White with Specular Highlight */
+    .word-yash .char {
       display: inline-block;
-      color: transparent;
-      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
-      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 45%, #64748b 100%);
+      color: #ffffff;
+      background: linear-gradient(180deg, #FFFFFF 15%, #E2E8F0 55%, #94A3B8 100%);
       -webkit-background-clip: text;
-      background-clip: text;
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), -webkit-text-stroke 0.3s, filter 0.3s, color 0.3s;
-      animation: letter-breath 6s ease-in-out infinite;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.8));
+      transition: transform 0.3s, filter 0.3s;
+      animation: signature-gentle 4s ease-in-out infinite alternate;
+      animation-delay: calc(var(--i, 0) * 0.12s);
     }
-    .yash-signature-title .char:hover {
-      transform: translateY(-16px) scale(1.12);
-      -webkit-text-stroke: 1.5px var(--blue-accent);
-      color: var(--blue-accent);
-      filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.85));
+    .yash-signature-interactive:hover .word-yash .char {
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) drop-shadow(0 10px 24px rgba(0, 0, 0, 0.9));
     }
-    .yash-signature-title .char-accent {
-      background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 55%, #0284c7 100%);
+    /* "EDITS": Glowing Electric Cyan Neon */
+    .word-edits .char-accent {
+      display: inline-block;
+      color: #38bdf8;
+      background: linear-gradient(180deg, #BAE6FD 10%, #38BDF8 50%, #0284C7 100%);
       -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-stroke: 1.5px rgba(56, 189, 248, 0.6);
-      filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.4));
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.85)) drop-shadow(0 0 50px rgba(56, 189, 248, 0.4));
+      transition: transform 0.3s, filter 0.3s;
+      animation: signature-gentle 4s ease-in-out infinite alternate;
+      animation-delay: calc(var(--i, 0) * 0.12s);
     }
-    @keyframes letter-breath {
-      0%, 100% {
-        filter: drop-shadow(0 0 0px transparent);
-      }
-      50% {
-        filter: drop-shadow(0 0 22px rgba(56, 189, 248, 0.35));
-      }
+    .yash-signature-interactive:hover .word-edits .char-accent {
+      filter: drop-shadow(0 0 35px #38bdf8) drop-shadow(0 0 70px rgba(56, 189, 248, 0.65));
+    }
+    @keyframes signature-gentle {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-3px); }
+    }
+    /* Subtle Cinema Light Sweep Across Logo */
+    .yash-sig-shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+      transform: skewX(-25deg);
+      pointer-events: none;
+      animation: sweep-light 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    @keyframes sweep-light {
+      0%, 70% { left: -100%; opacity: 0; }
+      75% { opacity: 1; }
+      90% { left: 160%; opacity: 1; }
+      91%, 100% { left: 160%; opacity: 0; }
     }
     .yash-signature-sub {
-      margin-top: 24px;
+      font-size: 13.5px;
       color: var(--muted);
-      font-size: clamp(12px, 1.4vw, 15px);
-      letter-spacing: 0.12em;
+      margin-top: 20px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      max-width: 600px;
+    }
+    @media (max-width: 640px) {
+      .yash-signature-sub {
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        line-height: 1.6;
+      }
+    }
+    .yash-sig-cta-row {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .yash-sig-cta-btn {
+      height: 44px;
+      padding: 0 24px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      gap: 10px;
+      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .yash-sig-cta-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 16px 35px -5px rgba(56, 189, 248, 0.6);
     }
 
     /* Giant Editorial Footer Marquee */
@@ -1543,10 +1682,33 @@
         line-height: 0.88;
       }
       .hero-reel {
+        width: 100% !important;
         margin-top: 24px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .hero-reel-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px;
+      }
+      .hero-reel-titler {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: left !important;
+        box-sizing: border-box;
+      }
+      .hero-reel-titler .titler-heading {
+        text-align: left !important;
       }
       .hero-featured-card {
-        margin: 0 auto;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
       }
       .case-grid {
         grid-template-columns: 1fr;
@@ -2129,14 +2291,15 @@
         <div class="stack-panel">
           <h3 style="font-size: 26px; margin-bottom: 20px; color: var(--bone-bright);">Core Software</h3>
           
-          <!-- Adobe Premiere Pro -->
+          <!-- Adobe Premiere Pro (Official 2026 Adobe Creative Cloud Logo) -->
           <div class="app-row">
             <div class="app-icon" style="background: transparent; border: none; padding: 0;">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block;">
-                <!-- Official Premiere Pro Rounded Container -->
-                <rect width="24" height="24" rx="5.4" fill="#00005B"/>
-                <!-- Official Pr Typography Mark -->
-                <path d="M10.15 8.42a2.93 2.93 0 00-1.18-.2 13.9 13.9 0 00-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03a1.45 1.45 0 00-.93-1.46zM12.66 12c-.4.56-.96.98-1.61 1.22-.68.25-1.43.34-2.25.34l-.5-.01-.43-.01v3.21a.12.12 0 01-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01.76-.02.87-.02.91-.01c.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.15.42.23.85.23 1.3 0 .86-.2 1.57-.6 2.13zm6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 00-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 01-.16-.12v-5.58l-.01-.75-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 01.07-.11h1.78c.1 0 .18.07.2.16a3.03 3.03 0 01.13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 011.52-.39c.07-.01.13.04.14.11v.04z" fill="#EA77FF"/>
+              <svg width="44" height="44" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block; filter: drop-shadow(0 4px 14px rgba(153, 153, 255, 0.25));">
+                <!-- Official 2026 Premiere Pro Rounded Container -->
+                <path d="M196.959 0H43.0414C19.2703 0 0 19.2703 0 43.0414V196.959C0 220.73 19.2703 240 43.0414 240H196.959C220.73 240 240 220.73 240 196.959V43.0414C240 19.2703 220.73 0 196.959 0Z" fill="#00005B"/>
+                <!-- Official 2026 Pr Typography Mark -->
+                <path d="M92.5516 63.7059C123.925 63.7059 141.594 78.4019 141.594 103.005C141.594 131.737 117.65 143.296 95.1933 143.296H80.002V174.339H49.2894V63.7059H92.5516ZM80.002 89.9604V117.041H93.5427C102.955 117.041 109.559 113.243 109.559 103.666C109.559 94.9144 103.945 89.9604 94.2027 89.9604H80.002Z" fill="#9999FF"/>
+                <path d="M184.411 86.6581C191.181 86.6581 196.63 87.4837 199.107 88.3093V110.766C197.125 110.271 193.327 109.94 190.19 109.94C184.081 109.94 180.613 110.436 177.475 111.592V174.339H148.579V93.9235C158.981 89.3001 169.385 86.6581 184.411 86.6581Z" fill="#9999FF"/>
               </svg>
             </div>
             <div style="flex-grow: 1;">
@@ -2150,14 +2313,15 @@
             </div>
           </div>
 
-          <!-- Adobe After Effects -->
+          <!-- Adobe After Effects (Official 2026 Adobe Creative Cloud Logo) -->
           <div class="app-row">
             <div class="app-icon" style="background: transparent; border: none; padding: 0;">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block;">
-                <!-- Official After Effects Rounded Container -->
-                <rect width="24" height="24" rx="5.4" fill="#00005B"/>
-                <!-- Official Ae Typography Mark -->
-                <path d="M8.54 10.73c-.1-.31-.19-.61-.29-.92s-.19-.6-.27-.89c-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.13.51-.29.98-.44 1.4h2.54c-.06-.21-.14-.46-.23-.72-.09-.27-.18-.56-.27-.86zm8.58-.29c-.55-.03-1.07.26-1.33.76-.12.23-.19.47-.22.72h2.109c.26 0 .45 0 .57-.01.08-.01.16-.03.23-.08v-.1c0-.13-.021-.25-.061-.37-.178-.56-.708-.94-1.298-.92zM12.71 16.811h-2.09c-.07.01-.14-.041-.16-.11l-.82-2.4H5.92l-.76 2.36c-.02.09-.1.15-.19.14H3.09c-.11 0-.14-.06-.11-.18L6.2 7.39c.03-.1.06-.19.1-.31.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.07 0 .12.03.13.08l3.65 10.25c.03.11.001.161-.1.161zm7.851-3.991c-.021.189-.031.33-.041.42-.01.07-.069.13-.14.13-.06 0-.17.01-.33.021-.159.02-.35.029-.579.029-.23 0-.471-.04-.73-.04h-3.17c.039.31.14.62.31.89.181.271.431.48.729.601.4.17.841.26 1.281.25.35-.011.699-.04 1.039-.11.311-.039.61-.119.891-.23.05-.039.08-.02.08.08v1.531c0 .039-.01.08-.021.119-.021.03-.04.051-.069.07-.32.14-.65.24-1 .3-.471.09-.94.13-1.42.12-.761 0-1.4-.12-1.92-.35-.49-.211-.921-.541-1.261-.95-.319-.39-.55-.83-.69-1.31-.14-.471-.209-.961-.209-1.461 0-.539.08-1.07.25-1.59.16-.5.41-.96.75-1.37.33-.4.739-.72 1.209-.95.471-.23 1.03-.31 1.67-.31.531-.01 1.06.09 1.55.31.41.18.77.45 1.05.8.26.34.47.72.601 1.14.129.4.189.81.189 1.22 0 .24-.01.45-.019.64z" fill="#D291FF"/>
+              <svg width="44" height="44" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block; filter: drop-shadow(0 4px 14px rgba(153, 153, 255, 0.25));">
+                <!-- Official 2026 After Effects Rounded Container -->
+                <path d="M34.4678 0H7.53225C3.3723 0 0 3.3723 0 7.53225V34.4678C0 38.6277 3.3723 42 7.53225 42H34.4678C38.6277 42 42 38.6277 42 34.4678V7.53225C42 3.3723 38.6277 0 34.4678 0Z" fill="#00005B"/>
+                <!-- Official 2026 Ae Typography Mark -->
+                <path d="M10.7343 11.1486H16.9182L23.8534 30.5093H18.1896L17.236 27.5618H9.98297L9.02936 30.5093H3.5968L10.7343 11.1486ZM15.7334 22.9673L13.624 16.4655L11.5145 22.9673H15.7334Z" fill="#9999FF"/>
+                <path d="M38.4033 22.5338C38.4033 23.2274 38.3455 23.9787 38.2588 24.5566H28.8096C29.3875 26.0015 30.7746 26.6949 32.9419 26.6949C34.5022 26.6949 35.8604 26.406 37.2185 25.7703L37.2764 29.7869C35.8026 30.5382 34.2134 30.7983 32.1616 30.7983C27.1047 30.7983 23.7239 27.9953 23.7239 22.9095C23.7239 18.2571 26.9603 15.1652 31.2369 15.1652C35.6293 15.1652 38.4033 17.9971 38.4033 22.5338ZM28.6363 21.2624H33.6931C33.5776 19.9042 32.7396 18.9507 31.2658 18.9507C29.8499 18.9507 28.9541 19.702 28.6363 21.2624Z" fill="#9999FF"/>
               </svg>
             </div>
             <div style="flex-grow: 1;">
@@ -2171,14 +2335,15 @@
             </div>
           </div>
 
-          <!-- Adobe Photoshop -->
+          <!-- Adobe Photoshop (Official 2026 Adobe Creative Cloud Logo) -->
           <div class="app-row">
             <div class="app-icon" style="background: transparent; border: none; padding: 0;">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block;">
-                <!-- Official Photoshop Rounded Container -->
-                <rect width="24" height="24" rx="5.4" fill="#001E36"/>
-                <!-- Official Ps Typography Mark -->
-                <path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zm2.509 3.23c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z" fill="#31A8FF"/>
+              <svg width="44" height="44" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 10px; display: block; filter: drop-shadow(0 4px 14px rgba(49, 168, 255, 0.25));">
+                <!-- Official 2026 Photoshop Rounded Container -->
+                <path d="M34.4678 0H7.53225C3.3723 0 0 3.3723 0 7.53225V34.4678C0 38.6277 3.3723 42 7.53225 42H34.4678C38.6277 42 42 38.6277 42 34.4678V7.53225C42 3.3723 38.6277 0 34.4678 0Z" fill="#001E36"/>
+                <!-- Official 2026 Ps Typography Mark -->
+                <path d="M14.6661 11.1485C20.1565 11.1485 23.2484 13.7203 23.2484 18.0259C23.2484 23.0539 19.0584 25.0767 15.1284 25.0767H12.47V30.5093H7.09517V11.1485H14.6661ZM12.47 15.7431V20.4821H14.8395C16.4866 20.4821 17.6425 19.8175 17.6425 18.1415C17.6425 16.61 16.66 15.7431 14.9551 15.7431H12.47Z" fill="#31A8FF"/>
+                <path d="M24.3408 29.5557L24.3698 25.0767C25.9013 26.0881 28.0396 26.7238 29.5134 26.7238C30.5247 26.7238 30.9871 26.4348 30.9871 25.9147C30.9871 25.3368 30.3514 25.1056 29.1377 24.7299C26.797 24.0364 24.2253 23.0828 24.2253 20.0198C24.2253 16.8989 26.797 15.1652 30.5247 15.1652C32.2874 15.1652 33.7323 15.4252 35.0037 15.9743L34.9748 20.251C33.9634 19.6441 31.9696 19.0951 30.6692 19.0951C29.7156 19.0951 29.34 19.3841 29.34 19.8175C29.34 20.3376 29.8023 20.4821 31.1894 20.9156C33.8768 21.7247 36.1307 22.5916 36.1307 25.7413C36.1307 28.7465 33.6745 30.7693 29.8312 30.7693C27.8084 30.7693 25.9013 30.4226 24.3408 29.5557Z" fill="#31A8FF"/>
               </svg>
             </div>
             <div style="flex-grow: 1;">
@@ -2384,13 +2549,23 @@
           <div class="color-slider-wrap" id="colorSlider">
             <!-- Graded Image (Background) -->
             <div class="color-slide-layer is-graded">
-              <img src="/assets/cinematic_grade_doc.jpg" id="imgGraded" alt="Cinematic Rec.709 Grade" />
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
+                   id="imgGraded" 
+                   alt="Cinematic Rec.709 Grade" 
+                   loading="eager" 
+                   decoding="async" 
+                   onerror="if(this.src.indexOf('unsplash') !== -1){ this.src='/assets/cinematic_grade_doc.jpg'; }" />
               <span class="color-badge badge-graded mono">REC.709 CINEMATIC GRADE</span>
             </div>
 
             <!-- Raw Log Image (Clipped Foreground) -->
             <div class="color-slide-layer is-raw" id="layerRaw" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-              <img src="/assets/cinematic_grade_doc.jpg" id="imgRaw" alt="Sony S-Log3 Raw Profile" />
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
+                   id="imgRaw" 
+                   alt="Sony S-Log3 Raw Profile" 
+                   loading="eager" 
+                   decoding="async" 
+                   onerror="if(this.src.indexOf('unsplash') !== -1){ this.src='/assets/cinematic_grade_doc.jpg'; }" />
               <span class="color-badge badge-raw mono">RAW S-LOG3 PROFILE</span>
             </div>
 
@@ -2530,31 +2705,52 @@
       </div>
     </section>
 
-    <!-- Giant Animated Yash Edits Signature Section -->
+    <!-- Redesigned Cinematic Yash Edits Signature Section -->
     <section class="yash-signature-section" id="yash-signature">
       <div class="yash-signature-glow" aria-hidden="true"></div>
+      
+      <!-- Film Slate Reticle Accents -->
+      <div class="yash-sig-reticle reticle-tl mono" aria-hidden="true">TC: 00:24:18:02</div>
+      <div class="yash-sig-reticle reticle-tr mono" aria-hidden="true">4K UHD · 24 FPS</div>
+
       <div class="yash-signature-wrapper">
         <div class="yash-signature-badge mono">
-          <i class="live"></i> Senior Video Editor & Motion Designer
+          <span class="sig-rec-dot"></span>
+          <span>YASH KHALOKAR · SENIOR VIDEO EDITOR</span>
         </div>
-        <div class="yash-signature-title" aria-label="Yash Edits">
-          <span class="word">
-            <span class="char" style="animation-delay: 0.1s;">Y</span>
-            <span class="char" style="animation-delay: 0.2s;">A</span>
-            <span class="char" style="animation-delay: 0.3s;">S</span>
-            <span class="char" style="animation-delay: 0.4s;">H</span>
-          </span>
-          <span class="word">
-            <span class="char char-accent" style="animation-delay: 0.5s;">E</span>
-            <span class="char char-accent" style="animation-delay: 0.6s;">D</span>
-            <span class="char char-accent" style="animation-delay: 0.7s;">I</span>
-            <span class="char char-accent" style="animation-delay: 0.8s;">T</span>
-            <span class="char char-accent" style="animation-delay: 0.9s;">S</span>
-          </span>
+
+        <!-- Interactive Glitch-Free Cinematic Hero Title -->
+        <div class="yash-signature-interactive" tabindex="0" role="region" aria-label="Yash Edits Signature Title">
+          <div class="yash-signature-title" aria-label="Yash Edits">
+            <span class="word word-yash">
+              <span class="char" style="--i: 0;">Y</span>
+              <span class="char" style="--i: 1;">A</span>
+              <span class="char" style="--i: 2;">S</span>
+              <span class="char" style="--i: 3;">H</span>
+            </span>
+            <span class="word word-edits">
+              <span class="char char-accent" style="--i: 4;">E</span>
+              <span class="char char-accent" style="--i: 5;">D</span>
+              <span class="char char-accent" style="--i: 6;">I</span>
+              <span class="char char-accent" style="--i: 7;">T</span>
+              <span class="char char-accent" style="--i: 8;">S</span>
+            </span>
+          </div>
+          <!-- Shimmering Light Glint Effect -->
+          <div class="yash-sig-shine" aria-hidden="true"></div>
         </div>
+
         <p class="yash-signature-sub mono">
-          Retention Cuts · Motion Graphics · Sound Architecture · Color Grading
+          Retention Architecture · Kinetic Motion · Sound Design · Color Grading
         </p>
+
+        <!-- Signature Direct Action CTA Button -->
+        <div class="yash-sig-cta-row">
+          <a href="#contact" class="pill pill-primary yash-sig-cta-btn" data-magnetic>
+            <i class="fa-solid fa-bolt"></i> Commission Your Next Video
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -2901,17 +3097,31 @@
     window.switchColorScene = function(scene) {
       const btnDoc = document.getElementById('btnSceneDoc');
       const btnUrban = document.getElementById('btnSceneUrban');
+      const docUrl = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80';
+      const urbanUrl = 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80';
 
       if (scene === 'doc') {
         if (btnDoc) btnDoc.classList.add('is-active');
         if (btnUrban) btnUrban.classList.remove('is-active');
-        if (imgGraded) imgGraded.src = '/assets/cinematic_grade_doc.jpg';
-        if (imgRaw) imgRaw.src = '/assets/cinematic_grade_doc.jpg';
+        if (imgGraded) {
+          imgGraded.src = docUrl;
+          imgGraded.onerror = function() { this.src = '/assets/cinematic_grade_doc.jpg'; };
+        }
+        if (imgRaw) {
+          imgRaw.src = docUrl;
+          imgRaw.onerror = function() { this.src = '/assets/cinematic_grade_doc.jpg'; };
+        }
       } else {
         if (btnDoc) btnDoc.classList.remove('is-active');
         if (btnUrban) btnUrban.classList.add('is-active');
-        if (imgGraded) imgGraded.src = '/assets/cinematic_grade_urban.jpg';
-        if (imgRaw) imgRaw.src = '/assets/cinematic_grade_urban.jpg';
+        if (imgGraded) {
+          imgGraded.src = urbanUrl;
+          imgGraded.onerror = function() { this.src = '/assets/cinematic_grade_urban.jpg'; };
+        }
+        if (imgRaw) {
+          imgRaw.src = urbanUrl;
+          imgRaw.onerror = function() { this.src = '/assets/cinematic_grade_urban.jpg'; };
+        }
       }
     };
 
