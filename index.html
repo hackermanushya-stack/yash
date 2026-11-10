@@ -311,14 +311,67 @@
       color: var(--muted);
       transition: color 0.3s;
       position: relative;
+      padding-block: 4px;
     }
     .nav-links a:hover, .nav-links a.is-active {
       color: var(--bone-bright);
+    }
+    .nav-links a.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--blue-accent);
+      box-shadow: 0 0 8px var(--blue-accent);
     }
     .nav-cta {
       height: 44px;
       padding: 0 20px;
       font-size: 14px;
+    }
+
+    /* Fixed Header Anchor Offset for UI/UX Navigation */
+    section[id], .wrap[id], .hero, .craft, .yash-signature-section {
+      scroll-margin-top: 86px;
+    }
+
+    /* Floating Scroll to Top Quick Action */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(13, 15, 18, 0.9);
+      border: 1px solid var(--line-2);
+      color: var(--bone);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+      z-index: 55;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, border-color 0.25s, box-shadow 0.25s, color 0.25s;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
+    .scroll-top-btn.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .scroll-top-btn:hover {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: var(--blue-accent);
+      color: var(--blue-accent);
+      box-shadow: 0 0 18px var(--blue-glow);
+      transform: translateY(-2px);
     }
     .nav-menu {
       display: none;
@@ -729,16 +782,22 @@
       max-width: 48ch;
     }
 
-    /* Sub-Section 1: Shorts 4-Column Grid on Desktop, 2-Column Grid on Mobile */
+    /* Sub-Section 1: Shorts Grid: 5-Column Grid on Desktop, 3-Column on Tablet, 2-Column on Mobile */
     .shorts-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
     }
-    @media (max-width: 1080px) {
+    @media (max-width: 1200px) {
+      .shorts-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 16px;
+      }
+    }
+    @media (max-width: 860px) {
       .shorts-grid { 
         grid-template-columns: repeat(2, 1fr); 
-        gap: 16px;
+        gap: 14px;
       }
     }
     @media (max-width: 768px) {
@@ -1406,58 +1465,31 @@
       box-shadow: 0 0 16px var(--blue-glow-soft);
     }
 
-    /* Giant Animated "YASH EDITS" Signature Section at very end */
-    /* Redesigned Cinematic Yash Edits Signature Section */
+    /* Clean Minimalist Yash Edits Signature Section */
     .yash-signature-section {
       position: relative;
-      padding: clamp(40px, 5.5vw, 76px) var(--pad) clamp(28px, 4vw, 48px);
-      background: radial-gradient(ellipse 90% 60% at 50% 65%, rgba(56, 189, 248, 0.08) 0%, rgba(15, 23, 42, 0.4) 40%, #0d0f12 100%);
+      padding: clamp(64px, 8vw, 100px) var(--pad) clamp(50px, 6vw, 84px);
+      background: radial-gradient(ellipse 90% 70% at 50% 50%, rgba(56, 189, 248, 0.06) 0%, rgba(15, 23, 42, 0.2) 50%, #0d0f12 100%);
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
       overflow: hidden;
       text-align: center;
     }
     .yash-signature-glow {
       position: absolute;
-      bottom: -30px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      width: clamp(340px, 80vw, 1050px);
+      transform: translate(-50%, -50%);
+      width: clamp(320px, 65vw, 850px);
       height: 280px;
-      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.32) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 75%);
-      filter: blur(55px);
+      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.16) 0%, rgba(56, 189, 248, 0.03) 50%, transparent 75%);
+      filter: blur(60px);
       pointer-events: none;
       z-index: 0;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      animation: signature-pulse 5s ease-in-out infinite alternate;
-    }
-    @keyframes signature-pulse {
-      0% { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
-      100% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s;
     }
     .yash-signature-section:hover .yash-signature-glow {
+      transform: translate(-50%, -50%) scale(1.15);
       opacity: 1;
-      transform: translateX(-50%) scale(1.3);
-      filter: blur(45px);
-    }
-    .yash-sig-reticle {
-      position: absolute;
-      font-size: 10.5px;
-      color: rgba(255, 255, 255, 0.28);
-      letter-spacing: 0.12em;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .reticle-tl {
-      top: 20px;
-      left: var(--pad);
-    }
-    .reticle-tr {
-      top: 20px;
-      right: var(--pad);
-    }
-    @media (max-width: 640px) {
-      .yash-sig-reticle { display: none; }
     }
     .yash-signature-wrapper {
       position: relative;
@@ -1470,60 +1502,49 @@
     .yash-signature-badge {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 6px 16px;
+      gap: 8px;
+      padding: 5px 14px;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       color: var(--blue-accent);
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       margin-bottom: 22px;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
-    .sig-rec-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue-accent);
-      box-shadow: 0 0 8px var(--blue-accent);
-      animation: pulse-dot 1.8s ease-in-out infinite alternate;
-    }
-    @keyframes pulse-dot {
-      0% { opacity: 0.4; transform: scale(0.85); }
-      100% { opacity: 1; transform: scale(1.15); }
+      transition: border-color 0.3s, transform 0.3s;
     }
     .yash-signature-wrapper:hover .yash-signature-badge {
       border-color: var(--blue-accent);
       transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+    }
+    .sig-rec-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue-accent);
+      box-shadow: 0 0 8px var(--blue-accent);
     }
 
-    /* Redesigned Glitch-Free Scale Animation Container */
+    /* Glitch-Free Scale Animation Container */
     .yash-signature-interactive {
       position: relative;
       cursor: pointer;
       display: inline-block;
-      padding: 8px 24px;
-      border-radius: var(--r);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 4px 12px;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       transform-origin: center center;
       will-change: transform;
-      backface-visibility: hidden;
-      -webkit-font-smoothing: antialiased;
-      overflow: hidden;
+      background: transparent;
     }
     .yash-signature-interactive:hover {
-      transform: scale(1.08);
-      filter: drop-shadow(0 0 45px rgba(56, 189, 248, 0.75));
+      transform: scale(1.06);
     }
     .yash-signature-title {
       font-family: var(--display);
       font-weight: 900;
-      font-size: clamp(48px, 12.8vw, 180px);
+      font-size: clamp(52px, 13vw, 170px);
       line-height: 0.88;
       text-transform: uppercase;
       letter-spacing: -0.02em;
@@ -1540,125 +1561,46 @@
       display: inline-flex;
       flex-wrap: nowrap;
     }
-    /* "YASH": Solid Polished Titanium White with Specular Highlight */
+    /* "YASH": Crisp Titanium White */
     .word-yash .char {
       display: inline-block;
-      color: #ffffff;
-      background: linear-gradient(180deg, #FFFFFF 15%, #E2E8F0 55%, #94A3B8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.8));
-      transition: transform 0.3s, filter 0.3s;
-      animation: signature-gentle 4s ease-in-out infinite alternate;
-      animation-delay: calc(var(--i, 0) * 0.12s);
+      color: #FFFFFF;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+      transition: transform 0.3s, text-shadow 0.3s;
     }
     .yash-signature-interactive:hover .word-yash .char {
-      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) drop-shadow(0 10px 24px rgba(0, 0, 0, 0.9));
+      text-shadow: 0 0 24px rgba(255, 255, 255, 0.4), 0 4px 20px rgba(0, 0, 0, 0.9);
     }
-    /* "EDITS": Glowing Electric Cyan Neon */
+    /* "EDITS": Electric Cyan Glow */
     .word-edits .char-accent {
       display: inline-block;
       color: #38bdf8;
-      background: linear-gradient(180deg, #BAE6FD 10%, #38BDF8 50%, #0284C7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.85)) drop-shadow(0 0 50px rgba(56, 189, 248, 0.4));
-      transition: transform 0.3s, filter 0.3s;
-      animation: signature-gentle 4s ease-in-out infinite alternate;
-      animation-delay: calc(var(--i, 0) * 0.12s);
+      text-shadow: 0 0 24px rgba(56, 189, 248, 0.7), 0 0 50px rgba(56, 189, 248, 0.35);
+      transition: transform 0.3s, text-shadow 0.3s, color 0.3s;
     }
     .yash-signature-interactive:hover .word-edits .char-accent {
-      filter: drop-shadow(0 0 35px #38bdf8) drop-shadow(0 0 70px rgba(56, 189, 248, 0.65));
+      color: #7dd3fc;
+      text-shadow: 0 0 35px #38bdf8, 0 0 70px rgba(56, 189, 248, 0.6);
     }
-    @keyframes signature-gentle {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-3px); }
-    }
-    /* Subtle Cinema Light Sweep Across Logo */
-    .yash-sig-shine {
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
-      transform: skewX(-25deg);
-      pointer-events: none;
-      animation: sweep-light 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    @keyframes sweep-light {
-      0%, 70% { left: -100%; opacity: 0; }
-      75% { opacity: 1; }
-      90% { left: 160%; opacity: 1; }
-      91%, 100% { left: 160%; opacity: 0; }
-    }
+
     .yash-signature-sub {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--muted);
-      margin-top: 20px;
-      letter-spacing: 0.08em;
+      margin-top: 22px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      line-height: 1.5;
     }
     @media (max-width: 640px) {
       .yash-signature-sub {
         font-size: 11px;
-        letter-spacing: 0.04em;
-        line-height: 1.6;
+        letter-spacing: 0.05em;
       }
     }
-    .yash-sig-cta-row {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-    }
-    .yash-sig-cta-btn {
-      height: 44px;
-      padding: 0 24px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      gap: 10px;
-      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .yash-sig-cta-btn:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 16px 35px -5px rgba(56, 189, 248, 0.6);
-    }
 
-    /* Giant Editorial Footer Marquee */
-    .marquee-strip {
-      overflow: hidden;
-      white-space: nowrap;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 14px 0;
-      background: #0f1216;
-      position: relative;
-    }
-    .marquee-track {
-      display: inline-block;
-      white-space: nowrap;
-      animation: marquee-roll 28s linear infinite;
-    }
-    .marquee-text {
-      font: 900 clamp(48px, 7vw, 92px)/1 var(--display);
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.16);
-      letter-spacing: -0.01em;
-      transition: color 0.4s;
-    }
-    .marquee-strip:hover .marquee-text {
-      color: rgba(56, 189, 248, 0.6);
-    }
-    @keyframes marquee-roll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Site Colophon */
+    /* Site Colophon - Clean, Minimalist, Elegant */
     .foot-bar {
-      padding: 22px var(--pad);
+      padding: 26px var(--pad) 32px;
       max-width: var(--max);
       margin: 0 auto;
       display: flex;
@@ -1666,8 +1608,37 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12.5px;
+    }
+    .foot-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .foot-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+    .foot-links a:hover {
+      color: var(--blue-accent);
+    }
+    @media (max-width: 640px) {
+      .foot-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 22px var(--pad) 28px;
+      }
+      .foot-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     /* Responsive Adjustments */
@@ -1883,22 +1854,22 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
 
   <!-- Floating Navigation -->
   <header class="nav-wrap">
     <div class="nav-inner">
       <nav class="nav-pill">
-        <a href="#" class="logo">
+        <a href="#top" class="logo">
           YASH <span>EDITS</span>
         </a>
         <ul class="nav-links">
           <li><a href="#work">Work</a></li>
-          <li><a href="#case-study">Growth</a></li>
-          <li><a href="#workflow">Workflow</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#services">Services</a></li>
           <li><a href="#craft">The Craft</a></li>
+          <li><a href="#case-study">Growth</a></li>
+          <li><a href="#skills">Toolkit</a></li>
+          <li><a href="#workflow">Process</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -1921,12 +1892,13 @@
   <!-- Mobile Fullscreen Menu -->
   <div class="menu" id="mobileMenu" aria-hidden="true">
     <div class="menu-links">
-      <a href="#work" onclick="closeMenu()">Portfolio</a>
-      <a href="#case-study" onclick="closeMenu()">Growth</a>
-      <a href="#workflow" onclick="closeMenu()">Workflow</a>
-      <a href="#skills" onclick="closeMenu()">Software</a>
-      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#work" onclick="closeMenu()">Work</a>
       <a href="#craft" onclick="closeMenu()">The Craft</a>
+      <a href="#case-study" onclick="closeMenu()">Growth</a>
+      <a href="#skills" onclick="closeMenu()">Toolkit</a>
+      <a href="#workflow" onclick="closeMenu()">Process</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#faq" onclick="closeMenu()">FAQ</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
     <div class="menu-foot" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%;">
@@ -2031,8 +2003,8 @@
           </div>
           <!-- Clean Filter Chips -->
           <div class="filters">
-            <button class="chip is-on" data-filter="all" onclick="filterPortfolio('all', this)">All Work <span class="mono">8</span></button>
-            <button class="chip" data-filter="shorts" onclick="filterPortfolio('shorts', this)">Shorts / Reels <span class="mono">4</span></button>
+            <button class="chip is-on" data-filter="all" onclick="filterPortfolio('all', this)">All Work <span class="mono">9</span></button>
+            <button class="chip" data-filter="shorts" onclick="filterPortfolio('shorts', this)">Shorts / Reels <span class="mono">5</span></button>
             <button class="chip" data-filter="longform" onclick="filterPortfolio('longform', this)">Long-Form <span class="mono">2</span></button>
             <button class="chip" data-filter="thumbnails" onclick="filterPortfolio('thumbnails', this)">Thumbnails <span class="mono">2</span></button>
           </div>
@@ -2096,6 +2068,19 @@
                 id="yt-short-4"
                 src="https://www.youtube-nocookie.com/embed/8KGy-W0Il7A?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
                 title="Motion design reel 2" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Short 5: Finance & Banking Hook Edit (hXdRMqRqCuk) -->
+          <div class="work-card" data-category="shorts" data-yt-id="hXdRMqRqCuk">
+            <div class="work-media-shorts">
+              <iframe 
+                id="yt-short-5"
+                src="https://www.youtube-nocookie.com/embed/hXdRMqRqCuk?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&mute=0" 
+                title="Finance &amp; Banking Hook Edit" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
               </iframe>
@@ -2185,7 +2170,117 @@
       </div>
     </section>
 
-    <!-- 3. Featured Channel Growth Case Study -->
+    <!-- 3. THE CRAFT, LIVE -->
+    <!-- Interactive Panels: Pacing (BPM), Colour (Real Photo Comparison), Motion (Ease), Sound (Duck) -->
+    <section class="craft wrap" id="craft">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>What every edit gets</p>
+        <h2>The craft, live.</h2>
+        <p class="sec-note">
+          Each panel runs the real editing technique interactively in your browser. Move your cursor across each panel to experience how the edits are engineered.
+        </p>
+      </div>
+
+      <div class="craft-grid">
+        <!-- Interactive 1: Pacing (BPM & Cut Timeline) -->
+        <article class="tile" data-demo="pace">
+          <div class="tile-head">
+            <h3>Pacing</h3>
+            <span class="mono tile-read" id="paceRead">128 BPM</span>
+          </div>
+          <canvas aria-hidden="true" class="tile-canvas" id="canvasPace"></canvas>
+          <p class="tile-copy">Cuts timed to the beat and paced to hold attention, for Shorts, long form or anything between.</p>
+          <p class="mono tile-hint">Move cursor across to change the tempo</p>
+        </article>
+
+        <!-- Interactive 2: Colour (Raw Log Profile vs Cinematic Grade Real Photo Slider) -->
+        <article class="tile" data-demo="grade">
+          <div class="tile-head">
+            <div>
+              <h3>Colour</h3>
+              <p class="mono" style="color: var(--blue-accent); font-size: 11px; margin-top: 2px;">
+                Raw Log Profile vs Cinematic Grade
+              </p>
+            </div>
+            <span class="mono tile-read" id="gradeRead">Log 50% / 50% Graded</span>
+          </div>
+
+          <!-- Real Photo Before/After Comparison Slider -->
+          <div class="color-slider-wrap" id="colorSlider">
+            <!-- Graded Image (Background) -->
+            <div class="color-slide-layer is-graded">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
+                   id="imgGraded" 
+                   alt="Cinematic Rec.709 Grade" 
+                   loading="eager" 
+                   decoding="async" 
+                   onerror="if(this.src.indexOf('unsplash') !== -1){ this.src='/assets/cinematic_grade_doc.jpg'; }" />
+              <span class="color-badge badge-graded mono">REC.709 CINEMATIC GRADE</span>
+            </div>
+
+            <!-- Raw Log Image (Clipped Foreground) -->
+            <div class="color-slide-layer is-raw" id="layerRaw" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
+                   id="imgRaw" 
+                   alt="Sony S-Log3 Raw Profile" 
+                   loading="eager" 
+                   decoding="async" 
+                   onerror="if(this.src.indexOf('unsplash') !== -1){ this.src='/assets/cinematic_grade_doc.jpg'; }" />
+              <span class="color-badge badge-raw mono">RAW S-LOG3 PROFILE</span>
+            </div>
+
+            <!-- Dividing Split Handle -->
+            <div class="color-slider-handle" id="sliderHandle" style="left: 50%;">
+              <div class="handle-knob">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scene Selector Switcher -->
+          <div class="color-scene-bar">
+            <div class="scene-switcher">
+              <button class="scene-btn is-active" id="btnSceneDoc" onclick="switchColorScene('doc')">
+                <i class="fa-solid fa-camera"></i> Scene 01: 35mm Documentary
+              </button>
+              <button class="scene-btn" id="btnSceneUrban" onclick="switchColorScene('urban')">
+                <i class="fa-solid fa-film"></i> Scene 02: Neon Cyberpunk
+              </button>
+            </div>
+            <span class="mono color-lut-tag">LUT: KODAK 2383 PRINT</span>
+          </div>
+
+          <p class="tile-copy">A grade that sets the mood, separates skin tones, and gives your channel a signature cinematic look.</p>
+          <p class="mono tile-hint">Drag or hover slider across to compare Raw Log vs Graded</p>
+        </article>
+
+        <!-- Interactive 3: Motion (Ease 3.0 Bezier Curve) -->
+        <article class="tile" data-demo="motion">
+          <div class="tile-head">
+            <h3>Motion</h3>
+            <span class="mono tile-read" id="motionRead">Ease 3.0</span>
+          </div>
+          <canvas aria-hidden="true" class="tile-canvas" id="canvasMotion"></canvas>
+          <p class="tile-copy">Motion graphics and effects eased properly with Bezier curves, so they serve the story instead of shouting over it.</p>
+          <p class="mono tile-hint">Move cursor up and down to bend the curve</p>
+        </article>
+
+        <!-- Interactive 4: Sound (Voiceover Dynamic Ducking) -->
+        <article class="tile" data-demo="sound">
+          <div class="tile-head">
+            <h3>Sound</h3>
+            <span class="mono tile-read" id="soundRead">Duck −12 dB</span>
+          </div>
+          <canvas aria-hidden="true" class="tile-canvas" id="canvasSound"></canvas>
+          <p class="tile-copy">Music that steps aside dynamically for the voice, and sound impacts that land with surgical precision on cuts.</p>
+          <p class="mono tile-hint">Move cursor across to set how far the music ducks</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Featured Channel Growth Case Study -->
     <section class="wrap" id="case-study">
       <div class="case-card">
         <div class="case-grid">
@@ -2232,49 +2327,6 @@
               <div class="stat-sub mono">Consistent Weekly Pipeline</div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Workflow Timeline -->
-    <section class="wrap" id="workflow">
-      <div class="sec-head">
-        <p class="eyebrow mono"><i class="live"></i>Process</p>
-        <h2>Production Timeline</h2>
-        <p class="sec-note">A systematic post-production pipeline built for velocity, creative precision, and zero friction.</p>
-      </div>
-
-      <div class="timeline-steps">
-        <div class="step-card">
-          <div class="step-num">01</div>
-          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Ingest & Selects</h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
-            Cloud ingest via Drive/Dropbox. A-roll transcript analysis, cutting dead air, and building the strongest hook.
-          </p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">02</div>
-          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">The Assembly Cut</h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
-            Rhythmic pacing to musical transients, multi-cam switching, and narrative structural arcs designed to hold attention.
-          </p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">03</div>
-          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Sound & Visual FX</h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
-            Kinetic After Effects typography, multi-layered Foley sound effects, dynamic music ducking, and color grading.
-          </p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">04</div>
-          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Final Mastering</h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
-            Frame.io client review, 2 rounds of timestamped revisions, 4K ProRes/H.265 master delivery, and free 16:9 thumbnail.
-          </p>
         </div>
       </div>
     </section>
@@ -2374,6 +2426,49 @@
               <p style="font-size: 13.5px; color: var(--muted);">Layered SFX, vocal EQ enhancement, and ducking mastery.</p>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Production Timeline -->
+    <section class="wrap" id="workflow">
+      <div class="sec-head">
+        <p class="eyebrow mono"><i class="live"></i>Process</p>
+        <h2>Production Timeline</h2>
+        <p class="sec-note">A systematic post-production pipeline built for velocity, creative precision, and zero friction.</p>
+      </div>
+
+      <div class="timeline-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Ingest & Selects</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Cloud ingest via Drive/Dropbox. A-roll transcript analysis, cutting dead air, and building the strongest hook.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">The Assembly Cut</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Rhythmic pacing to musical transients, multi-cam switching, and narrative structural arcs designed to hold attention.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Sound & Visual FX</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Kinetic After Effects typography, multi-layered Foley sound effects, dynamic music ducking, and color grading.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3 style="font-size: 22px; margin-bottom: 10px; color: var(--bone-bright);">Final Mastering</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            Frame.io client review, 2 rounds of timestamped revisions, 4K ProRes/H.265 master delivery, and free 16:9 thumbnail.
+          </p>
         </div>
       </div>
     </section>
@@ -2510,117 +2605,7 @@
       </div>
     </section>
 
-    <!-- 8. THE CRAFT, LIVE (MOVED DIRECTLY ABOVE CONTACT AS REQUESTED) -->
-    <!-- Interactive Panels: Pacing (BPM), Colour (Real Photo Comparison), Motion (Ease), Sound (Duck) -->
-    <section class="craft wrap" id="craft">
-      <div class="sec-head">
-        <p class="eyebrow mono"><i class="live"></i>What every edit gets</p>
-        <h2>The craft, live.</h2>
-        <p class="sec-note">
-          Each panel runs the real editing technique interactively in your browser. Move your cursor across each panel to experience how the edits are engineered.
-        </p>
-      </div>
-
-      <div class="craft-grid">
-        <!-- Interactive 1: Pacing (BPM & Cut Timeline) -->
-        <article class="tile" data-demo="pace">
-          <div class="tile-head">
-            <h3>Pacing</h3>
-            <span class="mono tile-read" id="paceRead">128 BPM</span>
-          </div>
-          <canvas aria-hidden="true" class="tile-canvas" id="canvasPace"></canvas>
-          <p class="tile-copy">Cuts timed to the beat and paced to hold attention, for Shorts, long form or anything between.</p>
-          <p class="mono tile-hint">Move cursor across to change the tempo</p>
-        </article>
-
-        <!-- Interactive 2: Colour (Raw Log Profile vs Cinematic Grade Real Photo Slider) -->
-        <article class="tile" data-demo="grade">
-          <div class="tile-head">
-            <div>
-              <h3>Colour</h3>
-              <p class="mono" style="color: var(--blue-accent); font-size: 11px; margin-top: 2px;">
-                Raw Log Profile vs Cinematic Grade
-              </p>
-            </div>
-            <span class="mono tile-read" id="gradeRead">Log 50% / 50% Graded</span>
-          </div>
-
-          <!-- Real Photo Before/After Comparison Slider -->
-          <div class="color-slider-wrap" id="colorSlider">
-            <!-- Graded Image (Background) -->
-            <div class="color-slide-layer is-graded">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
-                   id="imgGraded" 
-                   alt="Cinematic Rec.709 Grade" 
-                   loading="eager" 
-                   decoding="async" 
-                   onerror="if(this.src.indexOf('unsplash') !== -1){ this.src='/assets/cinematic_grade_doc.jpg'; }" />
-              <span class="color-badge badge-graded mono">REC.709 CINEMATIC GRADE</span>
-            </div>
-
-            <!-- Raw Log Image (Clipped Foreground) -->
-            <div class="color-slide-layer is-raw" id="layerRaw" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
-                   id="imgRaw" 
-                   alt="Sony S-Log3 Raw Profile" 
-                   loading="eager" 
-                   decoding="async" 
-                   onerror="if(this.src.indexOf('unsplash') !== -1){ this.src='/assets/cinematic_grade_doc.jpg'; }" />
-              <span class="color-badge badge-raw mono">RAW S-LOG3 PROFILE</span>
-            </div>
-
-            <!-- Dividing Split Handle -->
-            <div class="color-slider-handle" id="sliderHandle" style="left: 50%;">
-              <div class="handle-knob">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Scene Selector Switcher -->
-          <div class="color-scene-bar">
-            <div class="scene-switcher">
-              <button class="scene-btn is-active" id="btnSceneDoc" onclick="switchColorScene('doc')">
-                <i class="fa-solid fa-camera"></i> Scene 01: 35mm Documentary
-              </button>
-              <button class="scene-btn" id="btnSceneUrban" onclick="switchColorScene('urban')">
-                <i class="fa-solid fa-film"></i> Scene 02: Neon Cyberpunk
-              </button>
-            </div>
-            <span class="mono color-lut-tag">LUT: KODAK 2383 PRINT</span>
-          </div>
-
-          <p class="tile-copy">A grade that sets the mood, separates skin tones, and gives your channel a signature cinematic look.</p>
-          <p class="mono tile-hint">Drag or hover slider across to compare Raw Log vs Graded</p>
-        </article>
-
-        <!-- Interactive 3: Motion (Ease 3.0 Bezier Curve) -->
-        <article class="tile" data-demo="motion">
-          <div class="tile-head">
-            <h3>Motion</h3>
-            <span class="mono tile-read" id="motionRead">Ease 3.0</span>
-          </div>
-          <canvas aria-hidden="true" class="tile-canvas" id="canvasMotion"></canvas>
-          <p class="tile-copy">Motion graphics and effects eased properly with Bezier curves, so they serve the story instead of shouting over it.</p>
-          <p class="mono tile-hint">Move cursor up and down to bend the curve</p>
-        </article>
-
-        <!-- Interactive 4: Sound (Voiceover Dynamic Ducking) -->
-        <article class="tile" data-demo="sound">
-          <div class="tile-head">
-            <h3>Sound</h3>
-            <span class="mono tile-read" id="soundRead">Duck −12 dB</span>
-          </div>
-          <canvas aria-hidden="true" class="tile-canvas" id="canvasSound"></canvas>
-          <p class="tile-copy">Music that steps aside dynamically for the voice, and sound impacts that land with surgical precision on cuts.</p>
-          <p class="mono tile-hint">Move cursor across to set how far the music ducks</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 9. Contact Section -->
+    <!-- 8. Contact Section -->
     <section class="wrap" id="contact">
       <div class="contact-wrap">
         <p class="eyebrow mono" style="margin-bottom: 14px;"><i class="live"></i>Taking new clients</p>
@@ -2708,10 +2693,6 @@
     <!-- Redesigned Cinematic Yash Edits Signature Section -->
     <section class="yash-signature-section" id="yash-signature">
       <div class="yash-signature-glow" aria-hidden="true"></div>
-      
-      <!-- Film Slate Reticle Accents -->
-      <div class="yash-sig-reticle reticle-tl mono" aria-hidden="true">TC: 00:24:18:02</div>
-      <div class="yash-sig-reticle reticle-tr mono" aria-hidden="true">4K UHD · 24 FPS</div>
 
       <div class="yash-signature-wrapper">
         <div class="yash-signature-badge mono">
@@ -2723,54 +2704,49 @@
         <div class="yash-signature-interactive" tabindex="0" role="region" aria-label="Yash Edits Signature Title">
           <div class="yash-signature-title" aria-label="Yash Edits">
             <span class="word word-yash">
-              <span class="char" style="--i: 0;">Y</span>
-              <span class="char" style="--i: 1;">A</span>
-              <span class="char" style="--i: 2;">S</span>
-              <span class="char" style="--i: 3;">H</span>
+              <span class="char">Y</span>
+              <span class="char">A</span>
+              <span class="char">S</span>
+              <span class="char">H</span>
             </span>
             <span class="word word-edits">
-              <span class="char char-accent" style="--i: 4;">E</span>
-              <span class="char char-accent" style="--i: 5;">D</span>
-              <span class="char char-accent" style="--i: 6;">I</span>
-              <span class="char char-accent" style="--i: 7;">T</span>
-              <span class="char char-accent" style="--i: 8;">S</span>
+              <span class="char char-accent">E</span>
+              <span class="char char-accent">D</span>
+              <span class="char char-accent">I</span>
+              <span class="char char-accent">T</span>
+              <span class="char char-accent">S</span>
             </span>
           </div>
-          <!-- Shimmering Light Glint Effect -->
-          <div class="yash-sig-shine" aria-hidden="true"></div>
         </div>
 
         <p class="yash-signature-sub mono">
           Retention Architecture · Kinetic Motion · Sound Design · Color Grading
         </p>
-
-        <!-- Signature Direct Action CTA Button -->
-        <div class="yash-sig-cta-row">
-          <a href="#contact" class="pill pill-primary yash-sig-cta-btn" data-magnetic>
-            <i class="fa-solid fa-bolt"></i> Commission Your Next Video
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
       </div>
     </section>
-
-    <!-- Giant Foot Marquee -->
-    <div class="marquee-strip" aria-hidden="true">
-      <div class="marquee-track">
-        <span class="marquee-text">YASH EDITS · HIGH RETENTION CUTS · MOTION DESIGN · KINETIC TYPOGRAPHY · SOUND ARCHITECTURE · COLOR GRADING · YASH EDITS · HIGH RETENTION CUTS · MOTION DESIGN · KINETIC TYPOGRAPHY · SOUND ARCHITECTURE · COLOR GRADING · </span>
-      </div>
-    </div>
   </main>
 
-  <!-- Site Colophon -->
+  <!-- Clean Minimalist Colophon Footer -->
   <footer class="foot-bar">
     <div class="mono" style="color: var(--bone);">
-      © <span id="yr">2026</span> Yash Khalokar. All edits reserved.
+      © <span id="yr">2026</span> Yash Khalokar · All edits reserved
     </div>
-    <div class="mono" style="font-size: 11px; color: var(--muted);">
-      Crafted with Big Shoulders Display & SF Pro Display · 24 FPS
+    <div class="foot-links mono">
+      <a href="#work">Work</a>
+      <a href="#craft">The Craft</a>
+      <a href="#case-study">Growth</a>
+      <a href="#skills">Toolkit</a>
+      <a href="#workflow">Process</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#top" style="color: var(--blue-accent);">Back to top ↑</a>
     </div>
   </footer>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
   <!-- Interactive JavaScript Engine -->
   <script>
@@ -2887,6 +2863,62 @@
         });
       });
     }
+
+    // 8. Navigation Scrollspy & Back-to-Top Button Controller
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const trackedSections = [
+      document.getElementById('home'),
+      document.getElementById('work'),
+      document.getElementById('craft'),
+      document.getElementById('case-study'),
+      document.getElementById('skills'),
+      document.getElementById('workflow'),
+      document.getElementById('services'),
+      document.getElementById('faq'),
+      document.getElementById('contact')
+    ].filter(Boolean);
+
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    function handleScrollNav() {
+      const scrollY = window.scrollY;
+
+      // Toggle back to top button visibility
+      if (scrollTopBtn) {
+        if (scrollY > 500) {
+          scrollTopBtn.classList.add('is-visible');
+        } else {
+          scrollTopBtn.classList.remove('is-visible');
+        }
+      }
+
+      // Determine active section for scrollspy
+      const scrollMid = scrollY + 160;
+      let activeSectionId = '';
+
+      for (let i = 0; i < trackedSections.length; i++) {
+        const sec = trackedSections[i];
+        const top = sec.offsetTop;
+        const bottom = top + sec.offsetHeight;
+        if (scrollMid >= top && scrollMid < bottom) {
+          activeSectionId = sec.id;
+          break;
+        }
+      }
+
+      navAnchors.forEach(a => {
+        const href = a.getAttribute('href');
+        if (href === `#${activeSectionId}`) {
+          a.classList.add('is-active');
+        } else {
+          a.classList.remove('is-active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScrollNav, { passive: true });
+    window.addEventListener('load', handleScrollNav);
+    handleScrollNav();
 
     // ====================================================================
     // OFFCUT CANVAS ENGINE FOR PACING, SOUND, MOTION & REAL PHOTO COLOR SLIDER
